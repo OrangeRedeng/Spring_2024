@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}"
+      lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Заявки от пользователей</title>
+</head>
+<body class="view">
+<div layout:fragment="content" class="top">
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Login</th>
+            <th>Experience</th>
+            <th>AboutMe</th>
+            <th style="text-align: center">Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="user : ${userApplication}">
+            <td th:text="${user.login}"></td>
+            <td th:text="${user.experience}"></td>
+            <td th:text="${user.aboutMe}"></td>
+            <td>
+                <div style="text-align: center">
+                    <a class="btn btn-secondary ms-1" th:href="'/users/detailedInformation/' + ${user.id}">Подробнее</a>
+                    <a class="btn btn-danger ms-1" th:href="'/users/acceptApplication/' + ${user.id}">Принять</a>
+                    <a class="btn btn-warning ms-1" th:href="'/users/rejectApplication/' + ${user.id}">Отклонить</a>
+                </div>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

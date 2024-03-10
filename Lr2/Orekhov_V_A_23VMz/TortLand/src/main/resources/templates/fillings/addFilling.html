@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}">
+<head>
+    <meta charset="UTF-8">
+    <title>Добавить начинку</title>
+</head>
+<body class="view">
+<div layout:fragment="content" class="top">
+    <h1>Добавить начинку</h1>
+    <form method="POST" th:action="@{/fillings/add/{cake}(cake=${cakeId})}" th:object="${fillingForm}">
+        <div class="mb-3 col-sm-4">
+            <label for="name" class="form-label">Название</label>
+            <input name="name" placeholder="Введите название начинки..." type="text" class="form-control" id="name">
+            <div
+                    class="alert alert-warning"
+                    th:if="${#fields.hasErrors('name')}"
+                    th:errors="*{name}">
+            </div>
+        </div>
+        <div class="mb-3 col-sm-4">
+            <label for="pricePer" class="form-label">Укажите цену за килограмм</label>
+            <input name="pricePer" placeholder="Цена за килограмм..." type="text" class="form-control" id="pricePer">
+            <div
+                    class="alert alert-warning"
+                    th:if="${#fields.hasErrors('pricePer')}"
+                    th:errors="*{pricePer}">
+            </div>
+        </div>
+        <button type="submit" class="btn btn-outline-primary zoom">Добавить</button>
+    </form>
+    <div class="row">
+        <div class="col">
+            <button
+                    class="btn btn-outline-secondary zoom"
+                    style="float: left; margin-top: 10px; padding-right: 38px;"
+                    onclick="window.history.back()">Назад
+            </button>
+        </div>
+    </div>
+</div>
+</body>
+</html>

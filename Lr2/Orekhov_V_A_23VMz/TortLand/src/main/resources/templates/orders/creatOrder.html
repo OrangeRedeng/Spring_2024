@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}">
+<head>
+    <meta charset="UTF-8">
+    <title>Заказ</title>
+    <script>
+
+    </script>
+</head>
+<body class="view">
+<div layout:fragment="content" class="top">
+    <h1>Заказ</h1>
+    <h1 style="text-align: center; margin-top: 5%">Торт</h1>
+    <table style="margin-left: 10%">
+        <tbody>
+        <tr>
+            <td class="name"><span>Название</span></td>
+            <td class="cur" th:text="${cakes.name}"></td>
+        </tr>
+        <tr>
+            <td class="name"><span>Масса от</span></td>
+            <td class="cur" id="col_1" th:text="${cakes.weightFrom}"></td>
+        </tr>
+        <tr>
+            <td class="name"><span>Город</span></td>
+            <td class="cur" th:text="${cakes.city.getCityText()}"></td>
+        </tr>
+        <tr>
+            <td class="name"><span>Цена за килограмм</span></td>
+            <td class="cur"><b id="cena_1" th:text="${filling.pricePer}"></b> руб.</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <h4 style="margin-top: 5%">Выбрать массу</h4>
+    <p>* +/- 0,5 кг.</p>
+    <p><b onpaste="0.5" onclick="plus(1)">
+        <button type="button" class="btn btn-outline-success">Добавить</button>
+    </b>
+        <b onpaste="0.5" onclick="minus(1)">
+            <button type="button" class="btn btn-outline-danger">Убавить</button>
+        </b></p>
+    <form method="POST" th:action="@{/orders/create/{filId}(filId = ${fillingId})}" th:object="${orderForm}">
+        <input type="hidden" th:value="${cakes.weightFrom}" name="weightFrom" id="weightFrom">
+        <input type="hidden" th:value="${cakes.weightFrom * filling.pricePer}" name="price" id="price">
+        <input type="hidden" th:value="${userCity}" name="city" id="city">
+        <div class="mb-3 col-sm-4">
+            <div class="mb-3">
+                <p class="form-label">Ваш город</p>
+                <h4 th:text="${userCity.getCityText()}"></h4>
+            </div>
+        </div>
+        <div class="mb-3 col-sm-4">
+            <label for="address" class="form-label">Укажите адрес</label>
+            <input name="address" placeholder="Введите свой адрес..." type="text" class="form-control" id="address">
+            <div
+                    class="alert alert-warning"
+                    th:if="${#fields.hasErrors('address')}"
+                    th:errors="*{address}">
+            </div>
+        </div>
+        <div class="mb-3 col-sm-4">
+            <label for="deliveryDate" class="form-label">Укажите дату доставки</label>
+            <input name="deliveryDate" type="date" class="form-control" id="deliveryDate">
+            <div
+                    class="alert alert-warning"
+                    th:if="${#fields.hasErrors('deliveryDate')}"
+                    th:errors="*{deliveryDate}">
+            </div>
+        </div>
+        <p class="cur"><b id="cenap_1" th:text="${filling.pricePer * cakes.weightFrom}"></b> руб.</p>
+        <button type="submit" class="btn btn-outline-primary zoom">Заказать</button>
+    </form>
+    <div class="row" style="margin-bottom: 10%">
+        <div class="col">
+            <button
+                    class="btn btn-outline-secondary zoom"
+                    style="float: left; margin-top: 10px; padding-right: 38px;"
+                    onclick="window.history.back()">Назад
+            </button>
+        </div>
+    </div>
+</div>
+</body>
+</html>

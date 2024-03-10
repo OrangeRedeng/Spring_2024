@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Регистрация</title>
+</head>
+<body>
+<div>
+    <div class="row justify-content-center">
+        <div class="col-xl-10">
+            <div class="card border-0">
+                <div class="card-body p-0">
+                    <div class="row no-gutters">
+                        <div class="col-lg-6">
+                            <div class="p-5">
+                                <div class="mb-5">
+                                    <h3 class="h4 font-weight-bold text-theme">Регистрация</h3>
+                                </div>
+                                <p class="text-muted mt-2 mb-5">Заполните все поля ниже</p>
+                                <form method="POST" th:action="@{/users/registration}" th:object="${userForm}"
+                                      style="margin: 0 auto">
+                                    <div class="row">
+                                        <div class="col-5">
+                                            <label for="login" class="form-label">Логин</label>
+                                            <input name="login" type="text" class="form-control" id="login" required>
+                                            <div
+                                                    class="alert alert-warning"
+                                                    th:if="${#fields.hasErrors('login')}"
+                                                    th:errors="*{login}">
+                                            </div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <label for="password" class="form-label">Пароль</label>
+                                            <input name="password" type="password" class="form-control" id="password"
+                                                   required>
+                                            <div
+                                                    class="alert alert-warning"
+                                                    th:if="${#fields.hasErrors('password')}"
+                                                    th:errors="*{password}">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-5">
+                                            <label for="firstName" class="form-label">Имя</label>
+                                            <input name="firstName" type="text" class="form-control" id="firstName"
+                                                   required>
+                                            <div
+                                                    class="alert alert-warning"
+                                                    th:if="${#fields.hasErrors('firstName')}"
+                                                    th:errors="*{firstName}">
+                                            </div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <label for="middleName" class="form-label">Фамилия</label>
+                                            <input name="middleName" type="text" class="form-control" id="middleName"
+                                                   required>
+                                            <div
+                                                    class="alert alert-warning"
+                                                    th:if="${#fields.hasErrors('middleName')}"
+                                                    th:errors="*{middleName}">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-5">
+                                            <label for="lastName" class="form-label">Отчество</label>
+                                            <input name="lastName" type="text" class="form-control" id="lastName"
+                                                   required>
+                                            <div
+                                                    class="alert alert-warning"
+                                                    th:if="${#fields.hasErrors('lastName')}"
+                                                    th:errors="*{lastName}">
+                                            </div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <label for="email" class="form-label">Бэкап-почта</label>
+                                            <input name="email" type="email" class="form-control" id="email" required>
+                                            <div
+                                                    class="alert alert-warning"
+                                                    th:if="${#fields.hasErrors('email')}"
+                                                    th:errors="*{email}">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-5">
+                                            <label for="phone" class="form-label">Телефон</label>
+                                            <input name="phone" type="text" class="form-control" id="phone" required>
+                                            <div
+                                                    class="alert alert-warning"
+                                                    th:if="${#fields.hasErrors('phone')}"
+                                                    th:errors="*{phone}">
+                                            </div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <label for="address" class="form-label">Адрес</label>
+                                            <input name="address" type="text" class="form-control" id="address"
+                                                   required>
+                                            <div
+                                                    class="alert alert-warning"
+                                                    th:if="${#fields.hasErrors('address')}"
+                                                    th:errors="*{address}">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-5">
+                                            <label for="birthDate" class="form-label">Дата Рождения</label>
+                                            <input placeholder="YYYY-MM-DD" name="birthDate" type="date"
+                                                   class="form-control" id="birthDate" required>
+                                            <div
+                                                    class="alert alert-warning"
+                                                    th:if="${#fields.hasErrors('birthDate')}"
+                                                    th:errors="*{birthDate}">
+                                            </div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <label for="city" class="form-label">Выберете город</label>
+                                            <select class="form-select" name="city" id="city"
+                                                    aria-label="Default select example">
+                                                <option th:each="city : ${T(com.example.tortland.model.City).values()}"
+                                                        th:value="${city}" th:text="${city.getCityText()}"></option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <button type="submit" class="btn btn-outline-primary zoom">Зарегистрироваться
+                                    </button>
+                                    <button class="btn btn-outline-secondary zoom" onclick="window.history.back()"
+                                            style="margin-left: 15px">Назад
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 d-none d-lg-inline-block">
+                            <div class="account-block rounded-right">
+                                <div class="overlay rounded-right"></div>
+                                <div class="account-testimonial">
+                                    <h4 class="text-white mb-4">Добро пожаловать!</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p class="text-muted text-center mt-3 mb-0">У вас уже есть аккаунт? <a href="/login"
+                                                                                   class="text-primary ml-1">войти</a>
+            </p>
+        </div>
+    </div>
+    <div style=" margin-top: 3%; margin-right: 30px" class="text-center">
+        <img src="/images/logoBot.png" alt="" width="400" height="400">
+    </div>
+</div>
+</body>
+<style>
+    body {
+        margin-top: 20px;
+        background: #f6f9fc;
+    }
+
+    .account-block {
+        padding: 0;
+        background-image: url(https://bootdey.com/img/Content/bg1.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 100%;
+        position: relative;
+    }
+
+    .account-block .overlay {
+        -webkit-box-flex: 1;
+        -ms-flex: 1;
+        flex: 1;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: rgba(0, 0, 0, 0.4);
+    }
+
+    .account-block .account-testimonial {
+        text-align: center;
+        color: #fff;
+        position: absolute;
+        margin: 0 auto;
+        padding: 0 1.75rem;
+        bottom: 3rem;
+        left: 0;
+        right: 0;
+    }
+
+    .text-theme {
+        color: #5369f8 !important;
+    }
+
+    .btn-theme {
+        background-color: #5369f8;
+        border-color: #5369f8;
+        color: #fff;
+    }
+
+    .zoom {
+        transition: transform .2s;
+    }
+
+    .zoom:hover {
+        transform: scale(1.1);
+    }
+</style>
+</html>

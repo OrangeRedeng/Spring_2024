@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}">
+<head>
+    <meta charset="UTF-8">
+    <title>Изменить аватар</title>
+</head>
+<body class="view">
+<div layout:fragment="content" class="top">
+    <h1>Изменить аватар</h1>
+    <form method="POST" th:action="@{/users/updateImages}" enctype="multipart/form-data">
+        <div class="mb-3 col-sm-4">
+            <label for="file" class="form-label">Изображение</label>
+            <input name="file" type="file" class="form-control" id="file">
+        </div>
+        <button type="submit" class="btn btn-outline-primary zoom">Добавить</button>
+    </form>
+    <div class="row" style="margin-bottom: 10%">
+        <div class="col">
+            <button
+                    class="btn btn-outline-secondary zoom"
+                    style="float: left; margin-top: 10px; padding-right: 38px;"
+                    onclick="window.history.back()">Назад
+            </button>
+        </div>
+    </div>
+</div>
+</body>
+</html>

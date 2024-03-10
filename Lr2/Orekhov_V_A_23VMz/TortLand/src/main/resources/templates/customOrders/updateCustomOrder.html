@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}">
+<head>
+    <meta charset="UTF-8">
+    <title>Изменить личный заказ</title>
+</head>
+<body class="view">
+<div layout:fragment="content" class="top">
+    <h1>Изменить личный заказ</h1>
+    <form method="POST" th:action="@{/customOrders/update}" th:object="${customOrderForm}">
+        <input type="hidden" th:value="${customOrder.id}" name="id">
+        <input type="hidden" th:value="${customOrder.updatedBy}" name="updatedBy">
+        <input type="hidden" th:value="${customOrder.createdWhen}" name="createdWhen">
+        <input type="hidden" th:value="${customOrder.createdBy}" name="createdBy">
+        <input type="hidden" th:value="${customOrder.number}" name="number">
+        <div class="mb-3 col-sm-4">
+            <label for="tiers" class="form-label">Количество ярусов</label>
+            <input name="tiers" th:value="${customOrder.tiers}" type="text" class="form-control" id="tiers">
+        </div>
+        <div class="mb-3 col-sm-4">
+            <div class="mb-3">
+                <label for="form" class="form-label">Выберете форму</label>
+                <select class="form-select" name="form" id="form" aria-label="Default select example">
+                    <option th:value="${customOrder.form}" th:text="${customOrder.form.getFormText()}">
+                    <option th:each="form : ${T(com.example.tortland.model.Form).values()}"
+                            th:if="${form.getFormText() != customOrder.form.getFormText()}"
+                            th:value="${form}" th:text="${form.getFormText()}"></option>
+                </select>
+            </div>
+        </div>
+        <div class="mb-3 col-sm-4">
+            <label for="deliveryDate" class="form-label">Дата доставки</label>
+            <input name="deliveryDate" th:value="${customOrder.deliveryDate}" type="date" class="form-control"
+                   id="deliveryDate">
+        </div>
+        <div class="mb-3 col-sm-4">
+            <fieldset>
+                <legend>Активность заказа</legend>
+                <div th:if="${!customOrder.activity}">
+                    <input type="checkbox" checked="{isOrdered}" id="true" name="activity" value="false"/>
+                    <label for="false">Закрытый</label>
+                </div>
+                <div th:if="${customOrder.activity}">
+                    <input type="checkbox" id="false" name="activity" value="false"/>
+                    <label for="false">Закрыть</label>
+                </div>
+            </fieldset>
+        </div>
+        <div class="mb-3 col-sm-4">
+            <label for="address" class="form-label">Адрес доставки</label>
+            <input name="address" th:value="${customOrder.address}" type="text" class="form-control" id="address">
+        </div>
+        <div class="mb-3 col-sm-4">
+            <label for="wT" class="form-label">Вес торта(с шагом 0,5кг)</label>
+            <input name="wT" th:value="${customOrder.wT}" type="text" class="form-control" id="wT">
+        </div>
+        <div class="mb-3 col-sm-4">
+            <label for="decoration" class="form-label">Украшения для торта</label>
+            <input name="decoration" th:value="${customOrder.decoration}" type="text" class="form-control"
+                   id="decoration">
+        </div>
+        <div class="mb-3 col-sm-4">
+            <label for="filling" class="form-label">Начинка</label>
+            <input name="filling" th:value="${customOrder.filling}" type="text" class="form-control" id="filling">
+        </div>
+        <div class="mb-3 col-sm-4">
+            <label for="shortDescription" class="form-label">Краткое описание</label>
+            <input name="shortDescription" th:value="${customOrder.shortDescription}" type="text" class="form-control"
+                   id="shortDescription">
+        </div>
+        <div class="mb-3 col-sm-4">
+            <label for="price" class="form-label">Цена торта</label>
+            <input name="price" th:value="${customOrder.price}" type="text" class="form-control" id="price">
+        </div>
+        <div class="mb-3 col-sm-4">
+            <div class="mb-3">
+                <label for="status" class="form-label">Статус</label>
+                <select class="form-select" name="status" id="status" aria-label="Default select example">
+                    <option th:value="${customOrder.status}" th:text="${customOrder.status.getStatusText()}">
+                    <option th:each="status : ${T(com.example.tortland.model.Status).values()}"
+                            th:if="${status.getStatusText() != customOrder.status.getStatusText()}"
+                            th:value="${status}" th:text="${status.getStatusText()}"></option>
+                </select>
+            </div>
+        </div>
+        <div class="mb-3 col-sm-4">
+            <div class="mb-3">
+                <label for="city" class="form-label">Город</label>
+                <select class="form-select" name="city" id="city" aria-label="Default select example">
+                    <option th:value="${customOrder.city}" th:text="${customOrder.city.getCityText()}">
+                    <option th:each="city : ${T(com.example.tortland.model.City).values()}"
+                            th:if="${city.getCityText() != customOrder.city.getCityText()}"
+                            th:value="${city}" th:text="${city.getCityText()}"></option>
+                </select>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-outline-warning zoom">Сохранить</button>
+    </form>
+    <div class="row" style="margin-bottom: 10%">
+        <div class="col">
+            <button
+                    class="btn btn-outline-secondary zoom"
+                    style="float: left; margin-top: 10px; padding-right: 38px;"
+                    onclick="window.history.back()">Назад
+            </button>
+        </div>
+    </div>
+</div>
+</body>
+</html>

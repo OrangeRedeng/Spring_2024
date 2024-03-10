@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}"
+      lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Мои заказы</title>
+</head>
+<body class="view">
+<div layout:fragment="content" class="top">
+    <h1 style="text-align: center; margin-top: 30px">Торт и кондитер</h1>
+    <div class="row" style="margin-top: 2%">
+        <div class="card shadow p-3 mb-5 rounded col-sm-6 zoom"
+             style="width: 25rem; background: linear-gradient(to right, rgba(215,65,119,0.13), rgba(255,233,138,0.15)); border-radius: 7%!important;">
+            <img th:src="${cake.previewImagePlug}" class="card-img-top rounded-circle shadow mb-3 p-1 bg-body"
+                 style="border-radius: 10%!important;">
+            <div class="card-body" style="text-align: center">
+                <h4 class="card-title" th:text="${cake.name}"></h4>
+                <p class="card-title" style="font-family:comic sans ms" th:text="${cake.shortDescription}"></p>
+                <div class="row row-cols-1 row-cols-md-1 g-4">
+                    <a th:href="'/cakes/info/'+${cake.id}" class="btn btn-outline-primary zoom"
+                       th:if="${!cake.isDeleted}">Подробнее</a>
+                    <p th:if="${cake.isDeleted}">Этот торт больше не продается данным кондитером</p>
+                </div>
+            </div>
+        </div>
+        <div class="container py-5 h-100 col-sm-6" style="margin-bottom: 10%">
+            <div class="row justify-content-center align-items-center h-100">
+                <div class="col col-md-9">
+                    <div style="border-radius: 15px;">
+                        <div class="card-body p-4">
+                            <div class="d-flex text-black">
+                                <div class="flex-shrink-0">
+                                    <img th:src="${order.userConfectioners.plug}"
+                                         alt="Generic placeholder image"
+                                         class="img-fluid rounded-circle shadow-lg mb-5 bg-body rounded"
+                                         style="width: 180px; border-radius: 10%!important;">
+                                </div>
+                                <div class="flex-grow-1 ms-3">
+                                    <h5 class="mb-1" style="color: white; padding-top: 7px"
+                                        th:text="${order.userConfectioners.firstName}"></h5>
+                                    <div class="justify-content-start rounded-3 p-2 mb-2"
+                                         style="background-color: #efefef; margin-top: 40px">
+                                        <div>
+                                            <p class="small text-muted mb-1">Количество тортов</p>
+                                            <p class="mb-0" th:text="${order.userConfectioners.cakes.size}"></p>
+                                        </div>
+                                    </div>
+                                    <div class=" pt-1">
+                                        <a th:if="${!order.userConfectioners.isDeleted}"
+                                           th:href="'/users/profileConfectioner/' + ${order.userConfectioners.id}"
+                                           class="btn btn-outline-info flex-grow-1 zoom">Перейти в профиль</a>
+                                        <p th:if="${order.userConfectioners.isDeleted}" class="small text-muted mb-1">Статус</p>
+                                        <p style="color: #ff2400"  th:if="${order.userConfectioners.isDeleted}" class="mb-0" >Заблокирован</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <h1 style="text-align: center; margin-top: 15%">Описание заказа</h1>
+    <table style="margin-left: 10%; margin-bottom: 15%">
+        <tbody>
+        <tr>
+            <td class="name"><span>Масса</span></td>
+            <td class="cur" th:text="${order.weightFrom} + ' кг.'"></td>
+        </tr>
+        <tr>
+            <td class="name"><span>Начинка</span></td>
+            <td class="cur" th:text="${order.filling.name}"></td>
+        </tr>
+        <tr>
+            <td class="name"><span>Город</span></td>
+            <td class="cur" th:text="${order.city.getCityText()}"></td>
+        </tr>
+        <tr>
+            <td class="name"><span>Адрес</span></td>
+            <td class="cur" th:text="${order.address}"></td>
+        </tr>
+        <tr>
+            <td class="name"><span>Дата доставки</span></td>
+            <td class="cur" th:text="${order.deliveryDate}"></td>
+        </tr>
+        <tr>
+            <td class="name"><span>Цена</span></td>
+            <td class="cur" th:text="${order.filling.pricePer * order.weightFrom} + ' руб.'"></td>
+        </tr>
+        </tbody>
+    </table>
+    <div style=" margin-top: 15%; margin-right: 30px" class="text-center">
+        <img src="/images/logoBot.png" alt="" width="400" height="400">
+    </div>
+</div>
+</body>
+</html>

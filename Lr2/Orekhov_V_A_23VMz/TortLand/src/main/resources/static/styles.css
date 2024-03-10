@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,700');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:700');
+
+
+/*.navbar {*/
+/*    background-image: linear-gradient(55deg, rgba(141, 141, 141, 0.41), white);*/
+/*    --bs-bg-opacity: 0;*/
+/*}*/
+
+.top {
+    margin-top: 160px
+}
+
+.view {
+    background: linear-gradient(45deg, rgba(82, 237, 251, 0.07), rgba(255, 255, 255, 0.91));
+}
+
+.grad {
+    background: linear-gradient(45deg, rgba(251, 82, 121, 0.07), rgba(255, 149, 44, 0.91));
+}
+
+.d-flex {
+    display: flex;
+    background: #2f3640;
+    height: 40px;
+    border-radius: 40px;
+}
+
+.searchBtn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #2f3640;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.4s;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.searchBtn > i {
+    font-size: 30px;
+}
+
+.d-flex:hover > .searchText {
+    width: 240px;
+    padding: 0 6px;
+}
+
+.searchText {
+    border: none;
+    background: none;
+    outline: none;
+    padding: 0;
+    color: #ffffff;
+    font-size: 16px;
+    transition: 0.4s;
+    line-height: 40px;
+    width: 0;
+    font-weight: 0;
+}
+
+.d-flex:hover > .searchBtn {
+    background: linear-gradient(45deg, #ff2400, #ffa500);
+    color: #ffffff;
+}
+
+.d-flex:hover > .searchBtn:hover {
+    background: linear-gradient(45deg, #ffa500, #ff2400);
+}
+
+.zoom {
+    transition: transform .2s;
+}
+
+.zoom:hover {
+    transform: scale(1.1);
+}
+
+.card {
+    --bs-card-border-color: white;
+}
+
+.filmTable {
+    padding-left: 90px
+}
+

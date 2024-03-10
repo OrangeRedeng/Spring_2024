@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}"
+      lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Пользователи</title>
+</head>
+<body class="view">
+<div layout:fragment="content" class="top">
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Номер заказа</th>
+            <th>Заказ</th>
+            <th>login заказчика</th>
+            <th>login кондитера</th>
+            <th>Название торта</th>
+            <th>Начника</th>
+            <th>Статус заказа</th>
+            <th>Город</th>
+            <th>Адрес доставки</th>
+            <th>Цена</th>
+            <th style="text-align: center">Действия</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="order : ${orders}">
+            <td th:text="${order.number}"></td>
+            <td th:text="${order.title}"></td>
+            <td th:text="${order.users.login}"></td>
+            <td th:text="${order.userConfectioners.login}"></td>
+            <td th:text="${order.cake.name}"></td>
+            <td th:text="${order.filling.name}"></td>
+            <td th:text="${order.status.getStatusText()}"></td>
+            <td th:text="${order.city.getCityText()}"></td>
+            <td th:text="${order.address}"></td>
+            <td th:text="${order.price}"></td>
+            <td>
+                <div class="g-4" style="text-align: center; display: inline-block!important; width: auto!important">
+                    <a class="btn btn-secondary ms-1" th:href="'/orders/detailed/' + ${order.id}">Подробнее</a>
+                    <a class="btn btn-warning ms-1" th:href="'/orders/update/' + ${order.id}">Изменить</a>
+                    <a class="btn btn-danger ms-1" onclick="return confirm('Вы действительно хотите удалить заказ ?')"
+                       th:href="'/orders/delete/' + ${order.id}">Удалить</a>
+                </div>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <nav aria-label="Pagination" th:if="${orders.totalPages gt 0}">
+        <ul class="pagination justify-content-center font-weight-bold">
+            <li class="page-item" th:classappend="${orders.number eq 0} ? 'disabled'">
+                <a class="page-link"
+                   th:href="@{/orders?page={id}(id=${orders.number lt 2 ? 1 : orders.number})}"
+                   aria-label="Previous" title="Previous Page" data-toggle="tooltip">
+                    <span aria-hidden="true">&laquo;</span>
+                </a>
+            </li>
+            <li class="page-item"
+                th:each="i : ${#numbers.sequence(1, orders.totalPages, 1)}"
+                th:classappend="${i eq orders.number + 1} ? 'active'">
+                <a class="page-link" th:href="@{/orders?page={id}(id=${i})}" th:text="${i}"
+                   th:title="${'Page '+ i}" data-toggle="tooltip"></a>
+            </li>
+            <li class="page-item" th:classappend="${orders.number eq orders.totalPages - 1} ? 'disabled'">
+                <a class="page-link"
+                   th:href="@{/orders?page={id}(id=${orders.number + 2})}"
+                   aria-label="Next" title="Next Page" data-toggle="tooltip">
+                    <span aria-hidden="true">&raquo;</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</div>
+</body>
+</html>

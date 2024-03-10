@@ -1,0 +1,67 @@
+<div xmlns:th="http://www.thymeleaf.org"
+     xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+     th:fragment="header">
+    <nav class="navbar navbar-expand-lg shadow-lg p-3 mb-5 rounded fixed-top"
+         style="background: linear-gradient(to right, rgba(215,65,119,0.13), rgba(255,233,138,0.15));">
+        <div class="container-fluid">
+            <a class="zoom navbar-brand" href="/" style="color: #000000">
+                <img src="/images/logo4.png" alt="" width="60" height="60">
+                TortLand
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div sec:authorize="!isAnonymous()" class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-link active">
+                        <a class="zoom nav-link active btn btn-dark" aria-current="page" href="/cakes">Торты</a>
+                    </li>
+                    <li sec:authorize="!hasRole('admin')" class="nav-link active">
+                        <a class="zoom nav-link active btn btn-dark" aria-current="page" href="/users">Кондитеры</a>
+                    </li>
+                    <li sec:authorize="hasRole('admin')" class="nav-item dropdown"
+                        style="margin-top: 8px; margin-left: 8px">
+                        <a class="nav-link dropdown-toggle active btn btn-dark zoom" data-bs-toggle="dropdown"
+                           role="button" aria-expanded="false">Пользователи</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="/users/all">Все</a></li>
+                            <li><a class="dropdown-item" href="/users">Кондитеры</a></li>
+                            <li><a class="dropdown-item" href="/users/allUsers">Обычные пользователи</a></li>
+                        </ul>
+                    </li>
+                    <li sec:authorize="hasRole('admin')" class="nav-item dropdown"
+                        style="margin-top: 8px; margin-left: 16px">
+                        <a class="nav-link dropdown-toggle active btn btn-dark zoom" data-bs-toggle="dropdown"
+                           role="button" aria-expanded="false">Заказы</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="/orders">Обычные</a></li>
+                            <li><a class="dropdown-item" href="/customOrders">Кастомные</a></li>
+                        </ul>
+                    </li>
+                    <li sec:authorize="hasRole('admin')" class="nav-link active" style="margin-left: 8px">
+                        <a class="zoom nav-link active btn btn-dark" aria-current="page" href="/users/get-application">Заявки</a>
+                    </li>
+                </ul>
+                <form sec:authorize="hasRole('USER') or hasRole('CONFECTIONER')" th:action="@{/cakes/search}"
+                      method="get" class="d-flex" role="search" style="margin-right: 20px">
+                    <input class="searchText" type="search" placeholder="Поиск торта..." aria-label="Поиск"
+                           name="keyword" th:value="${keyword}">
+                    <button class="searchBtn" type="submit" style="border: none !important; outline: none !important">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                             class="bi bi-search" viewBox="0 0 16 16">
+                            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                        </svg>
+                        <i class="bi bi-search"></i>
+                    </button>
+                </form>
+                <div sec:authorize="hasRole('USER') or hasRole('CONFECTIONER')">
+                    <a class="zoom btn btn-outline-dark" style="float: right; margin-right: 20px"
+                       th:href="'/users/profile/' + ${#authentication.getPrincipal().getUserId()}">Профиль</a>
+                </div>
+                <a href="/logout" class="btn btn-outline-danger zoom" role="button" aria-disabled="true">Выйти</a>
+            </div>
+        </div>
+    </nav>
+</div>
