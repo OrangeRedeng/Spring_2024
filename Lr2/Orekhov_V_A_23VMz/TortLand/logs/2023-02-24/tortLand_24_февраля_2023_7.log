@@ -1,0 +1,52 @@
+2023-02-24 01:48:52,811 INFO o.h.v.i.u.Version [background-preinit] HV000001: Hibernate Validator 6.2.5.Final
+2023-02-24 01:48:52,828 INFO o.s.b.StartupInfoLogger [restartedMain] Starting TortLandApplication using Java 18.0.2 on DESKTOP-E1SLKID with PID 31968 (C:\Add\TortLand\target\classes started by MRCL in C:\Add\TortLand)
+2023-02-24 01:48:52,830 INFO o.s.b.SpringApplication [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2023-02-24 01:48:52,950 INFO o.s.b.l.DeferredLog [restartedMain] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-02-24 01:48:52,950 INFO o.s.b.l.DeferredLog [restartedMain] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-02-24 01:48:53,353 INFO o.s.d.r.c.RepositoryConfigurationDelegate [restartedMain] Multiple Spring Data modules found, entering strict repository configuration mode
+2023-02-24 01:48:53,354 INFO o.s.d.r.c.RepositoryConfigurationDelegate [restartedMain] Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2023-02-24 01:48:53,374 INFO o.s.d.r.c.RepositoryConfigurationExtensionSupport [restartedMain] Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.tortland.repository.CakeRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2023-02-24 01:48:53,375 INFO o.s.d.r.c.RepositoryConfigurationExtensionSupport [restartedMain] Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.tortland.repository.CustomOrderRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2023-02-24 01:48:53,376 INFO o.s.d.r.c.RepositoryConfigurationExtensionSupport [restartedMain] Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.tortland.repository.FillingRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2023-02-24 01:48:53,377 INFO o.s.d.r.c.RepositoryConfigurationExtensionSupport [restartedMain] Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.tortland.repository.ImageRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2023-02-24 01:48:53,378 INFO o.s.d.r.c.RepositoryConfigurationExtensionSupport [restartedMain] Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.tortland.repository.OrderRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2023-02-24 01:48:53,379 INFO o.s.d.r.c.RepositoryConfigurationExtensionSupport [restartedMain] Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.tortland.repository.RoleRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2023-02-24 01:48:53,380 INFO o.s.d.r.c.RepositoryConfigurationExtensionSupport [restartedMain] Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.tortland.repository.UserRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2023-02-24 01:48:53,380 INFO o.s.d.r.c.RepositoryConfigurationDelegate [restartedMain] Finished Spring Data repository scanning in 24 ms. Found 0 JDBC repository interfaces.
+2023-02-24 01:48:53,385 INFO o.s.d.r.c.RepositoryConfigurationDelegate [restartedMain] Multiple Spring Data modules found, entering strict repository configuration mode
+2023-02-24 01:48:53,385 INFO o.s.d.r.c.RepositoryConfigurationDelegate [restartedMain] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-02-24 01:48:53,409 INFO o.s.d.r.c.RepositoryConfigurationDelegate [restartedMain] Finished Spring Data repository scanning in 22 ms. Found 7 JPA repository interfaces.
+2023-02-24 01:48:53,745 INFO o.s.b.w.e.t.TomcatWebServer [restartedMain] Tomcat initialized with port(s): 9090 (http)
+2023-02-24 01:48:53,749 INFO o.a.j.l.DirectJDKLog [restartedMain] Initializing ProtocolHandler ["http-nio-9090"]
+2023-02-24 01:48:53,749 INFO o.a.j.l.DirectJDKLog [restartedMain] Starting service [Tomcat]
+2023-02-24 01:48:53,750 INFO o.a.j.l.DirectJDKLog [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.70]
+2023-02-24 01:48:53,799 INFO o.a.j.l.DirectJDKLog [restartedMain] Initializing Spring embedded WebApplicationContext
+2023-02-24 01:48:53,799 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [restartedMain] Root WebApplicationContext: initialization completed in 848 ms
+2023-02-24 01:48:53,897 INFO o.h.j.i.u.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-02-24 01:48:53,921 INFO o.h.Version [restartedMain] HHH000412: Hibernate ORM core version 5.6.14.Final
+2023-02-24 01:48:53,986 INFO o.h.a.c.r.j.JavaReflectionManager [restartedMain] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-02-24 01:48:54,035 INFO c.z.h.HikariDataSource [restartedMain] HikariPool-1 - Starting...
+2023-02-24 01:48:54,103 INFO c.z.h.HikariDataSource [restartedMain] HikariPool-1 - Start completed.
+2023-02-24 01:48:54,114 INFO o.h.d.Dialect [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2023-02-24 01:48:54,185 WARN o.h.b.i.InFlightMetadataCollectorImpl [restartedMain] HHH000069: Duplicate generator name default_generator
+2023-02-24 01:48:54,189 WARN o.h.b.i.InFlightMetadataCollectorImpl [restartedMain] HHH000069: Duplicate generator name default_generator
+2023-02-24 01:48:54,190 WARN o.h.b.i.InFlightMetadataCollectorImpl [restartedMain] HHH000069: Duplicate generator name default_generator
+2023-02-24 01:48:54,193 WARN o.h.b.i.InFlightMetadataCollectorImpl [restartedMain] HHH000069: Duplicate generator name default_generator
+2023-02-24 01:48:54,196 WARN o.h.b.i.InFlightMetadataCollectorImpl [restartedMain] HHH000069: Duplicate generator name default_generator
+2023-02-24 01:48:54,613 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [restartedMain] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-02-24 01:48:54,618 INFO o.s.o.j.AbstractEntityManagerFactoryBean [restartedMain] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-02-24 01:48:55,124 INFO o.s.s.w.DefaultSecurityFilterChain [restartedMain] Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@7e675c74, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4a5d82a2, org.springframework.security.web.context.SecurityContextPersistenceFilter@66766309, org.springframework.security.web.header.HeaderWriterFilter@62ccbfa4, org.springframework.security.web.authentication.logout.LogoutFilter@1c7e3f6e, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@11b215eb, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7dd8ae27, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@54b74759, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4bc1cb4f, org.springframework.security.web.session.SessionManagementFilter@22c44e48, org.springframework.security.web.access.ExceptionTranslationFilter@75eccf39, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@322d4622]
+2023-02-24 01:48:55,191 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-02-24 01:48:55,272 INFO o.s.b.a.w.s.WelcomePageHandlerMapping [restartedMain] Adding welcome page template: index
+2023-02-24 01:48:55,629 INFO o.s.b.d.a.OptionalLiveReloadServer [restartedMain] LiveReload server is running on port 35729
+2023-02-24 01:48:55,643 INFO o.a.j.l.DirectJDKLog [restartedMain] Starting ProtocolHandler ["http-nio-9090"]
+2023-02-24 01:48:55,656 INFO o.s.b.w.e.t.TomcatWebServer [restartedMain] Tomcat started on port(s): 9090 (http) with context path ''
+2023-02-24 01:48:55,664 INFO o.s.b.StartupInfoLogger [restartedMain] Started TortLandApplication in 2.999 seconds (JVM running for 3.557)
+2023-02-24 01:49:28,389 INFO o.a.j.l.DirectJDKLog [http-nio-9090-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-02-24 01:49:28,389 INFO o.s.w.s.FrameworkServlet [http-nio-9090-exec-1] Initializing Servlet 'dispatcherServlet'
+2023-02-24 01:49:28,391 INFO o.s.w.s.FrameworkServlet [http-nio-9090-exec-1] Completed initialization in 2 ms
+2023-02-24 01:49:28,414 INFO c.e.t.a.LoggerAspect [http-nio-9090-exec-1] Enter: class com.example.tortland.controller.MainController.index() with arguments = []
+2023-02-24 01:49:28,417 INFO c.e.t.a.LoggerAspect [http-nio-9090-exec-1] Exit: class com.example.tortland.controller.MainController.index() with result = index
+2023-02-24 01:56:58,072 INFO o.s.o.j.AbstractEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-02-24 01:56:58,074 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2023-02-24 01:56:58,076 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.

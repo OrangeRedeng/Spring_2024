@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}">
+<head>
+    <meta charset="UTF-8">
+    <title>Отправить заявку</title>
+</head>
+<body class="view">
+<div layout:fragment="content" class="top">
+    <h1>Отправить заявку</h1>
+    <form method="POST" th:action="@{/users/application}" th:object="${userForm}">
+        <div class="mb-3 col-sm-4">
+            <label for="experience" class="form-label">Опыт работы</label>
+            <input name="experience" placeholder="Введите ваш опыт работы..." type="text" class="form-control"
+                   id="experience">
+            <div
+                    class="alert alert-warning"
+                    th:if="${#fields.hasErrors('experience')}"
+                    th:errors="*{experience}">
+            </div>
+        </div>
+        <div class="mb-3 col-sm-4">
+            <label for="aboutMe" class="form-label">Краткая информация о себе</label>
+            <input name="aboutMe" placeholder="Введите краткую информацию..." type="text" class="form-control"
+                   id="aboutMe">
+            <div
+                    class="alert alert-warning"
+                    th:if="${#fields.hasErrors('aboutMe')}"
+                    th:errors="*{aboutMe}">
+            </div>
+        </div>
+        <p>*при принятии заявки эти данные будут отображены в вашем профиле</p>
+        <p>*при изменении статуса на "кондитер" нужно перезайти в аккаунт чтобы получить доступ к новым функциям</p>
+        <button type="submit" class="btn btn-outline-primary zoom">Отправить</button>
+    </form>
+    <div class="row">
+        <div class="col">
+            <button
+                    class="btn btn-outline-secondary zoom"
+                    style="float: left; margin-top: 10px; padding-right: 38px;"
+                    onclick="window.history.back()">Назад
+            </button>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}">
+<head>
+    <meta charset="UTF-8">
+    <title>Изменить торт</title>
+</head>
+<body class="view">
+<div layout:fragment="content" class="top">
+    <h1>Изменить торт</h1>
+    <form method="POST" th:action="@{/cakes/update}" th:object="${cakeForm}" enctype="multipart/form-data">
+        <input type="hidden" th:value="${cake.id}" name="id">
+        <input type="hidden" th:value="${cake.user.id}" name="user">
+        <input type="hidden" th:value="${cake.createdWhen}" name="createdWhen">
+        <input type="hidden" th:value="${cake.createdBy}" name="createdBy">
+        <input type="hidden" th:value="${cake.isDeleted}" name="isDeleted">
+        <div class="mb-3 col-sm-4">
+            <label for="name" class="form-label">Название</label>
+            <input name="name" th:value="${cake.name}" type="text" class="form-control" id="name">
+            <div
+                    class="alert alert-warning"
+                    th:if="${#fields.hasErrors('name')}"
+                    th:errors="*{name}">
+            </div>
+        </div>
+        <div class="mb-3 col-sm-4">
+            <label for="cookingTime" class="form-label">Укажите время готовки в часах</label>
+            <input name="cookingTime" th:value="${cake.cookingTime}" type="text" class="form-control" id="cookingTime">
+            <div
+                    class="alert alert-warning"
+                    th:if="${#fields.hasErrors('cookingTime')}"
+                    th:errors="*{cookingTime}">
+            </div>
+        </div>
+        <div class="mb-3 col-sm-4">
+            <label for="decorating" class="form-label">Укажите украшения если есть</label>
+            <input name="decorating" th:value="${cake.decorating}" type="text" class="form-control" id="decorating">
+            <div
+                    class="alert alert-warning"
+                    th:if="${#fields.hasErrors('decorating')}"
+                    th:errors="*{decorating}">
+            </div>
+        </div>
+        <div class="mb-3 col-sm-4">
+            <label for="weightFrom" class="form-label">Укажите минимальную масса торта в килограммах</label>
+            <input name="weightFrom" th:value="${cake.weightFrom}" type="text" class="form-control" id="weightFrom">
+            <div
+                    class="alert alert-warning"
+                    th:if="${#fields.hasErrors('weightFrom')}"
+                    th:errors="*{weightFrom}">
+            </div>
+        </div>
+        <div class="mb-3 col-sm-4">
+            <div class="mb-3">
+                <label for="city" class="form-label">Выберете город</label>
+                <select class="form-select" name="city" id="city" aria-label="Default select example">
+                    <option th:value="${cake.city}" th:text="${cake.city.getCityText()}">
+                    <option th:each="city : ${T(com.example.tortland.model.City).values()}"
+                            th:if="${city.getCityText() != cake.city.getCityText()}"
+                            th:value="${city}" th:text="${city.getCityText()}"></option>
+                </select>
+            </div>
+        </div>
+        <div class="mb-3 col-sm-4">
+            <div class="mb-3">
+                <label for="form" class="form-label">Выберете форму</label>
+                <select class="form-select" name="form" id="form" aria-label="Default select example">
+                    <option th:value="${cake.form}" th:text="${cake.form.getFormText()}">
+                    <option th:each="form : ${T(com.example.tortland.model.Form).values()}"
+                            th:if="${form.getFormText() != cake.form.getFormText()}"
+                            th:value="${form}" th:text="${form.getFormText()}"></option>
+                </select>
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="shortDescription" class="form-label">Напишите краткое описание</label>
+            <input name="shortDescription" th:value="${cake.shortDescription}" type="text" class="form-control"
+                   id="shortDescription">
+            <div
+                    class="alert alert-warning"
+                    th:if="${#fields.hasErrors('shortDescription')}"
+                    th:errors="*{shortDescription}">
+            </div>
+        </div>
+        <div class="mb-3 col-sm-4">
+            <label for="file1" class="form-label">Главное изображение</label>
+            <input name="file1" type="file" class="form-control" id="file1">
+        </div>
+        <div class="mb-3 col-sm-4">
+            <label for="file2" class="form-label">Изображение</label>
+            <input name="file2" type="file" class="form-control" id="file2">
+        </div>
+        <div class="mb-3 col-sm-4">
+            <label for="file3" class="form-label">Изображение</label>
+            <input name="file3" type="file" class="form-control" id="file3">
+        </div>
+        <button type="submit" class="btn btn-outline-warning zoom">Сохранить</button>
+    </form>
+    <div class="row" style="margin-bottom: 10%">
+        <div class="col">
+            <button
+                    class="btn btn-outline-secondary zoom"
+                    style="float: left; margin-top: 10px; padding-right: 38px;"
+                    onclick="window.history.back()">Назад
+            </button>
+        </div>
+    </div>
+</div>
+</body>
+</html>

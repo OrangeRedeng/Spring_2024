@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}">
+<head>
+    <meta charset="UTF-8">
+    <title>Изменить обычный заказ</title>
+</head>
+<body class="view">
+<div layout:fragment="content" class="top">
+    <h1>Изменить обычный заказ</h1>
+    <form method="POST" th:action="@{/orders/update}" th:object="${orderForm}">
+        <input type="hidden" th:value="${order.id}" name="id">
+        <input type="hidden" th:value="${order.updatedBy}" name="updatedBy">
+        <input type="hidden" th:value="${order.createdWhen}" name="createdWhen">
+        <input type="hidden" th:value="${order.createdBy}" name="createdBy">
+        <input type="hidden" th:value="${order.number}" name="number">
+        <div class="mb-3 col-sm-4">
+            <label for="deliveryDate" class="form-label">Дата доставки</label>
+            <input name="deliveryDate" th:value="${order.deliveryDate}" type="date" class="form-control"
+                   id="deliveryDate">
+        </div>
+        <div class="mb-3 col-sm-4">
+            <fieldset>
+                <legend>Активность заказа</legend>
+                <div th:if="${!order.activity}">
+                    <input type="checkbox" checked="{isOrdered}" id="true" name="activity" value="false"/>
+                    <label for="false">Закрытый</label>
+                </div>
+                <div th:if="${order.activity}">
+                    <input type="checkbox" id="false" name="activity" value="false"/>
+                    <label for="false">Закрыть</label>
+                </div>
+            </fieldset>
+        </div>
+        <div class="mb-3 col-sm-4">
+            <label for="address" class="form-label">Адрес доставки</label>
+            <input name="address" th:value="${order.address}" type="text" class="form-control" id="address">
+        </div>
+        <div class="mb-3 col-sm-4">
+            <label for="weightFrom" class="form-label">Вес торта(с шагом 0,5кг)</label>
+            <input name="weightFrom" th:value="${order.weightFrom}" type="text" class="form-control" id="weightFrom">
+        </div>
+        <div class="mb-3 col-sm-4">
+            <label for="price" class="form-label">Цена торта</label>
+            <p th:text="${order.filling.pricePer} + 'руб. за килограмм'"></p>
+            <input name="price" th:value="${order.price}" type="text" class="form-control" id="price">
+        </div>
+        <div class="mb-3 col-sm-4">
+            <div class="mb-3">
+                <label for="status" class="form-label">Статус</label>
+                <select class="form-select" name="status" id="status" aria-label="Default select example">
+                    <option th:value="${order.status}" th:text="${order.status.getStatusText()}">
+                    <option th:each="status : ${T(com.example.tortland.model.Status).values()}"
+                            th:if="${status.getStatusText() != order.status.getStatusText()}"
+                            th:value="${status}" th:text="${status.getStatusText()}"></option>
+                </select>
+            </div>
+        </div>
+        <div class="mb-3 col-sm-4">
+            <div class="mb-3">
+                <label for="city" class="form-label">Город</label>
+                <select class="form-select" name="city" id="city" aria-label="Default select example">
+                    <option th:value="${order.city}" th:text="${order.city.getCityText()}">
+                    <option th:each="city : ${T(com.example.tortland.model.City).values()}"
+                            th:if="${city.getCityText() != order.city.getCityText()}"
+                            th:value="${city}" th:text="${city.getCityText()}"></option>
+                </select>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-outline-warning zoom">Сохранить</button>
+    </form>
+    <div class="row" style="margin-bottom: 10%">
+        <div class="col">
+            <button
+                    class="btn btn-outline-secondary zoom"
+                    style="float: left; margin-top: 10px; padding-right: 38px;"
+                    onclick="window.history.back()">Назад
+            </button>
+        </div>
+    </div>
+</div>
+</body>
+</html>

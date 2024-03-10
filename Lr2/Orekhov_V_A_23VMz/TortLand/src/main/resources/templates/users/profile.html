@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+      layout:decorate="~{layout}"
+      lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Профиль</title>
+</head>
+<body class="view">
+<div layout:fragment="content" class="top">
+    <h1>Профиль</h1>
+    <div class="container rounded bg-white mt-5 mb-5 shadow p-3 mb-5 bg-white rounded" th:each="user : ${users}"
+         style="background: linear-gradient(to right, rgba(215,65,119,0.13), rgba(255,233,138,0.15));">
+        <div class="row">
+            <div class="col-md-3 border-right">
+                <div><img class="rounded-circle mt-5 shadow-lg mb-5 p-1 bg-body rounded"
+                          style="border-radius: 10%!important;"
+                          width="200px" th:src="${user.plug}">
+                    <span class="text-black-50"><p style="font-size: 30px"
+                                                   th:text="${user.email}"></p></span><span></span></div>
+                <div style="float: bottom">
+                    <a href="/users/updateImage" class="btn btn-outline-dark zoom shadow mb-3">Изменить аватар</a>
+                </div>
+            </div>
+            <div class="col-md-5 border-right" style="padding-left: 10%">
+                <div class="p-3 py-5">
+                    <div class="row mt-2">
+                        <div class="col-md-6"><h4 class="labels">Имя</h4>
+                            <p style="font-size: 20px" th:text="${user.firstName}"></p></div>
+                        <div class="col-md-6"><h4 class="labels">Фамилия</h4>
+                            <p style="font-size: 20px" th:text="${user.middleName}"></p>
+                        </div>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col-md-12"><h4 class="labels">Номер телефона</h4>
+                            <p style="font-size: 20px" th:text="${user.phone}"></p>
+                        </div>
+                        <div class="col-md-12"><h4 class="labels">Дата рождения</h4>
+                            <p style="font-size: 20px" th:text="${user.birthDate}"></p>
+                        </div>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col-md-6"><h4 class="labels">Город</h4>
+                            <p style="font-size: 20px" th:text="${user.city.getCityText()}"></p>
+                        </div>
+                        <div class="col-md-6"><h4 class="labels">Адрес</h4>
+                            <p style="font-size: 20px" th:text="${user.address}"></p>
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-md-6"><a
+                                th:href="'/users/update/' + ${#authentication.getPrincipal().getUserId()}"
+                                class="btn btn-outline-warning zoom shadow mb-3">Изменить данные</a>
+                        </div>
+                        <div class="col-md-6"><a
+                                href="/users/remember-password-profile/"
+                                class="btn btn-outline-warning zoom shadow mb-3">Изменить пароль</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4" style="margin-top: 45px; word-wrap: break-word">
+                <div class="row mt-2">
+                    <div class="col-md-6"><h4 sec:authorize="hasRole('CONFECTIONER')">Обо мне</h4>
+                        <p sec:authorize="hasRole('CONFECTIONER')" style="font-size: 20px"
+                           th:text="'Опыт работы: ' + ${user.experience}"></p>
+                        <p sec:authorize="hasRole('CONFECTIONER')" style="font-size: 20px"
+                           th:text="${user.aboutMe}"></p>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="btn-group dropup mb-3" style="float: right">
+                            <button type="button" class="btn btn-outline-success dropdown-toggle"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                Мои заказы
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a th:href="'/customOrders/myCustomOrder'" class="dropdown-item">Активные заказы</a>
+                                </li>
+                                <li><a th:href="'/customOrders/myCustomOrderClose'" class="dropdown-item">Завершенные
+                                    личные заказы</a></li>
+                                <li><a th:href="'/orders/myOrderClose'" class="dropdown-item">Завершенные обычные
+                                    заказы</a></li>
+                            </ul>
+                        </div>
+                        <a sec:authorize="hasRole('CONFECTIONER')" style="float: right" th:href="'/cakes/add'"
+                           class="btn btn-outline-secondary zoom shadow mb-3 shadow mb-3">Добавить торт</a>
+                        <a sec:authorize="hasRole('CONFECTIONER')" style="float: right"
+                           th:href="'/cakes/confectioners/' + ${#authentication.getPrincipal().getUserId()}"
+                           class="btn btn-outline-primary zoom shadow mb-3">Мои объявления</a>
+                    </div>
+                </div>
+                <div style="float: bottom" class="col-md-6"><h4 class="labels">Статус аккаунта</h4>
+                    <p style="font-size: 20px" th:text="${user.status}"></p>
+                    <a th:if="${user.status} == 'Пользователь'" sec:authorize="hasRole('USER')"
+                       class="btn btn-outline-primary zoom shadow mb-3"
+                       href="/users/application">Стать кондитером</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style=" margin-top: 5%; margin-right: 35px" class="text-center">
+        <img src="/images/logoBot.png" alt="" width="400" height="400">
+    </div>
+</div>
+</body>
+</html>

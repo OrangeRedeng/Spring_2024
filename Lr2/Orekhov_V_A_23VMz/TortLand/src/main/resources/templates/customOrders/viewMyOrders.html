@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+      layout:decorate="~{layout}"
+      lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Мои заказы</title>
+</head>
+<body class="view">
+
+<div layout:fragment="content" class="top">
+    <h1>Мои заказы</h1>
+    <h1 style="text-align: center">Активные</h1>
+    <div class="container rounded bg-white mt-5 mb-5 shadow p-3 mb-5 bg-white rounded zoom"
+         th:each="order : ${customOrders}"
+         style="background: linear-gradient(90deg, rgba(105,183,235,0.27), rgba(219,182,179,0.32), rgba(244,214,219,0.36));">
+        <div class="row">
+            <div class="col-md-3 border-right">
+                <div class="p-3 py-5">
+                    <div class="col-md-6"><h4 class="labels">Статус</h4>
+                        <p style="font-size: 20px; text-align: center" th:text="${order.status.getStatusText()}"></p>
+                    </div>
+                    <div class="col-md-6"><h4 class="labels">Дата заказа</h4>
+                        <p style="font-size: 20px; text-align: center" th:text="${order.createdWhen}"></p>
+                    </div>
+                </div>
+                <div class="cols-md-4">
+                    <a sec:authorize="hasRole('CONFECTIONER')" th:href="'/customOrders/delivered/' + ${order.id}"
+                       th:if="${order.status.getStatusText() != T(com.example.tortland.model.Status).EXPECTATION.getStatusText()}"
+                       class="btn btn-outline-success zoom">Доставлено</a>
+                    <a sec:authorize="hasRole('CONFECTIONER')" th:href="'/customOrders/cancelled/' + ${order.id}"
+                       class="btn btn-outline-danger zoom">Отменено</a>
+                </div>
+                <a th:href="'/customOrders/detailed/' + ${order.id}" class="btn btn-outline-info zoom"
+                   style="margin-top: 7px">Подробнее</a>
+
+            </div>
+            <div class="col-md-5 border-right" style="padding-left: 10%; text-align: center">
+                <div class="p-3 py-5">
+                    <div class="col-md-12"><h4 class="labels">Имя заказчика</h4>
+                        <p style="font-size: 20px" th:text="${order.users.firstName}"></p>
+                    </div>
+                </div>
+                <div class="col-md-12" style="float: bottom"><h4 class="labels"
+                                                                 th:text="${order.title} + ' заказ номер'"></h4>
+                    <p style="font-size: 20px" th:text="${order.number}"></p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="p-3 py-5">
+                    <div style="float: right"><h4 class="labels">Имя кондитера</h4>
+                        <p style="font-size: 20px; text-align: center"
+                           th:text="${order.userConfectioners.firstName}"></p>
+                        <h4 class="labels">Дата доставки</h4>
+                        <p style="font-size: 20px; text-align: center; float: bottom"
+                           th:text="${order.deliveryDate}"></p>
+                    </div>
+                </div>
+                <div class="col-md-12" style="float: bottom"><h4 class="labels">Цена</h4>
+                    <p style="font-size: 20px" th:text="${order.price} + ' руб.'"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container rounded bg-white mt-5 mb-5 shadow p-3 mb-5 bg-white rounded zoom" th:each="order : ${orders}"
+         style="background: linear-gradient(90deg, rgba(105,183,235,0.27), rgba(219,182,179,0.32), rgba(244,214,219,0.36));">
+        <div class="row">
+            <div class="col-md-3 border-right">
+                <div class="p-3 py-5">
+                    <div class="col-md-6"><h4 class="labels">Статус</h4>
+                        <p style="font-size: 20px; text-align: center" th:text="${order.status.getStatusText()}"></p>
+                    </div>
+                    <div class="col-md-6"><h4 class="labels">Дата заказа</h4>
+                        <p style="font-size: 20px; text-align: center" th:text="${order.createdWhen}"></p>
+                    </div>
+                </div>
+                <div class="cols-md-4">
+                    <a sec:authorize="hasRole('CONFECTIONER')" th:href="'/orders/delivered/' + ${order.id}"
+                       class="btn btn-outline-success zoom"
+                       th:if="${order.status.getStatusText() != T(com.example.tortland.model.Status).EXPECTATION.getStatusText()}">Доставлено</a>
+                    <a sec:authorize="hasRole('CONFECTIONER')" th:href="'/orders/cancelled/' + ${order.id}"
+                       onclick="return confirm('Вы действительно хотите отменить заказ ?')"
+                       class="btn btn-outline-danger zoom">Отменено</a>
+                </div>
+                <a th:href="'/orders/detailed/' + ${order.id}" class="btn btn-outline-info zoom"
+                   style="margin-top: 7px">Подробнее</a>
+            </div>
+            <div class="col-md-5 border-right" style="padding-left: 10%; text-align: center">
+                <div class="p-3 py-5">
+                    <div class="col-md-12"><h4 class="labels">Имя заказчика</h4>
+                        <p style="font-size: 20px" th:text="${order.users.firstName}"></p>
+                    </div>
+                </div>
+                <div class="col-md-12" style="float: bottom"><h4 class="labels"
+                                                                 th:text="${order.title} + ' заказ номер'"></h4>
+                    <p style="font-size: 20px" th:text="${order.number}"></p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="p-3 py-5">
+                    <div style="float: right"><h4 class="labels">Имя кондитера</h4>
+                        <p style="font-size: 20px; text-align: center"
+                           th:text="${order.userConfectioners.firstName}"></p>
+                        <h4 class="labels">Дата доставки</h4>
+                        <p style="font-size: 20px; text-align: center; float: bottom"
+                           th:text="${order.deliveryDate}"></p>
+                    </div>
+                </div>
+                <div class="col-md-12" style="float: bottom"><h4 class="labels">Цена</h4>
+                    <p style="font-size: 20px" th:text="${order.price} + ' руб.'"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style="margin-top: 100%; margin-right: 30px" class="text-center">
+        <img src="/images/logoBot.png" alt="" width="400" height="400">
+    </div>
+</div>
+</body>
+</html>

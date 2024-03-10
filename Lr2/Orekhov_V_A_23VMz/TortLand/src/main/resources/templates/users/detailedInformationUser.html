@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}"
+      lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Пользователи</title>
+</head>
+<body class="view">
+<div layout:fragment="content" class="top">
+    <h1 style="text-align: center" th:text="'Пользователь ' + ${users.login}"></h1>
+    <h3 style="color: #ff2400" th:if="${users.isDeleted}">Пользователь заблокирован</h3>
+    <div><img class="rounded-circle mt-5 shadow-lg mb-5 p-1 bg-body rounded"
+              style="border-radius: 10%!important;"
+              width="200px" th:src="${users.plug}">
+        <span class="text-black-50"><p style="font-size: 30px">Аватар пользователя</p></span>
+        <a type="button" class="btn btn-outline-warning zoom" th:href="'/users/deleteImage/' + ${users.id}">Изменить
+            аватар на стандартный</a>
+    </div>
+    <h1 style="text-align: center">Подробное описание</h1>
+    <table style="margin-left: 10%; margin-bottom: 10%">
+        <tbody>
+        <tr>
+            <td class="name"><span>id</span></td>
+            <td class="cur" th:text="${users.id}"></td>
+        </tr>
+        <tr>
+            <td class="name"><span>role</span></td>
+            <td class="cur" th:text="${users.role.title}"></td>
+        </tr>
+        <tr>
+            <td class="name"><span>login</span></td>
+            <td class="cur" th:text="${users.login}"></td>
+        </tr>
+        <tr>
+            <td class="name"><span>email</span></td>
+            <td class="cur" th:text="${users.email}"></td>
+        </tr>
+        <tr>
+            <td class="name"><span>middleName</span></td>
+            <td class="cur" th:text="${users.middleName}"></td>
+        </tr>
+        <tr>
+            <td class="name"><span>firstName</span></td>
+            <td class="cur" th:text="${users.firstName}"></td>
+        </tr>
+        <tr>
+            <td class="name"><span>lastName</span></td>
+            <td class="cur" th:text="${users.lastName}"></td>
+        </tr>
+        <tr>
+            <td class="name"><span>birthDate</span></td>
+            <td class="cur" th:text="${users.birthDate}"></td>
+        </tr>
+        <tr>
+            <td class="name"><span>phone</span></td>
+            <td class="cur" th:text="${users.phone}"></td>
+        </tr>
+        <tr>
+            <td class="name"><span>city</span></td>
+            <td class="cur" th:text="${users.city.getCityText()}"></td>
+        </tr>
+        <tr>
+            <td class="name"><span>address</span></td>
+            <td class="cur" th:text="${users.address}"></td>
+        </tr>
+        <tr>
+            <td class="name"><span>createdBy</span></td>
+            <td class="cur" th:text="${users.createdBy}"></td>
+        </tr>
+        <tr>
+            <td class="name"><span>createdWhen</span></td>
+            <td class="cur" th:text="${users.createdWhen}"></td>
+        </tr>
+        <tr>
+            <td class="name"><span>updatedWhen</span></td>
+            <td class="cur" th:text="${users.updatedWhen}"></td>
+        </tr>
+        <tr>
+            <td class="name"><span>updatedBy</span></td>
+            <td class="cur" th:text="${users.updatedBy}"></td>
+        </tr>
+        <tr>
+            <td class="name"><span>blocking</span></td>
+            <td class="cur" th:text="${users.isDeleted}"></td>
+        </tr>
+        <tr>
+            <td class="name"><span>blockingWhen</span></td>
+            <td class="cur" th:text="${users.deletedWhen}"></td>
+        </tr>
+        <tr>
+            <td class="name"><span>blockingBy</span></td>
+            <td class="cur" th:text="${users.deletedBy}"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}">
+<head>
+    <meta charset="UTF-8">
+    <title>Свой заказ</title>
+</head>
+<body class="view">
+<div layout:fragment="content" class="top">
+    <h1>Свой заказ</h1>
+    <form method="POST" th:action="@{/customOrders/create/{conId}(conId = ${confectionerId})}"
+          th:object="${customOrderForm}" enctype="multipart/form-data">
+        <input name="city" type="hidden" th:value="${userCity}" class="form-control" id="city">
+        <input name="price" type="hidden" th:value="0" class="form-control" id="price">
+        <div class="mb-3 col-sm-4">
+            <label for="tiers" class="form-label">Укажите количество ярусов</label>
+            <input name="tiers" placeholder="Введите каолличество ярусов..." type="text" class="form-control"
+                   id="tiers">
+            <div
+                    class="alert alert-warning"
+                    th:if="${#fields.hasErrors('tiers')}"
+                    th:errors="*{tiers}">
+            </div>
+        </div>
+        <div class="mb-3 col-sm-4">
+            <label for="weightFrom" class="form-label">Укажите примерный желаемы вес торта в килограммах</label>
+            <input type="range" value="1" min="1" max="5" step="0.5" oninput="weightFrom.value = this.value" name="wT">
+            <output id="weightFrom">1</output>
+            <div
+                    class="alert alert-warning"
+                    th:if="${#fields.hasErrors('wT')}"
+                    th:errors="*{wT}">
+            </div>
+        </div>
+        <div class="mb-3 col-sm-4">
+            <label for="decoration" class="form-label">Укажите желаемые украшения</label>
+            <input name="decoration" placeholder="Перечислети украшения..." type="text" class="form-control"
+                   id="decoration">
+            <div
+                    class="alert alert-warning"
+                    th:if="${#fields.hasErrors('decoration')}"
+                    th:errors="*{decoration}">
+            </div>
+        </div>
+        <div class="mb-3 col-sm-4">
+            <div class="mb-3">
+                <label for="form" class="form-label">Выберете форму</label>
+                <select class="form-select" name="form" id="form" aria-label="Default select example">
+                    <option th:value="${T(com.example.tortland.model.Form).CLASSIC}"
+                            th:text="${T(com.example.tortland.model.Form).CLASSIC.getFormText()}">
+                    <option th:each="form : ${T(com.example.tortland.model.Form).values()}"
+                            th:if="${T(com.example.tortland.model.Form).CLASSIC.getFormText() != form.getFormText()}"
+                            th:value="${form}" th:text="${form.getFormText()}"></option>
+                </select>
+            </div>
+        </div>
+        <div class="mb-3 col-sm-4">
+            <label for="filling" class="form-label">Укажите начинку</label>
+            <input name="filling" placeholder="Введите начинку..." type="text" class="form-control" id="filling">
+            <div
+                    class="alert alert-warning"
+                    th:if="${#fields.hasErrors('filling')}"
+                    th:errors="*{filling}">
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="shortDescription" class="form-label">Укажите дополнительное красткое описание</label>
+            <input name="shortDescription" placeholder="Введите краткое описание..." type="text" class="form-control"
+                   id="shortDescription">
+            <div
+                    class="alert alert-warning"
+                    th:if="${#fields.hasErrors('shortDescription')}"
+                    th:errors="*{shortDescription}">
+            </div>
+        </div>
+        <div class="mb-3 col-sm-4">
+            <div class="mb-3">
+                <p class="form-label">Ваш город</p>
+                <h4 th:text="${userCity.getCityText()}"></h4>
+            </div>
+        </div>
+        <div class="mb-3 col-sm-4">
+            <label for="address" class="form-label">Укажите адрес</label>
+            <input name="address" placeholder="Введите свой адрес..." type="text" class="form-control" id="address">
+            <div
+                    class="alert alert-warning"
+                    th:if="${#fields.hasErrors('address')}"
+                    th:errors="*{address}">
+            </div>
+        </div>
+        <div class="mb-3 col-sm-4">
+            <label for="deliveryDate" class="form-label">Укажите дату доставки</label>
+            <input name="deliveryDate" type="date" class="form-control" id="deliveryDate">
+            <div
+                    class="alert alert-warning"
+                    th:if="${#fields.hasErrors('deliveryDate')}"
+                    th:errors="*{deliveryDate}">
+            </div>
+        </div>
+        <button type="submit" class="btn btn-outline-primary zoom">Добавить</button>
+    </form>
+    <div class="row" style="margin-bottom: 10%">
+        <div class="col">
+            <button
+                    class="btn btn-outline-secondary zoom"
+                    style="float: left; margin-top: 10px; padding-right: 38px;"
+                    onclick="window.history.back()">Назад
+            </button>
+        </div>
+    </div>
+</div>
+</body>
+</html>
