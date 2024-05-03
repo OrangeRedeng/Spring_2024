@@ -1,0 +1,66 @@
+<mxfile host="app.diagrams.net" modified="2024-02-21T18:40:30.399Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 YaBrowser/24.1.0.0 Safari/537.36" etag="KcgdH3EVq8TxoQEQ4L1s" version="23.1.5" type="device">
+  <diagram name="Страница — 1" id="m9QG5dJLYE5IlyDbiiPw">
+    <mxGraphModel dx="735" dy="421" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="Gfrfb-KauTqQITtC2kTh-8" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="Gfrfb-KauTqQITtC2kTh-3" target="Gfrfb-KauTqQITtC2kTh-7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Gfrfb-KauTqQITtC2kTh-3" value="Начало" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.start_1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="364" y="10" width="100" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Gfrfb-KauTqQITtC2kTh-10" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="Gfrfb-KauTqQITtC2kTh-7" target="Gfrfb-KauTqQITtC2kTh-9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Gfrfb-KauTqQITtC2kTh-7" value="&lt;div style=&quot;&quot;&gt;&lt;span style=&quot;font-size: 11px; background-color: initial;&quot;&gt;Добавление переменной str&lt;/span&gt;&lt;/div&gt;" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;strokeWidth=2;align=center;" vertex="1" parent="1">
+          <mxGeometry x="354" y="100" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Gfrfb-KauTqQITtC2kTh-20" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="Gfrfb-KauTqQITtC2kTh-9" target="Gfrfb-KauTqQITtC2kTh-11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Gfrfb-KauTqQITtC2kTh-9" value="&lt;font style=&quot;font-size: 15px;&quot;&gt;Добавление переменной count&lt;/font&gt;" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;strokeWidth=2;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="354" y="190" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Gfrfb-KauTqQITtC2kTh-14" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="Gfrfb-KauTqQITtC2kTh-11" target="Gfrfb-KauTqQITtC2kTh-13">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Gfrfb-KauTqQITtC2kTh-16" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="Gfrfb-KauTqQITtC2kTh-11" target="Gfrfb-KauTqQITtC2kTh-15">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Gfrfb-KauTqQITtC2kTh-11" value="count !== -1" style="rhombus;whiteSpace=wrap;html=1;fontSize=15;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="339" y="270" width="150" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="Gfrfb-KauTqQITtC2kTh-13" value="&lt;font style=&quot;font-size: 8px;&quot;&gt;console.log&lt;br style=&quot;font-size: 8px;&quot;&gt;&quot;Двоеточие не найдено в строке&quot;&lt;/font&gt;" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;fontSize=8;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="210" y="370" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Gfrfb-KauTqQITtC2kTh-15" value="console.log&lt;br style=&quot;font-size: 10px;&quot;&gt;&quot;Кол-во знаков, предшествующих двоеточию: &quot;" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;fontSize=10;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="500" y="370" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Gfrfb-KauTqQITtC2kTh-17" value="True" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="280" y="290" width="50" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Gfrfb-KauTqQITtC2kTh-18" value="False" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="500" y="290" width="50" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Gfrfb-KauTqQITtC2kTh-21" value="Конец" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.start_1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="364" y="460" width="100" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Gfrfb-KauTqQITtC2kTh-22" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.516;exitY=1.015;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="Gfrfb-KauTqQITtC2kTh-13" target="Gfrfb-KauTqQITtC2kTh-21">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="272" y="430" as="sourcePoint" />
+            <mxPoint x="364.00000000000006" y="476.12" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="272" y="429" />
+              <mxPoint x="272" y="429" />
+              <mxPoint x="272" y="490" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Gfrfb-KauTqQITtC2kTh-23" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="Gfrfb-KauTqQITtC2kTh-15" target="Gfrfb-KauTqQITtC2kTh-21">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
