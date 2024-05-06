@@ -1,0 +1,7 @@
+D:\Program Files (x86)\ProjectVisualStudio\Lab1\Lab1\obj\Debug\Lab1.csproj.AssemblyReference.cache
+D:\Program Files (x86)\ProjectVisualStudio\Lab1\Lab1\obj\Debug\Lab1.csproj.CoreCompileInputs.cache
+D:\Program Files (x86)\ProjectVisualStudio\Lab1\Lab1\bin\Debug\Lab1.exe.config
+D:\Program Files (x86)\ProjectVisualStudio\Lab1\Lab1\bin\Debug\Lab1.exe
+D:\Program Files (x86)\ProjectVisualStudio\Lab1\Lab1\bin\Debug\Lab1.pdb
+D:\Program Files (x86)\ProjectVisualStudio\Lab1\Lab1\obj\Debug\Lab1.exe
+D:\Program Files (x86)\ProjectVisualStudio\Lab1\Lab1\obj\Debug\Lab1.pdb

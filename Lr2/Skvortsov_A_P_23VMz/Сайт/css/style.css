@@ -1,0 +1,338 @@
+@font-face {
+    font-family: 'Weekend';
+    src: url(./fonts/Weekend/the_weekend.otf);
+}
+
+@font-face {
+    font-family: 'Cruin';
+    src: url(./fonts/Cruin/Cruinn\ Regular.ttf);
+}
+
+@font-face {
+    font-family: 'LT-superior';
+    src: url(./fonts/LT_superior/LTSuperior-Regular.otf);
+}
+
+@font-face {
+    font-family: 'Kelson';
+    src: url(./fonts/Kelson/Kelson/Commercial/TTF/KelsonSans-Normal.ttf);
+}
+
+
+body {
+    overflow-y: hidden;
+    overflow-x: hidden;
+    font-family: 'LT-Superior';
+}
+
+h1 {
+    font-family: 'Weekend' !important;
+}
+
+.menu {
+    display: none;
+}
+
+.hide-menu {
+    position: absolute;
+    z-index: 3;
+    top: 0px;
+    left: 0px;
+    animation: hideMenu 1s 0s forwards;
+}
+
+.show-menu {
+    position: absolute;
+    z-index: 3;
+    top: 0px;
+    left: 0px;
+    animation: showMenu 1s 0s forwards;
+}
+
+figcaption {
+    color: white;
+}
+
+.show-menu-title {
+    animation: showMenuTitle 2s 0.5s forwards;
+    transition: opacity 1s;
+}
+
+.black-screen {
+    position: absolute;
+    z-index: 2;
+    width: 100vw;
+    height: 100vh;
+    top: 0px;
+    left: 0px;
+    background-color: rgba(50, 50, 50, 0.5);
+}
+
+.menu-title {
+    font-size: 32px !important;
+}
+
+.nav-header {
+    position: absolute;
+    height: 110px;
+    padding-top: 1rem;
+    padding-left: 1rem;
+}
+
+.nav-img {
+    width: 15vw;
+    height: 10vh;
+    border: solid 1px black;
+    margin-right: 15px;
+    border-radius: 5%;
+    transition: transform 0.5s;
+}
+
+.nav-img:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.frame {
+    margin-left: -0.75rem;
+    padding: 0;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+}
+
+.hidden-frame {
+    display: none;
+}
+
+.scroll-arrow {
+    height: 80%;
+    width: 5%;
+    background-color: rgb(158, 158, 158, 0.15);
+    border-radius: 15px;
+    box-shadow: 0 0 8px 8px rgba(100, 100, 100, 0.01) inset;
+    transition: background-color 0.5s;
+}
+
+.scroll-arrow:hover {
+    background-color: rgb(158, 158, 158, 0.5);
+    cursor: pointer;
+}
+
+.scroll-arrow button {
+    background-color: transparent;
+    color: white;
+    margin-top: 13rem;
+    width: 50px;
+    height: 80px;
+    border: none;
+}
+
+p {
+    text-align: justify;
+}
+
+body {
+    overflow-y: hidden;
+}
+
+.main-content {
+    position: absolute;
+    margin: 5%;
+    margin-left: 10%;
+    width: 32.5%;
+    height: 77.5%;
+    align-items: left;
+}
+
+.main-content a{
+    text-decoration: none;
+    font-size: 24px;
+    color: rgba(100, 100, 150, 1);
+}
+
+.to-content {
+    margin-left: 90% !important;
+    margin-top: 1%;
+}
+
+.to-content button {
+    background-color: rgba(175, 175, 175, 0.5) !important;
+    color: rgba(255, 255, 255, 0.75) !important;
+    border-color: rgba(155, 155, 155, 0.5);
+}
+
+.to-content button:hover{
+    background-color: rgba(175, 175, 175, 1) !important;
+    color: rgba(50, 50, 50, 1) !important;
+    border-color: rgba(155, 155, 155, 1);
+}
+
+.menu-button-div {
+    position: fixed;
+    z-index: 1;
+    margin-left: 2% !important;
+}
+
+.menu-button-div button {
+    background-color: rgba(175, 175, 175, 0.5) !important;
+    color: rgba(50, 50, 50, 0.75) !important;
+    border-color: rgba(155, 155, 155, 0.5);
+}
+
+.menu-button-div button:hover{
+    background-color: rgba(175, 175, 175, 1) !important;
+    color: rgba(50, 50, 50, 1) !important;
+    border-color: rgba(155, 155, 155, 1);
+}
+
+.hide-menu-btn {
+    background-color: rgba(175, 175, 175, 0.25) !important;
+    color: rgba(50, 50, 50, 0.75) !important;
+    border-color: rgba(155, 155, 155, 0.25);
+    margin-left: 2.5rem;
+    margin-top: 0.25rem;
+}
+
+.hide-menu-btn:hover{
+    background-color: rgba(175, 175, 175, 1) !important;
+    color: rgba(50, 50, 50, 1) !important;
+    border-color: rgba(155, 155, 155, 1);
+}
+
+#left-arrow {
+    visibility: hidden;    
+}
+
+#left-arrow button {
+    margin-top: 17.5rem;
+}
+
+#right-arrow button {
+    margin-top: 17.5rem;
+}
+
+.hide-arrow {
+    animation: hide-div 0.5s 0s forwards;
+}
+
+.show-arrow {
+    animation: show-div 0.5s 0s forwards;
+}
+
+.show-description {
+    animation: show-desc 1s 0.2s forwards;
+}
+
+.hide-description {
+    animation: hide-desc 1s 0s forwards;
+}
+
+.show-content {
+    animation: show-content 1s 0.2s forwards;
+}
+
+.hide-content {
+    animation: hide-content 1s 0s forwards;
+}
+
+@keyframes hide-div {
+    1%{
+        visibility: visible;
+        opacity: 100%;
+    }
+    99%{
+        visibility: visible;
+        opacity: 1%;
+    }
+    100%{
+        visibility: hidden;
+        opacity: 0%;
+    }
+}
+
+@keyframes show-div {
+    1%{
+        visibility: hidden;
+        opacity: 1%;
+    }
+    2%{
+        visibility: visible;
+        opacity: 2%;
+    }
+    100%{
+        visibility: visible;
+        opacity: 100%;
+    }
+}
+
+@keyframes showMenu {
+    1%{
+        width: 0vw;
+    }
+    100%{
+        width: 17.5vw;
+    }
+}
+
+@keyframes hideMenu {
+    1%{
+        width: 17.5vw;
+    }
+    100%{
+        width: 0vw;
+    }
+}
+
+@keyframes showMenuTitle {
+    1%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+@keyframes show-desc {
+    0%{
+        opacity: 0;
+        margin-top: 20rem;
+    }
+    100%{
+        opacity: 1;
+        margin-top: 5%;
+    }
+}
+
+@keyframes hide-desc {
+    0%{
+        opacity: 1;
+        margin-top: 5%;
+    }
+    100%{
+        opacity: 0;
+        margin-top: 20rem;
+    }
+}
+
+@keyframes show-content {
+    0%{
+        opacity: 0;
+        margin-top: 20rem;
+    }
+    100%{
+        opacity: 1;
+        margin-top: 10rem;
+    }
+}
+
+@keyframes hide-content {
+    0%{
+        opacity: 1;
+        margin-top: 10rem;
+    }
+    100%{
+        opacity: 0;
+        margin-top: 20rem;
+    }
+}

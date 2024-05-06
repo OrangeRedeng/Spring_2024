@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="../bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <link rel="stylesheet" type="text/css" href="../css/sw.css">
+    <script src="../scripts/script.js"> </script>
+</head>
+<body onload="loadBody('sw')">
+    <div class="d-flex main-div" id="main-page">
+        <div class="d-flex">
+            <img class="main-img" src="../images/sw/main.jpg"/>
+            <div class="main-content block-text">
+                <h1>
+                    Содержание:
+                </h1>
+                <a href="#" onclick="scrollToPage(1)">• Альдераан</a><br>
+                <a href="#" onclick="scrollToPage(2)">• Датомир</a><br>
+                <a href="#" onclick="scrollToPage(3)">• Камино</a><br>
+                <a href="#" onclick="scrollToPage(4)">• Коррибан</a><br>
+                <a href="#" onclick="scrollToPage(5)">• Корусант</a><br>
+                <a href="#" onclick="scrollToPage(6)">• Мандалор</a><br>
+                <a href="#" onclick="scrollToPage(7)">• Набу</a><br>
+                <a href="#" onclick="scrollToPage(8)">• Татуин</a><br>
+            </div>
+        </div>
+        <div class="d-flex">
+            <img class="main-img" src="../images/sw/Alderaan.jpg" onerror="this.onerror=null; this.src='../images/not-found-image.jpg'"/>
+            <div class="main-text block-text">
+                <h1>
+                    Альдераан 
+                </h1>
+                <p id="alderaan" />
+            </div>
+        </div>
+        <div class="d-flex">
+            <img class="main-img" src="../images/sw/Datomir.jpg" onerror="this.onerror=null; this.src='../images/not-found-image.jpg'"/>
+            <div class="main-text block-text">
+                <h1>
+                    Датомир
+                </h1>
+                <p id="datomir" />
+            </div>
+        </div>
+        <div class="d-flex">
+            <img class="main-img" src="../images/sw/Kamino.jpg" onerror="this.onerror=null; this.src='../images/not-found-image.jpg'"/>
+            <div class="main-text block-text">
+                <h1>
+                    Камино
+                </h1>
+                <p id="kamino" />
+            </div>
+        </div>
+        <div class="d-flex">
+            <img class="main-img" src="../images/sw/Korriban.jpg" onerror="this.onerror=null; this.src='../images/not-found-image.jpg'"/>
+            <div class="main-text block-text">
+                <h1>
+                    Коррибан
+                </h1>
+                <p id="korriban" />
+            </div>
+        </div>
+        <div class="d-flex">
+            <img class="main-img" src="../images/sw/Korusant.jpg" onerror="this.onerror=null; this.src='../images/not-found-image.jpg'"/>
+            <div class="main-text-right block-text">
+                <h1>
+                    Корусант
+                </h1>
+                <p id="korusant" />
+            </div>
+        </div>
+        <div class="d-flex">
+            <img class="main-img" src="../images/sw/Mandalor.jpg" onerror="this.onerror=null; this.src='../images/not-found-image.jpg'"/>
+            <div class="main-text-right block-text">
+                <h1>
+                    Мандалор
+                </h1>
+                <p id="mandalor" />
+            </div>
+        </div>
+        <div class="d-flex">
+            <img class="main-img" src="../images/sw/Naboo.jpg" onerror="this.onerror=null; this.src='../images/not-found-image.jpg'"/>
+            <div class="main-text-right block-text">
+                <h1>
+                    Набу
+                </h1>
+                <p id="naboo" />
+            </div>
+        </div>
+        <div class="d-flex">
+            <img class="main-img" src="../images/sw/tatooin.jpg" onerror="this.onerror=null; this.src='../images/not-found-image.jpg'"/>
+            <div class="main-text-right block-text">
+                <h1>
+                    Татуин
+                </h1>
+                <p id="tatooin" />
+            </div>
+        </div>
+    </div>
+    <div id="right-arrow" 
+            class="position-fixed top-50 translate-middle scroll-arrow"
+            align="center"
+            style="margin-left: 95%;"
+            onclick="scrollArrowClick('Right')">
+        <button onclick="scrollArrowClick('Right')" style="margin-top: 17.5rem;">
+            <img src="../images/arrow-right.png"/>
+        </button>
+    </div>
+    <div id="left-arrow" 
+            class="position-fixed top-50 translate-middle scroll-arrow"
+            align="center"
+            style="margin-left: 5%;"
+            onclick="scrollArrowClick('Left')">
+        <button onclick="scrollArrowClick('Left')" style="margin-top: 17.5rem;">
+            <img src="../images/arrow-left.png"/>
+        </button>
+    </div>
+    <div id="to-content" 
+         class="position-fixed top-0 to-content"
+         align="center"
+         style="margin-left: 5%;">
+         <button class="btn btn-primary" onclick="scrollToContent()">
+            К Содержанию
+        </button>
+    </div>
+</body>
+
+</html>
