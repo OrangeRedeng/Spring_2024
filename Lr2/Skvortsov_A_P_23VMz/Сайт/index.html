@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="./bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+    <script src="./bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="./scripts/script.js"> </script>
+    <title> Вселенные | Лаб. №2 </title>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row flex-nowrap">
+            <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark menu" id="menu">
+                <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100" id="menu-title-h" style="opacity: 0;">
+                    <h1 class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+                        <span class="fs-5 d-none d-sm-inline menu-title">Вселенные</span>
+                        <button class="btn btn-primary hide-menu-btn" onclick="hideMenu()">
+                            <img src="./images/arrow-left.png" style="margin-top: -5px; margin-left: 5px;"/>
+                        </button>
+                    </h1>
+                    <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link align-middle px-0" onclick="changeFrame('lotr')" align="center">
+                                <img class="nav-img" src="images/header/lotr.jpg" onerror="this.onerror=null; this.src='images/not-found-image.jpg'" onclick="changeFrame('lotr')"/>
+                                <figcaption>Властелин колец</figcaption>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link align-middle px-0" onclick="changeFrame('sw')" align="center">
+                                <img class="nav-img" src="images/header/sw.jpg" onerror="this.onerror=null; this.src='images/not-found-image.jpg'" onclick="changeFrame('lotr')"/>
+                                <figcaption>Звездные войны</figcaption>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link align-middle px-0" onclick="changeFrame('dune')" align="center">
+                                <img class="nav-img" src="images/header/dune.jpg" onerror="this.onerror=null; this.src='images/not-found-image.jpg'" onclick="changeFrame('lotr')"/>
+                                <figcaption>Дюна</figcaption>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>  
+            <div class="black-screen" style="visibility: hidden;" onclick="hideMenu()">
+                <i>  </i>
+            </div>
+            <div class="col">
+                <div class="menu-button-div to-content">
+                    <button class="btn btn-primary" onclick="showMenu()">
+                        <img src="./images/menu-btn.png"/>
+                    </button>
+                </div>
+                <iframe class="frame" id="lotr-frame" src="pages/lotr.html"></iframe>
+                <iframe class="frame hidden-frame" id="dune-frame" src="pages/dune.html"></iframe>
+                <iframe class="frame hidden-frame" id="sw-frame" src="pages/sw.html"></iframe>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

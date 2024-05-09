@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="../bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <link rel="stylesheet" type="text/css" href="../css/lotr.css">
+    <script src="../scripts/script.js"> </script>
+</head>
+<body onload="loadBody('lotr')">
+    <div class="d-flex main-div" id="main-page">
+        <div class="d-flex">
+            <img class="main-img" src="../images/lotr/main.jpg"/>
+            <div class="main-content block-text">
+                <h1>
+                    Содержание:
+                </h1>
+                <a href="#" onclick="scrollToPage(1)">• Шир</a><br>
+                <a href="#" onclick="scrollToPage(2)">• Бри</a><br>
+                <a href="#" onclick="scrollToPage(3)">• Амон-Сул</a><br>
+                <a href="#" onclick="scrollToPage(4)">• Троллистая пуща</a><br>
+                <a href="#" onclick="scrollToPage(5)">• Ривенделл</a><br>
+                <a href="#" onclick="scrollToPage(6)">• Мория</a><br>
+                <a href="#" onclick="scrollToPage(7)">• Аргонат</a><br>
+                <a href="#" onclick="scrollToPage(8)">• Рохан</a><br>
+                <a href="#" onclick="scrollToPage(9)">• Гондор</a><br>
+                <a href="#" onclick="scrollToPage(10)">• Мордор</a><br>
+            </div>
+        </div>
+        <div class="d-flex">
+            <img class="main-img" src="../images/lotr/shire.jpg" onerror="this.onerror=null; this.src='../images/not-found-image.jpg'"/>
+            <div class="main-text-right block-text">
+                <h1>
+                    Шир 
+                </h1>
+                <p id="shire" />
+            </div>
+        </div>
+        <div class="d-flex">
+            <img class="main-img" src="../images/lotr/Bree.jpg" onerror="this.onerror=null; this.src='../images/not-found-image.jpg'"/>
+            <div class="main-text block-text">
+                <h1>
+                    Бри
+                </h1>
+                <p id="bree" />
+            </div>
+        </div>
+        <div class="d-flex">
+            <img class="main-img" src="../images/lotr/amon-sul.jpg" onerror="this.onerror=null; this.src='../images/not-found-image.jpg'"/>
+            <div class="main-text-right block-text">
+                <h1>
+                    Амон-Сул
+                </h1>
+                <p id="amon-sul" />
+            </div>
+        </div>
+        <div class="d-flex">
+            <img class="main-img" src="../images/lotr/troll-forest.png" onerror="this.onerror=null; this.src='../images/not-found-image.jpg'"/>
+            <div class="main-text-right block-text">
+                <h1>
+                    Троллистая пуща
+                </h1>
+                <p id="troll-forest" />
+            </div>
+        </div>
+        <div class="d-flex">
+            <img class="main-img" src="../images/lotr/Rivendell.jpg" onerror="this.onerror=null; this.src='../images/not-found-image.jpg'"/>
+            <div class="main-text block-text">
+                <h1>
+                    Ривенделл
+                </h1>
+                <p id="Rivendell" />
+            </div>
+        </div>
+        <div class="d-flex">
+            <img class="main-img" src="../images/lotr/moria.jpg" onerror="this.onerror=null; this.src='../images/not-found-image.jpg'"/>
+            <div class="main-text-right block-text">
+                <h1>
+                    Мория
+                </h1>
+                <p id="moria" />
+            </div>
+        </div>
+        <div class="d-flex">
+            <img class="main-img" src="../images/lotr/Argonat.jpeg" onerror="this.onerror=null; this.src='../images/not-found-image.jpg'"/>
+            <div class="main-text block-text">
+                <h1>
+                    Аргонат
+                </h1>
+                <p id="Argonat" />
+            </div>
+        </div>
+        <div class="d-flex">
+            <img class="main-img" src="../images/lotr/Rohan.jpg" onerror="this.onerror=null; this.src='../images/not-found-image.jpg'"/>
+            <div class="main-text block-text">
+                <h1>
+                    Рохан
+                </h1>
+                <p id="Rohan" />
+            </div>
+        </div>
+        <div class="d-flex">
+            <img class="main-img" src="../images/lotr/Gondor.jpg" onerror="this.onerror=null; this.src='../images/not-found-image.jpg'"/>
+            <div class="main-text block-text">
+                <h1>
+                    Гондор
+                </h1>
+                <p id="Gondor" />
+            </div>
+        </div>
+        <div class="d-flex">
+            <img class="main-img" src="../images/lotr/Mordor.jpg" onerror="this.onerror=null; this.src='../images/not-found-image.jpg'"/>
+            <div class="main-text-right block-text">
+                <h1>
+                    Мордор
+                </h1>
+                <p id="Mordor" />
+            </div>
+        </div>
+    </div>
+    <div id="right-arrow" 
+            class="position-fixed top-50 translate-middle scroll-arrow"
+            align="center"
+            style="margin-left: 95%;"
+            onclick="scrollArrowClick('Right')">
+        <button onclick="scrollArrowClick('Right')">
+            <img src="../images/arrow-right.png"/>
+        </button>
+    </div>
+    <div id="left-arrow" 
+            class="position-fixed top-50 translate-middle scroll-arrow"
+            align="center"
+            style="margin-left: 5%;"
+            onclick="scrollArrowClick('Left')">
+            <button onclick="scrollArrowClick('Left')">
+            <img src="../images/arrow-left.png" />
+        </button>
+    </div>
+    <div id="to-content" 
+         class="position-fixed top-0 to-content"
+         align="center"
+         style="margin-left: 5%;">
+         <button class="btn btn-primary" onclick="scrollToContent()">
+            К Содержанию
+        </button>
+    </div>
+</body>
+
+</html>

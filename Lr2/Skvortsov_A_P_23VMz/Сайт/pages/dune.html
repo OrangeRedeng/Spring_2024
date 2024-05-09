@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="../bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <link rel="stylesheet" type="text/css" href="../css/dune.css">
+    <script src="../scripts/script.js"> </script>
+</head>
+<body onload="loadBody('dune')">
+    <div class="d-flex main-div" id="main-page">
+        <div class="d-flex">
+            <img class="main-img" src="../images/dune/main.jpg"/>
+            <div class="main-content block-text">
+                <h1>
+                    Содержание:
+                </h1>
+                <a href="#" onclick="scrollToPage(1)">• Арракис</a><br>
+                <a href="#" onclick="scrollToPage(2)">• Арракин</a><br>
+                <a href="#" onclick="scrollToPage(3)">• Дюна</a><br>
+                <a href="#" onclick="scrollToPage(4)">• Фримены</a><br>
+                <a href="#" onclick="scrollToPage(5)">• Растения</a><br>
+                <a href="#" onclick="scrollToPage(6)">• Специя</a><br>
+                <a href="#" onclick="scrollToPage(7)">• Шай-Хулуд, песчаный червь</a><br>
+            </div>
+        </div>
+        <div class="d-flex">
+            <img class="main-img" src="../images/dune/arrakis.jpeg" onerror="this.onerror=null; this.src='../images/not-found-image.jpg'"/>
+            <div class="main-text block-text">
+                <h1>
+                    Арракис
+                </h1>
+                <p id="arrakis" />
+            </div>
+        </div>
+        <div class="d-flex">
+            <img class="main-img" src="../images/dune/Arrakin.jpg" onerror="this.onerror=null; this.src='../images/not-found-image.jpg'"/>
+            <div class="main-text block-text">
+                <h1>
+                    Арракин
+                </h1>
+                <p id="arrakin" />
+            </div>
+        </div>
+        <div class="d-flex">
+            <img class="main-img" src="../images/dune/Dune.jpg" onerror="this.onerror=null; this.src='../images/not-found-image.jpg'"/>
+            <div class="main-text-right block-text">
+                <h1>
+                    Дюна, пустыни Арракиса
+                </h1>
+                <p id="dune" />
+            </div>
+        </div>
+        <div class="d-flex">
+            <img class="main-img" src="../images/dune/freemans.jpg" onerror="this.onerror=null; this.src='../images/not-found-image.jpg'"/>
+            <div class="main-text-right block-text">
+                <h1>
+                    Фримены
+                </h1>
+                <p id="freemans" />
+            </div>
+        </div>
+        <div class="d-flex">
+            <img class="main-img" src="../images/dune/plants.jpg" onerror="this.onerror=null; this.src='../images/not-found-image.jpg'"/>
+            <div class="main-text-right block-text">
+                <h1>
+                    Растения
+                </h1>
+                <p id="plants" />
+            </div>
+        </div>
+        <div class="d-flex">
+            <img class="main-img" src="../images/dune/spice.jpg" onerror="this.onerror=null; this.src='../images/not-found-image.jpg'"/>
+            <div class="main-text block-text">
+                <h1>
+                    Специя
+                </h1>
+                <p id="spice" />
+            </div>
+        </div>
+        <div class="d-flex">
+            <img class="main-img" src="../images/dune/worm.png" onerror="this.onerror=null; this.src='../images/not-found-image.jpg'"/>
+            <div class="main-text-right block-text">
+                <h1>
+                    Шай-Хулуд
+                </h1>
+                <p id="worm" />
+            </div>
+        </div>
+    </div>
+    <div id="right-arrow" 
+            class="position-fixed top-50 translate-middle scroll-arrow"
+            align="center"
+            style="margin-left: 95%;"
+            onclick="scrollArrowClick('Right')">
+        <button onclick="scrollArrowClick('Right')">
+            <img src="../images/arrow-right.png"/>
+        </button>
+    </div>
+    <div id="left-arrow" 
+            class="position-fixed top-50 translate-middle scroll-arrow"
+            align="center"
+            style="margin-left: 5%;"
+            onclick="scrollArrowClick('Left')">
+            <button onclick="scrollArrowClick('Left')">
+            <img src="../images/arrow-left.png" />
+        </button>
+    </div>
+    <div id="to-content" 
+         class="position-fixed top-0 to-content"
+         align="center"
+         style="margin-left: 5%;">
+         <button class="btn btn-primary" onclick="scrollToContent()">
+            К Содержанию
+        </button>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,57 @@
+
+.main-content {
+    margin-top: 10rem;
+    margin-left: 15rem;
+    color: white;
+}
+
+.main-content a {
+    color: white;
+}
+
+.main-img {
+    width: 100vw;
+    height: 100vh;
+}
+
+.main-text {
+    position: absolute;
+    margin: 5%;
+    margin-left: 5%;
+    width: 32.5%;
+    height: 77.5%;
+    align-items: left;
+    color: white;
+}
+
+.main-text h1 {
+    margin: 5% 0%;
+    text-align: center;
+    padding-bottom: 0;
+}
+
+.main-text p {
+    margin: 0% 10%;
+    font-size: 18px;
+}
+
+.main-text-right {
+    position: absolute;
+    margin: 5%;
+    margin-left: 55%;
+    width: 40%;
+    height: 77.5%;
+    align-items: left;
+    color: white;
+}
+
+.main-text-right h1 {
+    margin: 5% 0%;
+    text-align: center;
+    padding-bottom: 0;
+}
+
+.main-text-right p {
+    margin: 0% 10%;
+    font-size: 18px;
+}
