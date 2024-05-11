@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Обо мне</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+    header {
+        background-color: #f2f2f2;
+        padding: 10px;
+        text-align: center;
+    }
+    nav {
+        display: flex;
+        justify-content: center;
+        background-color: #333;
+        color: white;
+    }
+    nav a {
+        padding: 10px 20px;
+        text-decoration: none;
+        color: white;
+    }
+    section {
+        padding: 20px;
+    }
+    footer{
+        display: flex;
+        justify-content: center;
+        background-color: #333;
+        color: white;
+    }
+    header > img {
+        width: 100%;
+        height: 450px;
+        object-fit: cover;
+    }
+</style>
+</head>
+<body>
+<header>
+<h1>Кулинарные рецепты</h1>
+<img src="header.jpg" width="70%" height="30%">
+</header>
+<nav>
+<a href="main.html">Главная</a>
+<a href="recipes.html">Рецепты</a>
+<a href="aboutMe.html">Обо мне</a>
+</nav>
+<main>
+    <section>
+      <h2>Сайт разработан Мещеряковым Антоном, студентом группы XXX.</h2>
+    </section>
+    <section>
+      <h2>Проведённые работы:</h2>
+      <ul>
+        <li>Создано три стриницы, главная, рецепты и обо мне</li>
+        <li>Добавлены картинки</li>
+        <li>Добавлена навигация по страницам</li>
+        <li>Добавлены ссылки на другие вкладки</li>
+        <li>Добавлены хеадер и футер</li>
+        <li>Добавлены стили</li>
+      </ul>
+    </section>
+    <section>
+      <h2>Контакты</h2>
+      <ul>
+        <li>Email: XXX</li>
+        <li>GitHub: XXX</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>Copyright © 2024 Обо мне</p>
+  </footer>
+</body>
+</html>
