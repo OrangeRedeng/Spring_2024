@@ -1,0 +1,147 @@
+*{							
+	margin: 0;
+	padding: 0;
+}
+a{
+	text-decoration: none;
+}
+li{
+	list-style: none;
+}
+body{
+	width: 100%;
+  justify-content: center;
+}
+header {
+	background: url(img/header.png);
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+}
+.header_logo{
+	height: 300px;
+	font-size: 30px;
+}
+.one {
+	width: 150px;
+}
+.one a {
+  color: black;
+  text-align: center;
+  align-content: center;
+  height: 40px;
+  width: auto;
+  padding: 0px 10px;
+}
+.one a:hover {background: #f0e6fa;}
+.one li {
+  display: inline-flex;
+}
+.menu{
+	display: flex;
+	flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  background: #96C6E8;
+  opacity: 0.6;
+  height: 80px;
+}
+main{
+	background: url(img/фон.jpg);
+	background-size:100% 100%;
+	opacity: 0.7;
+	padding: 15%;
+}
+.blok{
+	background: white;
+	background: rgba(255, 255, 255, 0.5); /* Используем rgba для прозрачности */
+	border-radius: 45px;
+	padding: 60px;
+}
+.blok2{
+	background: white;
+	background: rgba(255, 255, 255, 0.5); /* Используем rgba для прозрачности */
+	border-radius: 45px;
+	padding: 2%;
+	margin: -15% 0;
+}
+.opisanie{
+	font-size: 40px;
+	text-align: center;
+	color:black;
+}
+.o_gorode{
+	padding: 6%;
+  font-size: 20px;
+  text-align: center;
+	color:black;
+}
+.history{
+	font-size: 20px;
+	text-align: center;
+	color:black;
+}
+.container {
+  padding: 0 5px 0 5px; /* left & right */
+  border-radius: 15px;
+  border: 1px solid #000;
+  margin: 1% 0;
+}
+.img-container img {
+  max-width: 100%;
+  display: block;
+  margin-top: 10px;
+}
+.text-container {
+  text-align: left;
+  margin-top: 1%;
+  text-indent: 2%; /* Отступ */
+  margin-bottom: 1%;
+}
+h2 {
+  text-align: center; 
+}
+footer {
+  padding-bottom: 3%;
+  background-color: #6f93af;
+  width: 100%;
+  border-top: 3px dotted black;
+}
+.footer_main{
+  display: flex;
+  justify-content: space-around;
+  font-size: 15px;
+}
+.ones{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 10%;
+  margin-top: 4%;
+}
+.twos{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin-right: 10%;
+  margin-top: 5%;
+  align-items: flex-end;
+}
+.img_ikonka{
+	display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 125%;
+}
+.names{
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  font-size: 40px;
+}
+.phone-number{
+	text-align: center;
+}
+.img-container{
+  text-align: -webkit-center;
+}
