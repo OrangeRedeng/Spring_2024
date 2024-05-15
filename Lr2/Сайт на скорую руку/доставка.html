@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <title>Flowers</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital@0;1&display=swap')
+</style>
+<script src="script.js"></script>
+  </head>
+  <body>
+
+<div class="header_wrapper">
+
+  <div class="one">
+    <li><a href="index.html">О нас</a></li>
+  </div>
+  <div class="one">
+    <li><a href="">Доставка</a></li>
+  </div>
+
+<header>
+          <div class="header_logo"><p>Flowers</p></div>
+ </header>     
+
+ <div class="one">
+    <li><a href="Каталог цветов.html">Каталог цветов</a></li>
+  </div>
+  <div class="one">
+    <li><a href="Каталог букетов.html">Каталог букетов</a></li>
+  </div>
+</div>   
+
+<main> 
+  <div class="img_flower">
+    <img src="img/Logo2.jpg">
+  </div>
+  <div class="dostavka_wrapper">
+    <div class="dostavka"><p>Доставка</p></div>
+  </div>
+  <hr class="hr-line">
+  <div class="dostavka_blok"> 
+  <div class="img_dostavka">
+    <img src="img/доставка.png">
+  </div>
+    <div class="dblok">
+        <ul1>
+          <li>Доставка осуществляется c 10:00 до 19:00 
+            и с 19:00 до 01:00 (по предзаказу)
+          </li>
+          <li>Цена доставки устанавливается в зависимости от расстояния. Вы можете проверить свой адрес и узнать стоимость доставка при оформлении заказа. 
+          </li>
+          <li>Ближайшее время доставки зависит от сложности букета. 
+          </li>
+          <li>Ожидание получателя букета курьером до 15 минут, более 15 минут оплачивается отдельно. Также возможно опоздание курьера на 15 минут. 
+          </li>
+        </ul1>
+    </div>  
+  </div>
+  <hr class="hr-line">
+  <div class="vibor">
+    <div class="vibor1"><p> НЕ СМОГЛИ ВЫБРАТЬ? </p></div>
+    <div class="vibor_text">
+      <p>Не проблема! Мы подберем букет по вашему индивидуальному запросу.
+<br>
+     Заполните форму и мы перезвоним вам в течении 5 минут </p>
+    </div>
+    <form action="" onsubmit="function sendEmail()">
+      <div class="forma">
+      <div class="kolonka1">
+        <input class="styled" name="name" type="text" placeholder="Имя" size="12">
+        <input class="styled" name="tel" type="text" placeholder="Телефон" size="10 ">
+      </div>
+      <div class="kolonka2">
+        <p><select name="Flowers" class="styledselect">
+          <option value="">Цветы</option>
+          <option value="f1">Альстромерия</option>
+          <option value="f2">Анемон</option>
+          <option value="f3">Антуриум</option>
+          <option value="f4">Бувардия</option>
+          <option value="f5">Гвоздика</option>
+          <option value="f6">Георгин</option>
+          <option value="f7">Гербера</option>
+          <option value="f8">Гортензия</option>
+          <option value="f9">Дельфиниум</option>
+          <option value="f10">Илекс</option>
+          <option value="f11">Ирис</option>
+          <option value="f12">Кампанула</option>
+          <option value="f13">Кортадерия</option>
+          <option value="f14">Роза</option>
+          <option value="f15">Левкой</option>
+          <option value="f16">Лизиантус</option>
+          <option value="f17">Лилия</option>
+          <option value="f18">Орхидея</option>
+          <option value="f19">Пион</option>
+          <option value="f20">Ранункулюс</option>
+          <option value="f21">Хризантема</option>
+          <option value="f22">Эустома</option>
+          <option value="f23">Нарцис</option>
+          <option value="f24">Сетария</option>
+        </select></p>
+        <p><select name="reason" class="styledselect">
+          <option value="">Повод</option>
+          <option value="r1">1 сентября</option>
+          <option value="r2">14 февраля</option>
+          <option value="r3">8 марта</option>
+          <option value="r4">Свадьба</option>
+          <option value="r5">День рождения</option>
+          <option value="r6">День матери</option>
+          <option value="r7">День учителя</option>
+          <option value="r8">Годовщина</option>
+        </select></p>
+      </div>
+      <div class="kolonka3">
+        <p><select name="prise" class="styledselect">
+          <option value="">Цена</option>
+          <option value="p1">до 1000</option>
+          <option value="p2">от 1000 до 2500</option>
+          <option value="p3">от 2500 до 4000</option>
+          <option value="p4">от 4000 до 6000</option>
+          <option value="p5">свыше 6000</option>
+        </select></p>
+        <p><select name="who" class="styledselect">
+          <option value="">Кому</option>
+          <option value="w1">девушке</option>
+          <option value="w2">жене</option>
+          <option value="w3">маме</option>
+          <option value="w4">дочери</option>
+          <option value="w5">бабушке</option>
+          <option value="w6">учителю</option>
+        </select></p>
+      </div>
+      <div class="kolonka4">
+        <input class="styled" name="color" type="text" placeholder="Цвет" size="12">
+        <p><select name="size" class="styledselect">
+          <option value="">Размер</option>
+          <option value="s1">Маленький</option>
+          <option value="s2">Средний</option>
+          <option value="s3">Большой</option>
+        </select></p>
+      </div>
+    </div>
+      <input class="knopka" type=»submit» value=Отправить onclick="sendEmail()"»>
+    </form>
+  </div>
+  </main>
+     
+
+      
+
+    
+  </body>
+</html>
