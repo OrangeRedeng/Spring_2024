@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<title>Туристический НН</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body>
+	<header>
+      <div class="header_logo"></div>
+ 	</header> 
+ 	<div class="menu">
+ <div class="one">
+    <li><a href="">Главная</a></li>
+  </div>
+  <div class="one">
+    <li><a href="Достопримечательности.html">Достопримечательности</a></li>
+  </div>
+  <div class="one">
+    <li><a href="Красивые места для прогулок.html">Красивые места для прогулок</a></li>
+  </div>
+	</div>
+
+	<main>
+<div class="blok">
+		<div class="opisanie">
+        <p>Откройте свой Нижний Новгород!</p></div>  
+<br>
+		<div class="o_gorode">
+<p>В Нижнем каждый сможет найти что-то важное для себя:
+<br>
+исторические достопримечательности и старинную архитектуру, уникальный ландшафт и красивые закаты, ставшие местным брендом, классическое и современное искусство, гастрономические впечатления.</p></div>
+<br>
+     <div class="history">
+<p>Нижний Новгород — один из древнейших российских городов. В Средневековье он был крепостью, которая защищала границы Руси от набегов татар. В XVI веке здесь появилась одна из крупнейших ярмарок страны, а к XIX столетию город стал одним из главных промышленных центров России.</p>
+      </div>
+  </div>
+	</main>
+
+    <footer>
+  <div class="footer_main">
+    <div class="ones">
+      <div class="names">
+         <p>Туристический <br> Нижний Новгород</p>
+      </div>
+            <div id="phone-number" class="phone-number"></div>
+            
+    </div>
+    <div class="twos">
+      <div class="img_ikonka">
+        <img src="img/icon-vk.png">
+        <img src="img/icon-telegram.png">
+        <img src="img/icon-instagram.png">
+        <img src="img/icon-whatsapp.png">
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Функция для генерации случайного номера телефона в формате +7 (9**) ***-**-**
+function generateRandomPhoneNumber() {
+    const remainingDigits = [];
+    // Генерация случайных цифр для всех блоков номера телефона
+    for (let i = 0; i < 10; i++) {
+        remainingDigits.push(Math.floor(Math.random() * 10)); // Добавляем случайное число от 0 до 9 в массив remainingDigits
+    }
+
+    // Формирование строки с номером телефона в требуемом формате
+    const phoneNumber = `+7 (9${remainingDigits[1]}${remainingDigits[2]}) ${remainingDigits.slice(3, 6).join('')}-${remainingDigits.slice(6, 8).join('')}-${remainingDigits.slice(8).join('')}`;
+
+    return phoneNumber; // Возвращаем сгенерированный номер телефона
+}
+
+// Функция для отображения сгенерированного номера телефона на странице
+function displayRandomPhoneNumber() {
+    const phoneNumberElement = document.getElementById('phone-number'); // Получаем элемент с id 'phone-number'
+    const randomPhoneNumber = generateRandomPhoneNumber(); // Генерируем случайный номер телефона
+    phoneNumberElement.textContent = randomPhoneNumber; // Устанавливаем сгенерированный номер телефона в текст элемента 'phone-number'
+}
+
+displayRandomPhoneNumber(); // Вызываем функцию для отображения случайного номера телефона на странице
+</script>
+
+</body>
+</html>
