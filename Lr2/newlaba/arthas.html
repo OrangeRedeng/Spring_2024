@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="style.css" />
+	<script src="скрипт.js"></script>
+	<title>Виталий Arthas</title>
+	 <style>
+        .sound-button {
+            width: 200px;
+            height: 200px;
+            background-size: cover;
+        }
+    </style>
+</head>
+<body>
+	<header>
+		<div class="header_img"><img src="headpapich.jpg" class="center-img" alt="Папич фоткает экран"></div> 
+	</header>
+<div class="sait"> 
+<center>
+	<ul>
+<li><a href="Arthas">Arthas </a></li>
+<li><a href="biografia.html">Биография </a></li>
+<li><a href="rofls.html">Рофлянки </a></li>
+<li><a href="lasthit.html">Гимн</a></li>
+</center>
+</ul>
+<img src="rolfan.jpg" onclick="playSound()" width="100" height="100">
+<audio id="myAudio">
+  <source src="champ.mp3.mp3" type="audio/mpeg">
+</audio>
+<script>
+function playSound() {
+  var audio = document.getElementById("myAudio");
+  audio.play();
+}
+</script>
+</div>
+</body>
+</html>
