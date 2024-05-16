@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>В Мире Технологий</title>
+    <link rel="shortcut icon" href="Photo/icon/icon.png">
+	<link href="style.css" rel="stylesheet">
+	<script src="script.js" defer></script>
+</head>
+<body>
+
+<img src="Photo/header.jpg">
+	
+<div class="main">
+	<div class="inline">
+        <div class="left">
+			<ul>
+				<li><a href="Сайт.html">Новости</a></li>
+                <li><a href="Обзоры.html">Обзоры</a></li>
+                <li><a href="Форумы.html">Форумы</a></li> 
+			</ul>
+        </div>
+
+        <div class="content">
+            <div class="containerVideo">
+                <h2>Самые крутые новинки техники CES 2024</h2>
+                <div class="Video">
+                    <iframe width="853" height="480"
+                        src="https://www.youtube.com/embed/TcaN3ZWjF1I"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                    </iframe>   
+                </div>
+            </div>
+
+            <div class="containerVideo">
+                <h2>iPhone 16 за 16 минут</h2>
+                <div class="Video">
+                    <iframe width="853" height="480"
+                        src="https://www.youtube.com/embed/DvxvMRbkvdw"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                    </iframe>   
+                </div>
+            </div>
+
+        	<div class="containerVideo">
+                <h2>Apple Vision Pro: быстрый обзор</h2>
+                <div class="Video">
+                    <iframe src="https://vk.com/video_ext.php?oid=-48265019&id=456241083&hd=2" width="853" height="480" allow="encrypted-media; fullscreen; picture-in-picture;" frameborder="0" allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+
+        	<div class="containerVideo">
+                <h2>Распаковка первого российского планшета</h2>
+                <div class="Video">
+                    <iframe width="853" height="480"
+                        src="https://www.youtube.com/embed/yu7g5pbfTII"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                    </iframe>   
+                </div>
+            </div>
+
+        	<div class="containerVideo">
+                <h2>Модульный ПК Khadas Mind</h2>
+                <div class="Video">
+                    <iframe width="853" height="480"
+                        src="https://www.youtube.com/embed/25vcCe3gEMM"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                    </iframe>   
+                </div>
+            </div>
+        </div>
+
+       <div class="right">
+        
+        <div class="right_shtuki">
+        Самая популярная статья:<br>
+
+            <div class="container">
+                <div onclick="goToSrc('Posts/Post3')">
+                    <img src="Photo/Post3/Post3.webp" style="margin-top: 3%;">
+                </div>
+                <div class="text-container" onclick="goToSrc('Posts/Post3')">
+                    <h2 onclick="goToSrc('Posts/Post3')">Вы этого не знали: 5 самых необычных функций вашего ноутбука</h2>
+                    <p onclick="goToSrc('Posts/Post3')">Для многих ноутбук — незаменимое устройство для работы, учебы или развлечений. При этом в новые поколения девайсов добавляют все новые, но не самые очевидные функции. Предлагаем изучить устройство глубже запуска приложения текстового редактора или интернет-браузера и рассказываем, как использовать свой ноутбук на максимум.</p>
+                    <p align="right" style="color: #810C73">Смотреть дальше ➯</p>
+                </div>
+            </div>
+        </div>
+
+<div class="right_shtuki">
+        Если хотите сравнить технику, то переходите на сайт наших партнёров! <br><br>
+        
+            <form action="https://versus.com/ru">
+                <input type="submit" value="Перейти" />
+            </form> <br>
+</div>
+        <br><br>
+        <button id="openModal">Хотите оценить наш сайт?</button>
+            <div id="modal" class="modal">
+            <div class="modal-content">
+                <button id="closeButton" class="closeButton">X</button>
+                <p align="center">Вам нравится сайт?</p>
+                    <button id="yesButton" class="yesButton">Да</button>
+                    <button id="noButton" class="noButton">Нет</button>
+            </div>
+            </div> <br><br>
+        </div>
+    </div>
+</div>
+
+    <footer class="footer">
+        <div class="lfooter">
+            <p>©2024 Айнов Данила</p>
+            <p>Сайт сделан в качестве лабораторной работы</p>
+        </div>
+        <div class="rfooter">
+            <span class="icon" onclick="goToLink('https://vk.com/id373415683')"><img src="Photo/icon/icon-vkontakte.png"></span>
+            <span class="icon" onclick="goToLink('https://t.me/ADanila')"><img src="Photo/icon/icon-telegram.png"></span>
+            <span class="icon" onclick="goToLink('https://wa.me/79991372101')"><img src="Photo/icon/icon-whatsapp.png"></span>
+            <span class="icon" onclick="goToLink('https://www.youtube.com/@_redextreme')"><img src="Photo/icon/icon-youtube.png"></span>
+            <span class="icon" onclick="goToLink('https://discordapp.com/users/702162233714671637/')"><img src="Photo/icon/icon-discord.png"></span> 
+        </div>
+    </footer>
+
+</body>
+</html>
