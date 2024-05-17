@@ -1,0 +1,93 @@
+/* General Styles */
+#mama
+{ colore: #dfdfdf;
+}
+body {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: bold;
+  margin: 1em 0;
+}
+
+a {
+  ffffff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Header */
+header {
+  background-color: #333;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em;
+}
+
+h1 {
+  margin: 0;
+}
+
+.nav-menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.nav-menu li {
+  margin-right: 1em;
+}
+
+.nav-menu li:last-child {
+  margin-right: 0;
+}
+
+.nav-menu a {
+  color: #fff;
+  font-weight: bold;
+  padding: 0.5em;
+}
+
+.nav-menu a.active,
+.nav-menu a:hover {
+  background-color: #fff;
+  color: #333;
+}
+
+/* Main Content */
+main {
+  max-width: 800px;
+  margin: 2em auto;
+  padding: 0 1em;
+}
+
+section h2 {
+  font-size: 2em;
+}
+
+/* Footer */
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 1em;
+}
+
+/* js.html */
+.js-sandbox-container {
+  border: 1px solid #333;
+  padding: 15px;
+}
