@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Заявка на визу на Марс</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-image: url(../Mars/images/atmsfmrs.jpg);
+        background-size: cover;
+        color: #a82323;
+    }
+    form {
+        max-width: 400px;
+        margin: 0 auto;
+    }
+    input[type="text"], input[type="email"], select, textarea {
+        width: 100%;
+        padding: 10px;
+        margin: 5px 0;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+    input[type="submit"] {
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        float: right;
+    }
+    input[type="submit"]:hover {
+        background-color: #45a049;
+    }
+</style>
+</head>
+<body>
+    <div class="sidebar-menu">
+        <div class="sidebar-link"><a href="./main.html">Главная</a></div>
+        <div class="sidebar-link"><a href="./news.html">Новости</a></div>
+       <div class="sidebar-link"><a href="./files.html">Cправочник юного колонизатора</a></div>
+    </div>
+
+
+<h2 align = center >Заявка на визу на Марс</h2>
+
+<form id="visaForm">
+    <label for="fullName">ФИО:</label>
+    <input type="text" id="fullName" name="fullName" required>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="gender">Пол:</label>
+    <select id="gender" name="gender" required>
+        <option value="">Выберите пол</option>
+        <option value="male">Мужской</option>
+        <option value="female">Женский</option>
+        <option value="barbie">Барби</option>
+        <option value="ken">Кен</option>
+    </select>
+
+    <label for="country">Страна проживания:</label>
+    <select id="country" name="country" required>
+        <option value="">Выберите страну</option>
+        <option value="RIP">Российское Интернет Пространство</option>
+        <option value="SSA">Советские Штаты Америки</option>
+        <option value="CEWL">Китайская Империя Белого Лотоса</option>
+        <option value="USB">Соединенные Штаты Болгарии</option>
+        <option value="DOS">Дойчестан</option>
+        <option value="UK">Разъединенное Королевство</option>
+        <option value="CANT">Независимые торговые города Антарктиды</option>
+        <option value="BBCH">Брайтон-Бич</option>
+        <option value="CAR">Калифорнийская Яблочная Империя</option>
+        <option value="ANIME">О-ва Радикального Аниме</option>
+        <option value="PC">Карибская Пиратская Гавань</option>
+        <option value="UOK">Объеднинение сопротивления Кенгуру</option>
+        <option value="AK">Африканская Капиталистическая Империя</option>
+        <option value="BARB">Барбилэнд</option>
+        <option value="KEN">Кенолевство</option>
+        <option value="Other">Ядерная пустошь (Будет расмотрено индивидуально в консульстве)</option>
+      
+    </select>
+
+    <label for="occupation">Профессия:</label>
+    <input type="text" id="occupation" name="occupation" required>
+
+    <label for="reason">Цель поездки:</label>
+    <textarea id="reason" name="reason" rows="4" required></textarea>
+
+    <input type="submit" value="Отправить">
+</form>
+
+<script>
+    document.getElementById("visaForm").addEventListener("submit", function(event) {
+        event.preventDefault();
+        let formData = new FormData(this);
+        let data = {};
+        formData.forEach(function(value, key){
+            data[key] = value;
+        });
+        console.log(data);
+        
+        alert("Заявка успешно отправлена!");
+        this.reset();
+    });
+</script>
+</body>
+</html>

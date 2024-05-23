@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="./css/styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Главная страница|MarsTravel</title>
+    <script>  
+        setInterval(function () {
+            var now = new Date();
+            var clock = document.getElementById("clock");
+            clock.innerHTML = now.toLocaleTimeString();
+        }, 1000);
+    </script>
+</head>
+<body>
+    <div class="wrap">
+        <div class="header-wrap">
+            <div class="none">
+                <div class= marsian_clock  style="font-size: x-large; color: brown;" >
+                    <h7>Сейчас в Нью-Бредбери:        </h7>
+                        <span id="clock" style="color:red;"></span>
+                        <div class= marsian_date style="font-size: x-large; color: brown;">
+                            <h7>235 сол<h7> 
+                            <h7>247 год с первой марсианской экспедиции</h7>
+                            </div>
+                </div>
+                <div class="sidebar-menu">
+                    <div class="sidebar-link"><a href="./main.html">Главная</a></div>
+                    <div class="sidebar-link"><a href="./news.html">Новости</a></div>
+                    <div class="sidebar-link"><a href="./files.html">Cправочник юного колонизатора</a></div>
+                    <div class="sidebar-link"><a href="./visa_form.html">Оформить Визу в рай не на Земле!</a></div>
+                </div>
+                
+            </div>
+            <div class="header">
+                <div class="logo">
+                    <img src="./images/log.jpg">
+                </div>
+                <div class="header-menu">
+                    <div class="link"><a href="./main.html">Главная</a></div>
+                    <div class="link"><a href="./news.html">Новости</a></div>
+                    <div class="link"><a href="./files.html">Cправочник юного колонизатора</a></div>
+                    <div class="link"><a href="./visa_form.html">Оформить Визу в рай не на Земле!</a></div>
+                </div>
+            </div>
+            
+        </div>
+        <div class="content">
+            <h2>Чем можно заняться на Марсе?</h2>
+                <table border="1" width="100%" align="center" style="background-color: rgb(9, 27, 43)">
+                    <tr>
+                        <th><img src="./images/mars_ladscape.jpg" width= 420 height=400/></th>
+                        <td>
+                            <h4>На Марсе можно любоваться шикарными видами!</h4>
+                            <p>Бескрайние пустыни, гигантские полярные льды и голубое небо на краю величественного кратера!</p>
+                            <p>Все эти впечатления можно получить исключительно на красной планете!</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th><img src="./images/mars-dirt.jpg" width= 420 height=400/></th>
+                        <td>
+                            <h4>Можно принять восхитительные ванны из красной грязи!</h4>
+                            <p>Ванны из красной глиной подарят вам долголетие, о котором не мечтали даже античные Боги!</p>
+                        </td> 
+                    </tr>
+                    <tr>
+                        <th><img src="./images/polis.jpg" width= 420 height=400/></th>
+                        <td>
+                            <h4>Развитые полисы и прекрасная инфраструктура!</h4>
+                            <p>От развитых и технологичных мегаполисов Нью-Бредбери, Циолковска и Маск-сити, до маленьких, но уютных колоний-поселений.</p>
+                            <p>Здесь каждый найдёт место себе по душе!</p>
+                        </td> 
+                    </tr>
+                </table>
+                <div>
+                    <h6>© Департамент демографии и туризма Марса, 2124</h6>
+                    <h6>Выдача карт колонизатора и тур. виз происходит по адресу:</h6>
+                    <h6>Нью-Бредберри, Одуванчиковый кратер,</h6>
+                    <h6> ул. Космодесанта, купол 9. Вход со стороны парковки марсоходов напротив гидропонных ферм.</h6>
+                </div>
+
+        </div>
+        </div>
+    </div>
+
+</body>
+</html>
