@@ -1,0 +1,200 @@
+<!Doctype HTML>
+<html>
+    <head>
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/bootstrap-grid.css">
+	    <title>Аксессуары</title>
+        <script src="js/teg.jsx"></script>
+    </head>
+    <body>
+        <header>
+            <div class="container">
+                <div class="row">
+                    <div class="col-4">
+                       <a href = "about_us.html"><img class="imglog" src="img/logot.png" alt="logo"></a>
+                    </div>
+                    <div class="col-8">
+                       <h1>Аксессуары</h1>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <nav class="main-menu">
+	        <ul class="menu-text">
+        <li><a href ="about_us.html">О нас</a></li>
+                <li>
+                    <a href ="Collectoin_of_wedding.html">Коллекция свадебных костюмов и платьев</a>
+                    <ul>
+                        <li><a href="costume_models.html">Модели костюмов</a></li>
+                        <li><a href="models_of_dresses.html">Модели платьев</a></li>
+                    </ul>
+                </li>
+        <li><a href ="wedding_shoes.html">Свадебная обувь</a>
+        <li><a href ="accessories.html">Аксессуары</a></li>
+        <li><a href ="photogallery.html">Фотогалерея</a></li>
+        <li><a href ="contacts.html">Контакты</a></li>
+	        </ul>
+        </nav>
+        <a class="back_to_top" title="Наверх">↑</a>
+        <script>
+        (function() {
+            'use strict';
+            function trackScroll() {
+              var scrolled = window.pageYOffset;
+              var coords = document.documentElement.clientHeight;
+          
+              if (scrolled > coords) {
+                goTopBtn.classList.add('back_to_top-show');
+              }
+              if (scrolled < coords) {
+                goTopBtn.classList.remove('back_to_top-show');
+              }
+            }
+            function backToTop() {
+              if (window.pageYOffset > 0) {
+                window.scrollBy(0, -80);
+                setTimeout(backToTop, 0);
+              }
+            }
+            var goTopBtn = document.querySelector('.back_to_top');
+            window.addEventListener('scroll', trackScroll);
+            goTopBtn.addEventListener('click', backToTop);
+          })();
+        </script>
+        <div class="row">
+            <h2 style="text-align: center;">Сережки</h2>
+            <div class="col-3">
+               <img class="imgosnov" src="img/accessories_earrings.jpeg">
+               <p class="text">Лаконичные серьги в виде капелек</p>
+               <p class="text">Размер - 4 см</p>
+               <p class="text"><b>4 700 руб</b></p>
+            </div>
+            <div class="col-3">
+                <img class="imgosnov" src="img/accessories_earrings_long.jpeg">
+                <p class="text">Безупречные серьги с каплевидной огранкой</p>
+                <p class="text">Размер - 4,5 см</p>
+                <p class="text"><b>9 700 руб</b></p>
+            </div>
+            <div class="col-3">
+                <img class="imgosnov" src="img/accessories_earrings_small.jpeg">
+               <p class="text">Изысканные серьги геометричной формы</p>
+               <p class="text">Размер - 2,5 см</p>
+                <p class="text"><b>4 590 руб</b></p>
+            </div>
+            <div class="col-3">
+                <img class="imgosnov" src="img/accessories_earrings_uzor.jpg">
+               <p class="text">Шикарные серьги-люстры с витиеватым узором</p>
+               <p class="text">Размер - 7,5 см</p>
+               <p class="text"><b>12 750 руб</b></p>
+            </div>
+            <h2 style="text-align: center;">Фата</h2>
+            <div class="col-3">
+                <img class="imgosnov" src="img/accessories_Veil.jpg">
+               <p class="text">Фата свадебная с жемчужными бусинами</p>
+               <p class="text"><b>7 000 руб</b></p>
+            </div>
+            <div class="col-3">
+                <img class="imgosnov" src="img/accessories_Veil-flow.jpg">
+               <p class="text">К фате прикреплен гребень, украшенный веточкой растения</p>
+               <p class="text"><b>5 500 руб</b></p>
+            </div>
+            <div class="col-3">
+                <img class="imgosnov" src="img/accessories_Veil-flowers.jpg">
+               <p class="text">Однослойная свадебная фата из струящегося шелковистого фатина</p>
+               <p class="text"><b>5 350 руб</b></p>
+            </div>
+            <div class="col-3">
+                <img class="imgosnov" src="img/accessories_Veil-long_flow.jpg">
+               <p class="text">Фата с цветами закреплена на прозрачный гребень</p>
+               <p class="text"><b>6 900 руб</b></p>
+            </div>
+            <h2 style="text-align: center;">Подвязки</h2>
+            <div class="col-3">
+                <img class="imgosnov" src="img/accessories_garter_gray.jpg">
+               <p class="text">Классическая подвязка из нежного кружева с флористическим мотивом</p>
+               <p class="text"><b>2 900 руб</b></p>
+            </div>
+            <div class="col-3">
+                <img class="imgosnov" src="img/accessories_garter_gold.jpg">
+               <p class="text">Золотая подвязка из нежного кружева с белым и золотым бантиком</p>
+               <p class="text"><b>3 790 руб</b></p>
+            </div>
+            <div class="col-3">
+                <img class="imgosnov" src="img/accessories_garter_lace.jpg">
+               <p class="text">Классическая подвязка с нежной вышивкой на бархатной ленте</p>
+               <p class="text"><b>5 900 руб</b></p>
+            </div>
+            <div class="col-3">
+                <img class="imgosnov" src="img/accessories_garter_serebro.jpg">
+               <p class="text">Классическая подвязка, вышитая из серебра с бусинками</p>
+               <p class="text"><b>5 500 руб</b></p>
+            </div>
+            <h2 style="text-align: center;">Бабочки</h2>
+            <div class="col-3">
+                <img class="imgosnov" src="img/accessories_butterfly_brown.jpg">
+               <p class="text">Цвет: коричневый</p>
+               <p class="text"><b>965 руб</b></p>
+            </div>
+            <div class="col-3">
+                <img class="imgosnov" src="img/accessories_butterfly_black.jpg">
+               <p class="text">Цвет: черный</p>
+               <p class="text"><b>1 100 руб</b></p>
+            </div>
+            <div class="col-3">
+                <img class="imgosnov" src="img/accessories_butterfly_vinous.jpg">
+               <p class="text">Цвет: бардовый</p>
+               <p class="text"><b>1 090 руб</b></p>
+            </div>
+            <div class="col-3">
+                <img class="imgosnov" src="img/accessories_butterfly_blue.jpg">
+               <p class="text">Цвет: синий с ромбиками</p>
+               <p class="text"><b>950 руб</b></p>
+            </div>
+        </div>
+        <footer>
+            <div class = "container-подвал" >
+                <div class="row">
+                    <div class="col-6">
+                        <h3>Контакты</h3>
+                        <p class="podval">Свадебный салон Princess'a</p>
+                        <p class="podval">Адрес: г.Нижний Новгород, ул.Максима Горького, 70</p>
+                        <p class="podval">Телефон: +7(963) 367-10-39</p>
+                        <p class="podval">E-mail: wedding@mail.ru</p>
+                        <p class="ft min"><b>Сегодня:</b></p>
+                        <div style=" padding:6px;">
+                            <span style="color: black; font-size:16px; padding-left: 57px; font-family: Verdana, Geneva, Tahoma, sans-serif;">
+                                <script>
+                                    document.write(date + " ");
+                                    document.write(thismonth + " " + thisyear + " " + "года" + " — " + DayofWeek);
+                                </script>
+                                (<span id="clockdat" style="color: black;"></span>)
+                            </span>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <h3>Магазин</h3>
+                        <nav class="main-menu_1">
+                           <ul class="main-text_1">
+                               <li><a href = "Collectoin_of_wedding.html">Коллекция свадебных костюмов и платьев</a>
+                               <li><a href ="wedding_shoes.html">Свадебная обувь</a>  
+                               <li><a href ="accessories.html">Аксессуары</a></li>  
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="col-3">
+                        <h3>Сайт</h3>
+                        <nav class="main-menu_1">
+                            <ul class="main-text_1">
+                               <li><a href ="about_us.html">О нас</a></li>
+                               <li><a href ="photogallery.html">Фотогалерея</a></li>
+                               <li><a href ="contacts.html">Контакты</a></li>
+                               <li><a href ="recording_for_fitting.html">Запись на примерку</a></li>
+                               <li><a href ="reviews.html">Отзывы</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </footer>  
+    </body>  
+</html>

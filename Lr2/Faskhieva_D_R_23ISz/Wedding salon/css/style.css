@@ -1,0 +1,319 @@
+.main-menu  ul{
+	list-style: none;
+	font-size: 10px;
+	background:#FFE4C4;
+}
+.main-menu>ul>li{
+    display: inline-block;
+}
+.main-menu ul li ul{
+    display: none;
+}
+.main-menu ul li a{
+    display: block;
+    padding: 10px 20px;
+    background: #FFE4C4;
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.main-menu ul li:hover ul{
+    display: block;
+    position: absolute;
+    margin-left: 35px;
+}
+.main-menu ul li li a{
+    background: #FFE4C4 ;
+}
+.main-menu ul li a:hover{
+    text-decoration: underline;
+    background: #FFE4C4;
+}
+.main-menu_1  ul{
+	list-style: none;
+	font-size: 10px;
+	background:#DFC5FE;
+}
+.main-menu_1 ul li{
+    display: list-item;;
+}
+.main-menu_1 ul li ul{
+    display: none;
+}
+.main-menu_1 ul li a{
+    display: block;
+    padding: 10px 20px;
+    background: #DFC5FE;
+    text-decoration: none;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: black;
+    font-size: 16px;
+    line-height: 1.35;
+}
+.main-menu_1 ul li:hover ul{
+    display: block;
+    position: absolute;
+    margin-left: -35px;
+    font-size: 16px;
+}
+.imglog {
+    width: 40%;
+    float:right;
+    margin-right: 65px;
+}
+.col-4 {
+    text-align: center;
+}
+h1{
+    text-align: center;
+    margin-left: 75px;
+    font-size: 32px;
+    padding-top: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+h2 {
+    font-size: 20px;
+    text-align: justify;
+    font-family: Arial, Helvetica, sans-serif;
+}
+h3 {
+    font-size: 18px;
+    padding-left: 57px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+p{
+    font-size: 18px;
+    text-align: justify;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.5;
+}
+.osnovnoe {
+    width: 100%;
+    margin-bottom: 10px;
+}
+.imgosnov {
+    width: 100%;
+    margin: 5px;
+}
+.text {
+    text-align: center;
+    margin: 0%;
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+ul {
+    font-size: 18px;
+}
+li {
+    line-height: 1.5;
+}
+footer {
+    background-color:#DFC5FE;
+    width: 100%;
+}
+body{
+    background-color:#FFFAFA;
+    width: 99%;
+}
+.podval {
+    font-size: 16px;
+    padding-left: 57px;
+    text-align: justify;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.container-подвал{
+    margin: 10px;
+    margin-top: 0px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.container-шапка{
+    margin: 10px;
+    margin-top: 0px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.container-форма {
+    display: flex;
+    height: 100vh;
+    background-color: #FFFAFA;
+    margin: 5px;
+}
+.left {
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    animation-name: center;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+    animation-delay: 1s;
+}
+.f {
+    max-width: 80%;
+    display: flex;
+    flex-direction: column;
+}
+.right {
+    flex: 1;
+    background-color: #FFFAFA;
+    transition: 1s;
+    background-image: url(https://www.richhowman.com/wp-content/uploads/2016/04/West-Wales-Wedding-Photography-1.jpg);
+    background-size: 95%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+button {
+    margin-left: 40%;
+    margin-right: 40%;
+    width: 150px;
+    border: none;
+    border-radius: 7px;
+    padding: 10px 25px;
+    background: #FFE4C4;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: black;
+}
+.textrev {
+    text-align: center;
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif; 
+}
+.imgbanner {
+    width: 500px;
+    height: 255px;
+    margin-left: 33%;
+    margin-right: 34%;
+}
+.imgreview {
+    width: 18%;
+}
+.r {
+    width: 15%;
+}
+.form-style-6{
+    border: solid 2.5px #DFC5FE;
+	font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+	max-width: 400px;
+	margin: 10px auto;
+	padding: 16px;
+    background-image: url(https://i.pinimg.com/474x/94/83/ac/9483ac5bd6a331b01b8c9cbf5fe7d6cd.jpg);
+    border-radius: 16px;
+}
+.form-style-6 h2{
+    border-radius: 15px;
+	background: #DFC5FE;
+	padding: 14px 0;
+	font-size: 18px;
+	font-weight: 300;
+	text-align: center;
+	color: black;
+	margin: -19px -19px 19px -19px;
+}
+.rev {
+    border: solid 5px #FFE4C4;
+    border-radius: 20px;
+    background-color: #FFE4C4;
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+    font-size: 18px;
+    transform: scale(0.9);
+    bottom: 7%;
+    box-shadow: 15px -10px 7px 5px #DFC5FE;
+}
+.row-photo {
+    display: -ms-flexbox; 
+    display: flex;
+    -ms-flex-wrap: wrap; 
+    flex-wrap: wrap;
+    padding: 0 2px;
+}
+.container-photo {
+    position: relative;
+}
+.mySlides {
+    display: none;
+}
+.cursor {
+    cursor: pointer;
+}
+.prev,
+.next {
+    cursor: pointer;
+    position: absolute;
+    top: 40%;
+    width: auto;
+    padding: 16px;
+    margin-top: -50px;
+    color: black;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    -webkit-user-select: none;
+}
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+.prev:hover,
+.next:hover {
+    background-color: #DFC5FE;
+}
+.numbertext {
+    color: black;
+    font-weight: bold;
+    font-size: 16px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+}
+.row:after {
+    display: table;
+    clear: both;
+}
+.col-sm {
+    float: left;
+    width: 15%;
+}
+.demo {
+    opacity: 0.7;
+    border-radius: 7%;
+}
+.active,
+.demo:hover {
+    opacity: 1;
+}
+.back_to_top {
+    position: fixed;
+    bottom: 80px;
+    right: 40px;
+    z-index: 9999;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    background: #FFE4C4;
+    color: #444;
+    cursor: pointer;
+    border-radius: 2px;
+    display: none;
+}
+  
+.back_to_top:hover {
+    background: #FFFAFA;
+}
+.back_to_top-show {
+    display: block;
+}
+.min {
+    font-size: 14pt;
+    padding-left: 57px;
+}
+  
+
