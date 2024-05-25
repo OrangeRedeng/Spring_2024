@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}"
+      lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Мои личные заказы</title>
+</head>
+<body class="view">
+<div layout:fragment="content" class="top">
+    <h1>Мои личные заказы</h1>
+    <h1 style="text-align: center">Завершенные</h1>
+    <div class="container rounded bg-white mt-5 mb-5 shadow p-3 mb-5 bg-white rounded zoom"
+         th:each="order : ${customOrdersClose}"
+         style="background: linear-gradient(to right, rgba(84,78,78,0.09), rgb(255,255,255));">
+        <div class="row">
+            <div class="col-md-3 border-right">
+                <div class="p-3 py-5">
+                    <div class="col-md-6"><h4 class="labels">Статус</h4>
+                        <p style="font-size: 20px; text-align: center" th:text="${order.status.getStatusText()}"></p>
+                    </div>
+                    <div class="col-md-6"><h4 class="labels">Дата заказа</h4>
+                        <p style="font-size: 20px; text-align: center" th:text="${order.createdWhen}"></p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <a th:href="'/customOrders/detailed/' + ${order.id}"
+                       class="btn btn-outline-warning zoom">Подробнее</a>
+                </div>
+            </div>
+            <div class="col-md-5 border-right" style="padding-left: 10%; text-align: center">
+                <div class="p-3 py-5">
+                    <div class="col-md-12"><h4 class="labels">Имя заказчика</h4>
+                        <p style="font-size: 20px" th:text="${order.users.firstName}"></p>
+                    </div>
+                </div>
+                <div class="col-md-12" style="float: bottom"><h4 class="labels"
+                                                                 th:text="${order.title} + ' заказ номер'"></h4>
+                    <p style="font-size: 20px" th:text="${order.number}"></p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="p-3 py-5">
+                    <div style="float: right"><h4 class="labels">Имя кондитера</h4>
+                        <p style="font-size: 20px; text-align: center"
+                           th:text="${order.userConfectioners.firstName}"></p>
+                        <h4 class="labels">Дата доставки</h4>
+                        <p style="font-size: 20px; text-align: center; float: bottom"
+                           th:text="${order.deliveryDate}"></p>
+                    </div>
+                </div>
+                <div class="col-md-12" style="float: bottom"><h4 class="labels">Цена</h4>
+                    <p style="font-size: 20px" th:text="${order.price} + ' руб.'"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <nav aria-label="Pagination" th:if="${customOrdersClose.totalPages gt 0}">
+        <ul class="pagination justify-content-center font-weight-bold">
+            <li class="page-item" th:classappend="${customOrdersClose.number eq 0} ? 'disabled'">
+                <a class="page-link"
+                   th:href="@{/customOrders/myCustomOrderClose?page={id}(id=${customOrdersClose.number lt 2 ? 1 : customOrdersClose.number})}"
+                   aria-label="Previous" title="Previous Page" data-toggle="tooltip">
+                    <span aria-hidden="true">&laquo;</span>
+                </a>
+            </li>
+            <li class="page-item"
+                th:each="i : ${#numbers.sequence(1, customOrdersClose.totalPages, 1)}"
+                th:classappend="${i eq customOrdersClose.number + 1} ? 'active'">
+                <a class="page-link" th:href="@{/customOrders/myCustomOrderClose?page={id}(id=${i})}" th:text="${i}"
+                   th:title="${'Page '+ i}" data-toggle="tooltip"></a>
+            </li>
+            <li class="page-item"
+                th:classappend="${customOrdersClose.number eq customOrdersClose.totalPages - 1} ? 'disabled'">
+                <a class="page-link"
+                   th:href="@{/customOrders/myCustomOrderClose?page={id}(id=${customOrdersClose.number + 2})}"
+                   aria-label="Next" title="Next Page" data-toggle="tooltip">
+                    <span aria-hidden="true">&raquo;</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <div style="margin-top: 100%; margin-right: 30px" class="text-center">
+        <img src="/images/logoBot.png" alt="" width="400" height="400">
+    </div>
+</div>
+</body>
+</html>

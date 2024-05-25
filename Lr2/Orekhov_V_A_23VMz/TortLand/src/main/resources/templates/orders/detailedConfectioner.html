@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+      layout:decorate="~{layout}"
+      lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Мои заказы</title>
+</head>
+<body class="view">
+<div layout:fragment="content" class="top">
+    <h1 style="text-align: center; margin-top: 30px">Торт и заказчик</h1>
+    <div class="row" style="margin-top: 2%">
+        <div class="card shadow p-3 mb-5 rounded col-sm-6 zoom"
+             style="width: 25rem; background: linear-gradient(to right, rgba(215,65,119,0.13), rgba(255,233,138,0.15)); border-radius: 7%!important;">
+            <img th:src="${cake.previewImagePlug}" class="card-img-top rounded-circle shadow mb-3 p-1 bg-body"
+                 style="border-radius: 10%!important;">
+            <div class="card-body" style="text-align: center">
+                <h4 class="card-title" th:text="${cake.name}"></h4>
+                <p class="card-title" th:text="${cake.shortDescription}"></p>
+                <div class="row row-cols-1 row-cols-md-1 g-4">
+                    <a th:href="'/cakes/info/'+${cake.id}" class="btn btn-outline-primary" th:if="${!cake.isDeleted}">Подробнее</a>
+                    <p th:if="${cake.isDeleted}">Этот торт больше не продается</p>
+                </div>
+            </div>
+        </div>
+        <div class="container py-5 h-100 col-sm-6" style="margin-bottom: 10%">
+            <div class="row justify-content-center align-items-center h-100">
+                <div class="col col-md-9">
+                    <div style="border-radius: 15px;">
+                        <div class="card-body p-4">
+                            <div class="d-flex text-black">
+                                <div class="flex-shrink-0">
+                                    <img th:src="${order.users.plug}"
+                                         alt="Generic placeholder image"
+                                         class="img-fluid rounded-circle shadow-lg mb-5 bg-body rounded"
+                                         style="width: 180px; border-radius: 10%!important;">
+                                </div>
+                                <div class="flex-grow-1 ms-3">
+                                    <h5 class="mb-1" style="color: white; padding-top: 7px"
+                                        th:text="${order.users.firstName}">
+                                    </h5>
+                                    <h4 th:text="${order.users.lastName}"></h4>
+                                    <h4 th:text="${order.users.middleName}"></h4>
+
+                                    <div class="justify-content-start rounded-3 p-2 mb-2"
+                                         style="background-color: #efefef; margin-top: 40px">
+                                        <div>
+                                            <p class="small text-muted mb-1">Номер телефона</p>
+                                            <p class="mb-0" th:text="${order.users.phone}"></p>
+                                            <p th:if="${order.users.isDeleted}" class="small text-muted mb-1">Статус</p>
+                                            <p style="color: #ff2400"  th:if="${order.users.isDeleted}" class="mb-0" >Заблокирован</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <h1 style="text-align: center; margin-top: 15%">Описание заказа</h1>
+    <table style="margin-left: 10%; margin-bottom: 15%">
+        <tbody>
+        <tr>
+            <td class="name"><span>Масса</span></td>
+            <td class="cur" th:text="${order.weightFrom} + ' кг.'"></td>
+        </tr>
+        <tr>
+            <td class="name"><span>Начинка</span></td>
+            <td class="cur" th:text="${order.filling.name}"></td>
+        </tr>
+        <tr>
+            <td class="name"><span>Город</span></td>
+            <td class="cur" th:text="${order.city.getCityText()}"></td>
+        </tr>
+        <tr>
+            <td class="name"><span>Адрес</span></td>
+            <td class="cur" th:text="${order.address}"></td>
+        </tr>
+        <tr>
+            <td class="name"><span>Дата доставки</span></td>
+            <td class="cur" th:text="${order.deliveryDate}"></td>
+        </tr>
+        <tr>
+            <td class="name"><span>Цена</span></td>
+            <td class="cur" th:text="${order.filling.pricePer * order.weightFrom} + ' руб.'"></td>
+        </tr>
+        <tr sec:authorize="hasRole('admin')">
+            <td class="name"><span>id</span></td>
+            <td class="cur" th:text="${order.id}"></td>
+        </tr>
+        <tr sec:authorize="hasRole('admin')">
+            <td class="name"><span>number</span></td>
+            <td class="cur" th:text="${order.number}"></td>
+        </tr>
+        <tr sec:authorize="hasRole('admin')">
+            <td class="name"><span>deliveryDate</span></td>
+            <td class="cur" th:text="${order.deliveryDate}"></td>
+        </tr>
+        <tr sec:authorize="hasRole('admin')">
+            <td class="name"><span>status</span></td>
+            <td class="cur" th:text="${order.status.getStatusText()}"></td>
+        </tr>
+        <tr sec:authorize="hasRole('admin')">
+            <td class="name"><span>title</span></td>
+            <td class="cur" th:text="${order.title}"></td>
+        </tr>
+        <tr sec:authorize="hasRole('admin')">
+            <td class="name"><span>activity</span></td>
+            <td class="cur" th:text="${order.activity}"></td>
+        </tr>
+        <tr sec:authorize="hasRole('admin')">
+            <td class="name"><span>createdBy</span></td>
+            <td class="cur" th:text="${order.createdBy}"></td>
+        </tr>
+        <tr sec:authorize="hasRole('admin')">
+            <td class="name"><span>createdWhen</span></td>
+            <td class="cur" th:text="${order.createdWhen}"></td>
+        </tr>
+        <tr sec:authorize="hasRole('admin')">
+            <td class="name"><span>updatedWhen</span></td>
+            <td class="cur" th:text="${order.updatedWhen}"></td>
+        </tr>
+        <tr sec:authorize="hasRole('admin')">
+            <td class="name"><span>updatedBy</span></td>
+            <td class="cur" th:text="${order.updatedBy}"></td>
+        </tr>
+        </tbody>
+    </table>
+    <div sec:authorize="hasRole('CONFECTIONER')" style="margin-top: 15%" th:if="${order.status.getStatusText() eq 'Ожидание'}">
+        <form method="POST" th:action="@{/orders/detailed}" th:object="${orderForm}">
+            <input type="hidden" th:value="${order.id}" name="id">
+            <div class="mb-3 col-sm-4">
+                <label for="deliveryDate" class="form-label">Дата доставки</label>
+                <input name="deliveryDate" th:value="${order.deliveryDate}" type="date" class="form-control"
+                       id="deliveryDate">
+                <div
+                        class="alert alert-warning"
+                        th:if="${#fields.hasErrors('deliveryDate')}"
+                        th:errors="*{deliveryDate}">
+                </div>
+            </div>
+            <button type="submit" class="btn btn-outline-warning zoom">Принять</button>
+        </form>
+        <div class="row" style="margin-bottom: 10%">
+            <div class="col">
+                <button
+                        class="btn btn-outline-secondary zoom"
+                        style="float: left; margin-top: 10px; padding-right: 38px;"
+                        onclick="window.history.back()">Назад
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="row" sec:authorize="hasRole('admin')">
+        <div class="col-5 shadow mb-3 p-1 bg-body"
+             style="background: linear-gradient(to right, rgba(215,65,119,0.13), rgba(255,233,138,0.15)); border-radius: 5%!important;">
+            <h1 style="text-align: center">Подробное описание заказчика</h1>
+            <div class="flex-shrink-0" style="text-align: center">
+                <img th:src="${order.users.plug}"
+                     alt="Generic placeholder image" class="img-fluid rounded-circle shadow-lg mb-5 bg-body rounded"
+                     style="width: 180px; border-radius: 10%!important;">
+                <span class="text-black-50"><p style="font-size: 30px">Аватар заказчика</p></span>
+            </div>
+            <table>
+                <tbody>
+                <tr>
+                    <td class="name"><span>id</span></td>
+                    <td class="cur" th:text="${order.users.id}"></td>
+                </tr>
+                <tr>
+                    <td class="name"><span>role</span></td>
+                    <td class="cur" th:text="${order.users.role.title}"></td>
+                </tr>
+                <tr>
+                    <td class="name"><span>login</span></td>
+                    <td class="cur" th:text="${order.users.login}"></td>
+                </tr>
+                <tr>
+                    <td class="name"><span>email</span></td>
+                    <td class="cur" th:text="${order.users.email}"></td>
+                </tr>
+                <tr>
+                    <td class="name"><span>middleName</span></td>
+                    <td class="cur" th:text="${order.users.middleName}"></td>
+                </tr>
+                <tr>
+                    <td class="name"><span>firstName</span></td>
+                    <td class="cur" th:text="${order.users.firstName}"></td>
+                </tr>
+                <tr>
+                    <td class="name"><span>lastName</span></td>
+                    <td class="cur" th:text="${order.users.lastName}"></td>
+                </tr>
+                <tr>
+                    <td class="name"><span>birthDate</span></td>
+                    <td class="cur" th:text="${order.users.birthDate}"></td>
+                </tr>
+                <tr>
+                    <td class="name"><span>phone</span></td>
+                    <td class="cur" th:text="${order.users.phone}"></td>
+                </tr>
+                <tr>
+                    <td class="name"><span>city</span></td>
+                    <td class="cur" th:text="${order.users.city.getCityText()}"></td>
+                </tr>
+                <tr>
+                    <td class="name"><span>address</span></td>
+                    <td class="cur" th:text="${order.users.address}"></td>
+                </tr>
+                <tr>
+                    <td class="name"><span>createdBy</span></td>
+                    <td class="cur" th:text="${order.users.createdBy}"></td>
+                </tr>
+                <tr>
+                    <td class="name"><span>createdWhen</span></td>
+                    <td class="cur" th:text="${order.users.createdWhen}"></td>
+                </tr>
+                <tr>
+                    <td class="name"><span>updatedWhen</span></td>
+                    <td class="cur" th:text="${order.users.updatedWhen}"></td>
+                </tr>
+                <tr>
+                    <td class="name"><span>updatedBy</span></td>
+                    <td class="cur" th:text="${order.users.updatedBy}"></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-5 shadow mb-3 p-1 bg-body"
+             style="background: linear-gradient(to right, rgba(255,233,138,0.15), rgba(215,65,119,0.13)); border-radius: 5%!important; margin-left: 15%">
+            <h1 style="text-align: center">Подробное описание кондитера</h1>
+            <div class="flex-shrink-0" style="text-align: center">
+                <img th:src="${order.userConfectioners.plug}"
+                     alt="Generic placeholder image" class="img-fluid rounded-circle shadow-lg mb-5 bg-body rounded"
+                     style="width: 180px; border-radius: 10%!important;">
+                <span class="text-black-50"><p style="font-size: 30px">Аватар кондитера</p></span>
+            </div>
+            <table>
+                <tbody>
+                <tr>
+                    <td class="name"><span>id</span></td>
+                    <td class="cur" th:text="${order.userConfectioners.id}"></td>
+                </tr>
+                <tr>
+                    <td class="name"><span>experience</span></td>
+                    <td class="cur" th:text="${order.userConfectioners.experience}"></td>
+                </tr>
+                <tr>
+                    <td class="name"><span>aboutMe</span></td>
+                    <td class="cur" th:text="${order.userConfectioners.aboutMe}"></td>
+                </tr>
+                <tr>
+                    <td class="name"><span>role</span></td>
+                    <td class="cur" th:text="${order.userConfectioners.role.title}"></td>
+                </tr>
+                <tr>
+                    <td class="name"><span>login</span></td>
+                    <td class="cur" th:text="${order.userConfectioners.login}"></td>
+                </tr>
+                <tr>
+                    <td class="name"><span>email</span></td>
+                    <td class="cur" th:text="${order.userConfectioners.email}"></td>
+                </tr>
+                <tr>
+                    <td class="name"><span>middleName</span></td>
+                    <td class="cur" th:text="${order.userConfectioners.middleName}"></td>
+                </tr>
+                <tr>
+                    <td class="name"><span>firstName</span></td>
+                    <td class="cur" th:text="${order.userConfectioners.firstName}"></td>
+                </tr>
+                <tr>
+                    <td class="name"><span>lastName</span></td>
+                    <td class="cur" th:text="${order.userConfectioners.lastName}"></td>
+                </tr>
+                <tr>
+                    <td class="name"><span>birthDate</span></td>
+                    <td class="cur" th:text="${order.userConfectioners.birthDate}"></td>
+                </tr>
+                <tr>
+                    <td class="name"><span>phone</span></td>
+                    <td class="cur" th:text="${order.userConfectioners.phone}"></td>
+                </tr>
+                <tr>
+                    <td class="name"><span>city</span></td>
+                    <td class="cur" th:text="${order.userConfectioners.city.getCityText()}"></td>
+                </tr>
+                <tr>
+                    <td class="name"><span>address</span></td>
+                    <td class="cur" th:text="${order.userConfectioners.address}"></td>
+                </tr>
+                <tr>
+                    <td class="name"><span>createdBy</span></td>
+                    <td class="cur" th:text="${order.userConfectioners.createdBy}"></td>
+                </tr>
+                <tr>
+                    <td class="name"><span>createdWhen</span></td>
+                    <td class="cur" th:text="${order.userConfectioners.createdWhen}"></td>
+                </tr>
+                <tr>
+                    <td class="name"><span>updatedWhen</span></td>
+                    <td class="cur" th:text="${order.userConfectioners.updatedWhen}"></td>
+                </tr>
+                <tr>
+                    <td class="name"><span>updatedBy</span></td>
+                    <td class="cur" th:text="${order.userConfectioners.updatedBy}"></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <h1 style="text-align: center; margin-top: 15%" sec:authorize="hasRole('admin')">Подробное описание заказанного
+        торта</h1>
+    <table sec:authorize="hasRole('admin')" style="margin-left: 10%">
+        <tbody>
+        <tr>
+            <td class="name"><span>Название</span></td>
+            <td class="cur" th:text="${order.cake.name}"></td>
+        </tr>
+        <tr>
+            <td class="name"><span>Форма</span></td>
+            <td class="cur" th:text="${order.cake.form.getFormText()}"></td>
+        </tr>
+        <tr>
+            <td class="name"><span>Время готовки</span></td>
+            <td class="cur" th:text="${order.cake.cookingTime} + ' ч.'"></td>
+        </tr>
+        <tr>
+            <td class="name"><span>Украшения</span></td>
+            <td class="cur" th:text="${order.cake.decorating}"></td>
+        </tr>
+        <tr>
+            <td class="name"><span>Масса</span></td>
+            <td class="cur" th:text="${order.cake.weightFrom} + ' кг.'"></td>
+        </tr>
+        <tr>
+            <td class="name"><span>Город</span></td>
+            <td class="cur" th:text="${order.cake.city.getCityText()}"></td>
+        </tr>
+        <tr>
+            <td class="name"><span>id</span></td>
+            <td class="cur" th:text="${order.cake.id}"></td>
+        </tr>
+        <tr sec:authorize="hasRole('admin')">
+            <td class="name"><span>createdBy</span></td>
+            <td class="cur" th:text="${order.cake.createdBy}"></td>
+        </tr>
+        <tr sec:authorize="hasRole('admin')">
+            <td class="name"><span>createdWhen</span></td>
+            <td class="cur" th:text="${order.cake.createdWhen}"></td>
+        </tr>
+        <tr sec:authorize="hasRole('admin')">
+            <td class="name"><span>updatedWhen</span></td>
+            <td class="cur" th:text="${order.cake.updatedWhen}"></td>
+        </tr>
+        <tr sec:authorize="hasRole('admin')">
+            <td class="name"><span>updatedBy</span></td>
+            <td class="cur" th:text="${order.cake.updatedBy}"></td>
+        </tr>
+        </tbody>
+    </table>
+    <h3 sec:authorize="hasRole('admin')" style="margin-top: 5%">Краткое описание</h3>
+    <div sec:authorize="hasRole('admin')" style="margin-top: 30px">
+        <p style="font-size: 22px;" th:text="${order.cake.shortDescription}"></p>
+    </div>
+    <div style=" margin-top: 15%; margin-right: 30px" class="text-center">
+        <img src="/images/logoBot.png" alt="" width="400" height="400">
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}"
+      lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Пользователи</title>
+</head>
+<body class="view">
+<div layout:fragment="content" class="top">
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Login</th>
+            <th>Email</th>
+            <th>MiddleName</th>
+            <th>FirstName</th>
+            <th>LastName</th>
+            <th>Role</th>
+            <th>Phone</th>
+            <th>Address</th>
+            <th>Blocking</th>
+            <th style="text-align: center">Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="user : ${users}">
+            <td th:text="${user.login}"></td>
+            <td th:text="${user.email}"></td>
+            <td th:text="${user.middleName}"></td>
+            <td th:text="${user.firstName}"></td>
+            <td th:text="${user.lastName}"></td>
+            <td th:text="${user.role.title}"></td>
+            <td th:text="${user.phone}"></td>
+            <td th:text="${user.address}"></td>
+            <td th:text="${user.isDeleted}"></td>
+            <td>
+                <div class="g-4" style="text-align: center; display: inline-block!important; width: auto!important">
+                    <a class="btn btn-secondary ms-1" th:href="'/users/detailedInformation/' + ${user.id}">Подробнее</a>
+                    <a class="btn btn-warning ms-1" th:href="'/users/update/' + ${user.id}">Изменить</a>
+                    <a class="btn btn-danger ms-1"
+                       onclick="return confirm('Вы действительно хотите заблокировать пользователя ?')"
+                       th:href="'/users/delete/' + ${user.id}" th:if="${!user.isDeleted}">Заблокировать</a>
+                    <a class="btn btn-dark ms-1"
+                       onclick="return confirm('Вы действительно хотите разблокировать пользователя ?')"
+                       th:if="${user.isDeleted}" th:href="'/users/unblock/' + ${user.id}">Разблокировать</a>
+                </div>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <nav aria-label="Pagination" th:if="${users.totalPages gt 0}">
+        <ul class="pagination justify-content-center font-weight-bold">
+            <li class="page-item" th:classappend="${users.number eq 0} ? 'disabled'">
+                <a class="page-link"
+                   th:href="@{/users/allUsers?page={id}(id=${users.number lt 2 ? 1 : users.number})}"
+                   aria-label="Previous" title="Previous Page" data-toggle="tooltip">
+                    <span aria-hidden="true">&laquo;</span>
+                </a>
+            </li>
+            <li class="page-item"
+                th:each="i : ${#numbers.sequence(1, users.totalPages, 1)}"
+                th:classappend="${i eq users.number + 1} ? 'active'">
+                <a class="page-link" th:href="@{/users/allUsers?page={id}(id=${i})}" th:text="${i}"
+                   th:title="${'Page '+ i}" data-toggle="tooltip"></a>
+            </li>
+            <li class="page-item" th:classappend="${users.number eq users.totalPages - 1} ? 'disabled'">
+                <a class="page-link"
+                   th:href="@{/users/allUsers?page={id}(id=${users.number + 2})}"
+                   aria-label="Next" title="Next Page" data-toggle="tooltip">
+                    <span aria-hidden="true">&raquo;</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</div>
+</body>
+</html>
