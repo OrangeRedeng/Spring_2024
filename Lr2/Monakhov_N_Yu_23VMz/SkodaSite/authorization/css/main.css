@@ -1,0 +1,74 @@
+.avtor p {
+    margin: 10px 0;
+}
+
+.avtor form {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+}
+
+.avtor input {
+    margin: 10px 0;
+    padding: 10px;
+    border: unset;
+    border-bottom: 2px solid #e3e3e3;
+    outline: none;
+}
+
+.avtor button {
+    padding: 10px;
+    background: green;
+    border: unset;
+    cursor: pointer;
+}
+
+.msg {
+    border: 2px solid #ffa908;
+    border-radius: 3px;
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.logout {
+    color: #b7625c;
+}
+.avtor{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Montserrat, sans-serif;
+}
+.title{
+    align-items: flex-start;
+
+}
+.title h3{
+    text-align: center;
+    
+}
+.tableProfile td{
+    text-align: center;
+    width: 13%;
+    max-width: 13%;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+.tableProfile{
+    width: 78%;
+    margin-right: 11%;
+    margin-left: 11%;
+    border: 2px solid #000;
+}
+.profile{
+    height: 100vh;
+}
+p{
+    color: darkred;
+}
+
