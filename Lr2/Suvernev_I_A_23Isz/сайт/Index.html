@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    
+    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="CSS/greed.css">
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="https://comedy.nnov.ru/favicon.ico" type="image/x-icon"/>
+    <title>Комедiя</title>
+    <script src="JS/time.js"></script>
+    <script src="JS/addfavorite.js"></script>
+</head>
+
+<body class="conteineroll" onLoad="getSecs()">
+
+    <header>
+        <center style="margin-bottom: 1%">
+            <img class="log" src="IMG/logo.png">
+            <p>Комедiя</p>
+        </center>
+    </header>
+    <nav>
+        <ul class="navigation">
+            <li><a href="Index.html">Главная</a></li>
+            <li><a href="akcii.html">Акции</a></li>
+            <li><a href="#">Афиша</a>
+                <ul>
+                    <li><a href="premiery.html">Премьеры</a></li>
+                    <li><a href="laureaty.html">Лауреаты премий</a></li>
+                    <li><a href="repertuar.html">Весь репертуар</a></li>
+                </ul>
+            </li>
+            <li><a href="meropriytie.html">Мероприятия</a></li>
+            <li><a href="pomosh.html">Помощь</a></li>
+            <li><a href="#">О театре</a>
+                <ul>
+                    <li><a href="sostav.html">Актерский состав</a></li>
+                    <li><a href="istoria.html">История театра</a></li>
+                </ul>
+            </li>
+
+            <li><a href="photo.html">Фотогалерея</a></li>
+            <li><a href="contact.html">Контакты</a></li>
+            <li><a href="Otzyv.html">Отзывы</a></li>
+        </ul>
+    </nav>
+
+
+    <div class="row" style="margin-bottom: 1%">
+        <div class="col-12">
+            <div>
+                <h1 align="center">Комедiя</h1>
+                <p align="center">Мы рады приветствовать вас на сайте Нижегородского театра «Комедiя»! Здесь вы сможете
+                    получить подробную
+                    информацию о наших спектаклях и актуальных новостях театральной жизни. Отзывы и фото, ответы на
+                    интересующие вас вопросы.
+                    Мы очень рады каждому зрителю, всегда ждем вас на спектаклях и желаем прекрасных, волшебных вечеров
+                    в нашем театре!
+                </p>
+                <hr>
+                <p class="p">
+                    На театральных сценах ставятся спектакли в разных комедийных жанрах, начиная с классики и заканчивая
+                    современными
+                    мюзиклами. В репертуаре присутствуют трагикомедии и лирика, памфлеты, сатирические зарисовки и этюды
+                    по мотивам новелл.
+                    Юным зрителям предлагают посмотреть веселые сказочные постановки, куда нередко включаются
+                    интерактивные забавы. Взрослые
+                    спектакли, часть из которых имеет возрастное ограничение 16+, затрагивают более осмысленные темы,
+                    дают возможность
+                    посмеяться от души или посмотреть на мир с иной точки зрения.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="banner" align="center">
+        <div class="banner image">
+            <a href="https://nn.kassir.ru/" title="KASSIR.RU" target="_blank" rel="nofollow"><img
+                    src="IMG/banner.png" /></a>
+        </div>
+    </div>
+    <div class="row" align="center">
+        <div class="col-4">
+            <div c>
+                <h2>Самый посещаемый театр</h2>
+                <p>
+                    Театр участвует в фестивальном движении, принимая гостей на своей площадке и выезжая в другие
+                    города.
+                    Он был в составе учредителей фестиваля-конкурса имени Евгения Евстигнеева и является организатором
+                    многочисленных
+                    проектов, осуществляемых в Нижнем Новгороде.
+                </p>
+            </div>
+        </div>
+
+        <div class="col-4">
+            <div>
+                <h2>Великолепная актерская труппа</h2>
+                <p>
+                    Заслуженные артисты России и молодые выдающиеся актеры, заставляют зрителей буквально проживать
+                    спектакли благодаря своей игре и погружению в роль
+                </p>
+            </div>
+        </div>
+        <div class="col-4">
+            <div>
+                <h2>Аудитория всех возрастов</h2>
+                <p>
+                    Спектакли нередко сопровождаются аншлагами, зрители с нетерпением ждут ежегодных премьер,
+                    а малыши — сказочных постановок и новогодних елок
+                </p>
+            </div>
+        </div>
+        <p>
+            Вы здесь уже:
+            <span id="time" style="color:rgb(255, 162, 162);font-size:150%;font-weight:bold;"></span>
+            минут/секунд.
+        </p>
+    </div>
+    <footer>
+        <div>
+            <div class="row">
+                <div class="col-3">
+                    <div class="ncont">
+                        <h2 class="ft minitxt">Карта сайта</h2>
+
+                        <nav>
+                            <ul class="pod">
+                                <li class="pod"><a href="Index.html">Главная</a></li>
+                                <ul>
+                                    <li class="pod"><a href="akcii.html">Акции</a></li>
+                                </ul>
+                                <li><a href="#">Афиша</a>
+                                    <ul>
+                                        <li class="pod"><a href="premiery.html">Премьеры</a></li>
+                                        <li class="pod"><a href="laureaty.html">Лауреаты премий</a></li>
+                                        <li class="pod"><a href="repertuar.html">Весь репертуар</a></li>
+                                    </ul>
+                                </li>
+                                <li class="pod"><a href="meropriytie.html">Мероприятия</a></li>
+                                <li class="pod"><a href="pomosh.html">Помощь</a></li>
+                                <li class="pod"><a href="#">О театре</a>
+                                    <ul>
+                                        <li class="pod"><a href="sostav.html">Актерский состав</a></li>
+                                        <li class="pod"><a href="istoria.html">История театра</a></li>
+                                    </ul>
+                                </li>
+
+                                <li class="pod"><a href="photo.html">Фотогалерея</a></li>
+                                <li class="pod"><a href="contact.html">Контакты</a></li>
+                                <li class="pod"><a href="Otzyv.html">Отзывы</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <p class="ft minitxt"> Контакты </p>
+                    <p></p>
+                    <p class="ft minitxt">
+                        ул. Грузинская, д. 23
+
+                    </p>
+                    <p></p>
+                    <p class="ft minitxt">
+                        +7 (831) 434-04-24
+                    </p>
+                    <p></p>
+                    <p class="ft minitxt">
+                        Билетные кассы – с 10:00 до 20:00
+                    </p>
+                    <p class="ft minitxt">
+                        Перерыв – с 14:20 до 15:00.
+                    </p>
+                </div>
+                <div class="col-3">
+                    <div class="ncont">
+
+                        <img src="IMG/razrab.png" style="width:100%">
+                        <p class="ft minitxt">Сайт разработчика здесь - <a
+                                href="https://vk.com/acstrimist"target="_blank">сувернев </a></li>
+                        </p>
+                    </div>
+                </div>               
+                <div class="clearfix"></div>
+            </div>
+            <div class="col-12" align="center">
+             <a href="#" onclick="return addFavorite(this);">Добавить в избранное</a>
+            <p class="niz">www.техт.com &#9400; 2010-2015. Текст</p>
+        </div>
+    </div>
+        
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="CSS/greed.css">
+    <link rel="shortcut icon" href="https://comedy.nnov.ru/favicon.ico" type="image/x-icon"/>
+    <meta charset="UTF-8">
+    <title>Помощь</title>
+</head>
+
+<body>
+    <header>
+        <center style="margin-bottom: 1%">
+            <img class="log" src="IMG/logo.png">
+            <p>Комедiя</p>
+        </center>
+    </header>
+    <nav>
+        <ul class="navigation">
+            <li><a href="Index.html">Главная</a></li>
+            <li><a href="akcii.html">Акции</a></li>
+            <li><a href="#">Афиша</a>
+                <ul>
+                    <li><a href="premiery.html">Премьеры</a></li>
+                    <li><a href="laureaty.html">Лауреаты премий</a></li>
+                    <li><a href="repertuar.html">Весь репертуар</a></li>
+                </ul>
+            </li>
+            <li><a href="meropriytie.html">Мероприятия</a></li>
+            <li><a href="pomosh.html">Помощь</a></li>
+            <li><a href="#">О театре</a>
+                <ul>
+                    <li><a href="sostav.html">Актерский состав</a></li>
+                    <li><a href="istoria.html">История театра</a></li>
+                </ul>
+            </li>
+
+            <li><a href="photo.html">Фотогалерея</a></li>
+            <li><a href="contact.html">Контакты</a></li>
+            <li><a href="Otzyv.html">Отзывы</a></li>
+        </ul>
+    </nav>
+    <div class="conteiner">
+          <form NAME = "f" class="transparent">
+               <div class="form-inner">
+                   <h3>Заявка на обратный звонок</h3>
+                   <label for="name"> Имя </label><input type="text" name="surname" size=20 required placeholder="Введите имя">
+                   <label for="surname">Фамилия</label><input type="text" name="name" size=20 required
+                   placeholder="Введите фамилию">
+                   <label for="patronimyc">Очество</label><input type="text" name="patronimyc" size=20 required
+                placeholder="Введите отчество">
+                <label for="phone">Телефон</label><input type="text" name="phone" size=12 required
+                placeholder="+7(xxx)xxx-xx-xx">
+                <label for="type">Вид помощи</label><select name="type" required>
+                    <option>Выберите вид помощи</option>
+                    <option>Подбор спектакля</option>
+                    <option>Бронь билетов</option>
+                </select>
+                <input type="submit"; id="1" class="floating-button" onClick="Complete()" value="Отправить">
+                 </div>
+         </form>
+         <script>
+            function Complete() {
+                var Elem = "Отправленные данные:" +
+                    "\nИмя: " + document.f.name.value +
+                    "\nФамилия: " + document.f.surname.value +
+                    "\nОтчество: " + document.f.patronimyc.value +
+                    "\nВаш номер телефона: " + document.f.phone.value +
+                    "\nВаш запрос: " + document.f.type.value 
+                    + "\nВ ближашее время с вами свяжутся, спасибо за обращение!";
+                alert(Elem);
+            }
+        </script>
+    </div>
+
+    
+</div>
+<footer>
+    <div>
+        <div class="row">
+            <div class="col-3">
+                <div class="ncont">
+                    <h2 class="ft minitxt">Карта сайта</h2>
+                
+                    <nav>
+                        <ul class="pod">
+                            <li class="pod"><a href="Index.html">Главная</a></li>
+                            <ul>
+                                <li class="pod"><a href="akcii.html">Акции</a></li>
+                            </ul>
+                            <li><a href="#">Афиша</a>
+                                <ul>
+                                    <li class="pod"><a href="premiery.html">Премьеры</a></li>
+                                    <li class="pod"><a href="laureaty.html">Лауреаты премий</a></li>
+                                    <li class="pod"><a href="repertuar.html">Весь репертуар</a></li>
+                                </ul>
+                            </li>
+                            <li class="pod"><a href="meropriytie.html">Мероприятия</a></li>
+                            <li class="pod"><a href="pomosh.html">Помощь</a></li>
+                            <li class="pod"><a href="#">О театре</a>
+                                <ul>
+                                    <li class="pod"><a href="sostav.html">Актерский состав</a></li>
+                                    <li class="pod"><a href="istoria.html">История театра</a></li>
+                                </ul>
+                            </li>
+
+                            <li class="pod"><a href="photo.html">Фотогалерея</a></li>
+                            <li class="pod"><a href="contact.html">Контакты</a></li>
+                            <li class="pod"><a href="Otzyv.html">Отзывы</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <div class="col-6">
+                <p class="ft minitxt"> Контакты </p>
+                <p></p>
+                <p class="ft minitxt">
+                    ул. Грузинская, д. 23
+
+                </p>
+                <p></p>
+                <p class="ft minitxt">
+                    +7 (831) 434-04-24
+                </p>
+                <p></p>
+                <p class="ft minitxt">
+                    Билетные кассы – с 10:00 до 20:00
+                </p>
+                <p class="ft minitxt">
+                    Перерыв – с 14:20 до 15:00.
+                </p>
+            </div>
+            <div class="col-3">
+                <div class="ncont">
+                   
+                    <img src="IMG/razrab.png" style="width:100%">
+                     <p class="ft minitxt">Сайт разработчика здесь - <a href="https://vk.com/acstrimist"target="_blank">сувернев </a></li> </p>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+        <p class="niz">www.техт.com &#9400; 2010-2015. Текст</p>
+    </div>
+</footer>
+</body>
+
+</html>
