@@ -1,0 +1,85 @@
+body {
+    background-color: white;
+    margin:0px;
+    padding: 0px;
+    color: black;
+}
+header {
+    height: 40px;
+    width: 100%;
+    min-width: 1000px;
+    border-bottom: 1px solid black;
+    background-color: black;
+    color: white;
+    display: inline-flex;
+    line-height: 40px;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+    .logo {
+        vertical-align: middle;
+        height: 100%;
+        padding: 0px 10px 0px 10px;
+        width: 21%;
+    }
+    .menu {
+        width: 65%;
+        text-align: center;
+    }
+        .menu ul {
+            margin:0px;
+            padding:0px;
+            list-style-type: none;
+        }
+            .menu li {
+                float: left;
+                padding: 0px 10px 0px 10px;
+            }
+
+            .menu li a{
+                text-decoration: none;
+                color:white;
+            }
+
+            .menu li a:hover{
+                text-decoration: underline;
+                color:#d1d1d1;
+            }
+
+    .timer {
+        width: 14%;
+        text-align: center;
+    }
+ 
+.container {
+    width: 1000px;
+    padding: 15px;
+    margin: 0 auto;
+    overflow: hidden;
+}    
+
+.content {
+    
+}
+
+.main-block {
+    display: inline-block;
+}
+
+
+.main-image img {
+    padding: 10px;
+    border: 1px solid lightgray;
+    max-width:500px;
+    border-radius: 7px;
+}
+
+.main-image.left-part {
+    float:left;
+    margin-right:30px;
+}
+
+.main-image.right-part {
+    float:right;
+    margin-left:30px;
+}
