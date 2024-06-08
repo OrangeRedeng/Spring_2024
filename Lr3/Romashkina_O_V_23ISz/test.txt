@@ -1,0 +1,3 @@
+MyTestForIRIT
+new Test
+конфликт

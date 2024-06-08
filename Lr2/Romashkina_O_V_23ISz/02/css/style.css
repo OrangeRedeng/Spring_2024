@@ -1,0 +1,277 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  color: #000205;
+}
+*{
+  scroll-behavior:smooth;/*плавная прокрyтка к якорю (ссылке)*/
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-weight: bold;
+  text-align: center;
+  padding-bottom: 3vw;
+  color: #f8d92b;
+  font-family: 'Poppins', sans-serif;
+  /* font-size: 3vw; */
+}
+
+.layout_padding h1{
+  padding-bottom: 4vw;
+}
+.layout_padding {
+  padding: 75px 0;
+
+}
+
+/*header section*/
+.top_container {
+  font-family: 'Poppins', sans-serif;
+  
+}
+ header{
+  display: flex;
+  flex-direction: row;
+  align-items:center;
+  
+}
+ 
+
+.custom_nav-container.navbar-expand-lg .navbar-nav .nav-link {
+  padding: 10px 20px;
+  color: #f8d92b;
+  text-align: center;
+  text-transform: uppercase;
+  
+  
+}
+
+a,
+a:hover,
+a:focus {
+  text-decoration: none;
+  /* margin-top: 30px; */
+  font-size: 20px;
+  font-weight: bold;
+}
+
+a:hover,
+a:focus {
+  color: initial;
+}
+
+.top_container.sub_page {
+  height: auto;
+}
+
+
+
+.custom_nav-container .nav_search-btn {
+  background-image: url(../images/search-icon.png);
+  background-size: 22px;
+  background-repeat: no-repeat;
+  background-position-y: 7px;
+  width: 35px;
+  height: 35px;
+  padding: 0;
+  border: none;
+}
+
+.navbar-brand,
+.navbar-brand:hover {
+  font-size: 30px;
+  color: #f8d92b;
+  font-weight: bold;
+}
+
+.nav-link img{
+
+  width: 2vw;
+  /* padding-bottom: 50px; */
+ 
+}
+
+.custom_nav-container {
+  z-index: 99999;
+  padding: 15px 0;
+}
+
+.custom_nav-container .navbar-toggler {
+  outline: none;
+}
+
+.custom_nav-container .navbar-toggler .navbar-toggler-icon {
+  
+  background-image: url(../images/menu.png);
+  background-size: 55px;
+}
+
+/*end header section*/
+
+/* hero section */
+.hero_section-container {
+  /* width: 0%; */
+  /* margin: 0 auto; */
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content:space-between;
+  /* align-items: stretch; */
+}
+
+
+.hero_section-container .hero_img-box {
+  width:60%;
+  /* margin: 4vw; */
+  margin-top: -45px;
+  margin-bottom: 4vw;
+}
+
+.hero_section-container .hero_img-box img {
+  width: 100%;
+}
+.hero_section-container .hero_detail-box {
+  width: 58%;
+
+}
+
+.hero_section-container .hero_detail-box .hero_detail-container {
+  padding-left: 45px;
+  padding-bottom: 15px;
+}
+
+.hero_section-container .hero_detail-box .hero_detail-container p {
+  margin: 35px 0 50px 0;
+}
+
+
+time {
+  font-size: 10vw;
+}
+.slide{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  /* justify-content: space-between; */
+  /* align-items: stretch; */
+}
+.widget-brick_week_item, .temp-max, .temp-min, .widget-brick_current, .current-temp{
+  font-size: 1,5vw;
+}
+/* end hero section */
+
+/* about section */
+.about_section {
+  background-color: #f8faf9;
+  /* font-size: 1vw; */
+}
+
+
+.about_section .row {
+  align-items: center;
+  justify-content: space-between;
+  font-size: 3vw;
+}
+
+.about_img-box img {
+  width: 130%;
+  margin-left: -20%;
+}
+
+/* .about_detail-box p {
+  margin: 45px 0;
+  font-size: 3vw;
+} */
+
+.rus-widget-square-actual,  .rus-widget-square {
+  font-size: 3vw;
+  /* width: 350px; */
+}
+/* end about section */
+
+/* practice section */
+
+.text-uppercase{
+  padding-top: 5vw;
+
+}
+.practice_container{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+
+}
+
+.practice_box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 70px 15px 0 15px;
+  transform: translateY(0);
+  transition: all .7s;
+  padding-bottom: 50px;
+}
+
+.practice_box:hover {
+  transform: translateY(-50px);
+  cursor: pointer;
+}
+
+.practice_box:hover .practice_img-box {
+  background-color: #f8faf9;
+
+}
+
+.practice_img-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 225px;
+  height: 295px;
+  border-radius: 90px;
+  background-color: #ffffffee;
+  border-color: #f8d92b;
+  border-width: 1vw;
+  border-style: double;
+  /* background-color: #e5f3f5; */
+
+}
+
+
+.practice_box h4 {
+  margin-top: 15px;
+}
+
+.practice_img-box img {
+  width: 120px;
+}
+
+.heading-text {
+  padding: 0;
+  margin: 0;
+  color: #fddd33;
+  font-weight: bold;
+}
+
+
+/* end Practice section */
+
+.footer_section {
+  background-color: #f8faf9;
+  padding: 20px 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+.footer_section p {
+  color: #000;
+  margin: 0;
+  text-align: center;
+}
+
+.footer_section a {
+  color: #000;
+}
+
+/* end footer section*/

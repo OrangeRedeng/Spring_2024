@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <title>GD</title>
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+  <!-- fonts style -->
+  <link href="https://fonts.googleapis.com/css?family=Poppins:400,700|Roboto:400,700&display=swap" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="css/style-dark.css" rel="stylesheet" />
+  <link href="css/responsive.css" rel="stylesheet" />
+
+</head>
+
+<body>
+  <div class="top_container">
+    <!-- header section strats -->
+    <header class="header_section">
+      <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg custom_nav-container ">
+          <a class="navbar-brand" href="index-dark.html" >
+            GD
+          </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="d-flex ml-auto flex-column flex-lg-row align-items-center">
+              <ul class="navbar-nav  ">
+                
+                <li class="nav-item">
+                  <a class="nav-link" href="#Weather">Погода</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#SSR">Советы</a>
+                </li>
+
+                <li class="nav-item">
+                  <a class="nav-link" href="index.html" title="Тёмная тема"><img src="images/dark.svg" alt=""></a>
+                </li>
+
+              </ul>
+              
+            </div>
+        </nav>
+      </div>
+    </header>
+    <section class="hero_section position-relative">
+      
+      <div class="hero_section-container ">
+
+        <div class="hero_img-box">
+          <img src="images/woman-sleeping-at-night-with-cat_951778-39831-Photoroom.png-Photoroom.png" alt="">
+        </div>
+        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+          <time id="currentTime" ></time>
+        </div>
+        
+      </div>
+    </section>
+    <script>
+      var timeElement = document.getElementById('currentTime');
+      setInterval(function () {
+      var currentTime = new Date();
+      timeElement.textContent = currentTime.toLocaleTimeString();
+      }, 1000);
+    </script>
+
+  </div>
+  <!-- end header section -->
+
+
+  <!-- about section -->
+  <section class="about_section layout_padding">
+    <div class="container">
+      <a name="Weather"><h1>ПРОГНОЗ ПОГОДЫ</h1></a>
+      <div class="row">
+        <div>
+          <link href="https://api.rusmeteo.net/service/informers/css/widget-square.min.css" rel="stylesheet" type="text/css">
+          <a href="https://rusmeteo.net/weather/nizhniy-novgorod/weekly/" class="rus-widget-square" id="f485d66a9aa1bb04e42672e617adeae7" style="width:350px;background-color:rgba(0, 0, 0, 0);color:rgb(54, 57, 69)">Погода</a>
+          <script async src="https://rusmeteo.net/api/informerV2/f485d66a9aa1bb04e42672e617adeae7/" type="text/javascript"></script>
+        </div>
+        <div class="col-md-6">
+          <div class="about_img-box">
+          <img src="images/picturesque-landscape.avif" alt="">
+          </div>
+        </div>
+         
+      </div>
+    </div>
+  </section>
+
+  <!-- end about section -->
+
+<!-- practice section -->
+
+  <div class="container" name = "Morning">
+    <div class="d-flex flex-column align-items-center">
+
+    <a name="SSR"><h1 class="text-uppercase">
+      Добрый вечер!
+    </h1></a>
+    <p style="text-align: justify; font-size: 0,7vw;">
+      Для лучшего засыпания нужно обызательно поужинать (на голождый желудок часто сон не идет), проветрить спальню приготоваить кровать ко сну.
+      В это время можно принять водные процедуры. Деятельность перед сном не должна приновить стесса, потратьте это время на собственные увлечения.
+      Проведите вечер расслабленно, это спосовствует лучшему засыванию,  повысит качество сна, что поитогу наилучшим способом укрепляет нервную систему.
+  </p>
+    </div>
+    <div class="practice_container">
+      <div class="practice_box">
+        <div class="practice_img-box" title="Ужин">
+        <img src="images/cheese-meat-assortment-platter-national-culture-paris-svgrepo-com.svg" alt="" >
+      
+                </div>
+        <!-- <h4>
+            Застелить постель
+        </h4> -->
+      </div>
+      <div class="practice_box">
+        <div class="practice_img-box" title = "Приготовленная кровать">
+          <img src="images/bed-bedroom-svgrepo-com_2.svg" alt="" >
+                  </div>
+          <!-- <h4>
+              Позавтракать
+          </h4> -->
+        </div>
+        <div class="practice_box" title = "Хобби">
+           
+          <div class="practice_img-box">
+            <img src="images/decoration-svgrepo-com.svg" alt="" >
+                    </div>
+            <!-- <h4>
+                Умыться
+            </h4> -->
+          </div>
+          <div class="practice_box" title="Водные процедуры">
+              
+              <div class="practice_img-box">
+                <img src="images/bath-svgrepo-com.svg" alt=""  >
+              </div>
+              <!-- <h4>
+                  Расслабляющее хобби      
+              </h4> -->
+            </div>
+    </div> 
+  </div>
+</section>
+
+
+<!-- end practice section -->
+
+
+ 
+
+<!-- end contact section -->
+
+<!-- footer section -->
+  <section class="container-fluid footer_section">
+    <p>
+       Ромашкина Ольга Васильевна ИРИТ-23ИСз-2024г
+    </p>
+  </section>
+  <!-- footer section -->
+
+</body>
+
+</html>
