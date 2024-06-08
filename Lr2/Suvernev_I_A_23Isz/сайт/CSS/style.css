@@ -1,0 +1,541 @@
+
+.button {
+    appearance: none;
+    border: 0;
+    border-radius: 5px;
+    background: #b67b7b;
+    color: #fff;
+    padding: 8px 16px;
+    font-size: 22px;
+    font-family: 'Corbel';    
+    src : local('Corbel'),
+  }
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    max-width: 98.7%;
+  }
+
+
+.p { text-indent: 25px; }
+
+a { 
+    text-decoration: none; 
+    color: white; 
+}
+
+.conteiner {
+    width : 70%;
+    margin: 0 auto;
+}
+
+.banner {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    
+}
+
+.banner image {
+    padding:  15px;
+    width: 690px;
+    height: 100px;
+}
+
+.otzyv {   width: 75%;
+    border: 1px;
+    background-color: #ffd7d7;
+    border-radius: 5px; 
+    padding: 16px; 
+    margin: 16px auto; 
+  }
+  .otzyv img {
+    width:200px;
+    height: 200px;
+  }
+
+@font-face {
+    font-family: 'Bahnschrift';
+    /* шрифт для обычного тектса */
+  src : local('Bahnschrift'),
+    url('/fonts/Bahnschrift.ttf') format('ttf');
+    font-weight: normal;
+    font-style : normal;
+}
+
+@font-face {
+    font-family: 'Corbel';
+    /* шрифт для заголовков */
+    src        : local('Corbel'),
+        url('/fonts/Corbel.ttf') format('ttf');
+    font-weight: normal;
+    font-style : normal;
+}
+
+header {
+    font-family: 'Corbel';
+    font-size  : 24pt;
+}
+
+.head-body h1 {
+    font-family: 'Corbel';
+    font-size  : 18pt;
+}
+
+.head-body h2,h3 {
+    font-family: 'Corbel';
+    font-size  : 16pt;
+}
+
+body {
+    font-family: 'Bahnschrift';
+    font-size  : 14pt;
+}
+
+body {
+    width: 100%;
+    min-width:960px;
+    }
+    
+img {
+    width : 100%;
+
+    height: auto;
+}
+
+.log {
+    width : 4%;
+
+    height: auto;
+}
+
+.shadow:hover {
+
+    box-shadow        : 0 0 4px 4px #5c040a;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition   : all 0.5s ease;
+    transition        : all 0.5s ease;
+}
+
+.shadow {
+    -webkit-transition: all 0.5s ease;
+    -moz-transition   : all 0.5s ease;
+    transition        : all 0.5s ease;
+}
+
+.leftimg {
+    float : left;
+ 
+    margin: 0 10px 10px 0;
+}
+
+.rightimg {
+    float : right;
+
+    margin: 0 0 10px 10px;
+}
+
+body {
+
+    background-color: #fff1f3;
+}
+
+.navigation ul {
+ 
+    display         : none;
+    background-color: #ffd1d8;
+    position        : absolute;
+    top             : 100%;
+}
+
+.navigation li:hover ul {
+    display: block;
+}
+
+.navigation,
+.navigation ul {
+    margin         : 0;
+    list-style-type: none;
+}
+
+.navigation {
+    height          : 40px;
+    background-color: #321414;
+    min-width       : 1024px;
+}
+
+.navigation li {
+    float   : left;
+    position: relative;
+    height  : 100%;
+}
+
+.navigation li a {
+    display        : block;
+    padding        : 5px 2.95em;
+    width          : 100%;
+    color          : rgb(255, 255, 255);
+    text-decoration: none;
+    text-align     : left;
+    z-index: 100;
+}
+
+.navigation li ul li a {
+    padding-left: 0;
+}
+
+.navigation ul li {
+    float: left;
+}
+
+.navigation li:hover {
+    background-color: #ffd1d8;
+    z-index: 100;
+}
+
+.navigation ul li:hover {
+    background-color: #ffd1d8;
+    z-index: 100;
+}
+
+.navigation li:hover a {
+    display        : block;
+    width          : 100%;
+    color          : rgb(0, 0, 0);
+    text-decoration: none;
+    text-align     : left;
+}
+
+.navigation {
+    font-family: 'Corbel';
+    font-size  : 12pt;
+}
+
+
+
+footer {
+    /* Дно сайта (с форматированием для сетки грид) */
+    margin-top : 40px;
+    padding-top: 20px;
+    background : #321414;
+}
+
+.pod {
+      list-style: none;
+      color: rgb(255, 255, 255);
+}
+
+.ft {
+    text-align: center;
+    padding   : 0 0 0 0;
+    margin    : 0px;
+    padding   : 0 0px 0 0px;
+}
+
+.fh {
+    text-align: center;
+    padding   : 0 0 0 0;
+    margin    : 0px;
+}
+
+
+.end {
+    margin-bottom: 40px;
+}
+
+.niz {
+    text-align: center;
+    color     : white;
+    font-size : 12px;
+    margin-top: 40px;
+}
+
+.margin {
+    background: white;
+    padding   : 3px 0 3px 0;
+}
+
+.clearfix {
+    clear: both;
+}
+
+hr {
+    margin: 5px;
+}
+
+.ncont
+{
+    width: 95%;
+    margin: 0 auto;
+}
+
+.minitxt
+{
+    color     : white;
+    font-size  : 12pt;
+}
+
+.transparents {
+    position: relative;
+    max-width: 500px;
+    padding: 50px 40px;
+    margin: 50px auto 0;
+    background: #321414;
+ }
+
+ .transparents:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background:  #321414;
+ }
+
+.transparent {
+   position: relative;
+   max-width: 500px;
+   padding: 50px 40px;
+   margin: 50px auto 0;
+   background-image: url(https://www.culture.ru/storage/images/76d2f6fcdaf21dfdc9ad90fec4045d98/2baacf60240caf78d81bd26b10754f82.jpeg);
+   background-size: cover;
+}
+.transparent:before {
+   content: "";
+   position: absolute;
+   top: 0;
+   left: 0;
+   right: 0;
+   bottom: 0;
+   background: linear-gradient(to right bottom, rgba(43, 44, 78, .5), rgba(104, 22, 96, .5));
+}
+.form-inner {
+   position: relative;
+}
+.form-inner h3 {
+   position: relative;
+   margin-top: 0;
+   color: white;
+   font-family: 'Corbel', sans-serif;
+   font-weight: 300;
+   font-size: 26px;
+   text-transform: uppercase;
+}
+.form-inner h3:after {
+   content: "";
+   position: absolute;
+   left: 0;
+   bottom: -6px;
+   height: 2px;
+   width: 60px;
+   background: #853838;
+}
+.form-inner label {
+   display: block;
+   padding-left: 15px;
+   font-family: 'Corbel', sans-serif;
+   color: rgba(255, 255, 255, .6);
+   text-transform: uppercase;
+   font-size: 16px;
+}
+
+.form-inner select {
+    display: block; 
+    font-family: 'Corbel' sans-serif;
+    color : rgb(138, 133, 133);
+    text-transform: uppercase;  
+    font-size: 14px;
+    width: 100%;
+    padding: 0 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin: 10px 0 15px;
+    border-width: 0;
+    line-height: 40px;
+    border-radius: 20px;
+    text-align: center;
+ }
+
+.form-inner input {
+   display: block;
+   width: 100%;
+   padding: 0 15px;
+   margin: 10px 0 15px;
+   border-width: 0;
+   line-height: 40px;
+   border-radius: 20px;
+   color: rgba(0, 0, 0, 0.5);
+   background: white;
+   font-family: 'Corbel';
+   font-size: 16px;
+}
+.form-inner input[type="checkbox"] {
+   position: absolute;
+   opacity: 0;
+}
+#custom-checkbox+label {
+   position: relative;
+   margin: 20px 0;
+   text-transform: none;
+   cursor: pointer;
+}
+
+#custom-checkbox+label:before {
+   content: "";
+   display: inline-block;
+   width: 20px;
+   height: 20px;
+   margin-right: 10px;
+   vertical-align: text-top;
+   background: white;
+}
+#custom-checkbox:checked+label:before {
+   background: #853838;
+}
+#custom-checkbox:checked+label:after {
+   content: "";
+   position: absolute;
+   width: 2px;
+   height: 2px;
+   left: 20px;
+   top: 9px;
+   background: white;
+   box-shadow: 2px 0 0 white, 4px 0 0 white, 4px -2px 0 white, 4px -4px 0 white, 4px -6px 0 white, 4px -8px 0 white;
+   transform: rotate(45deg);
+}
+.form-inner input[type="submit"] {
+   background: #ffe1e1;
+}
+
+*{box-sizing:border-box}
+
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+.mySlides {
+    display: none;
+}
+
+.prev, .next {
+  cursor: pointer;
+  position: fixed;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 14px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+.text {
+  color: #efa8a8;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+.dot1 {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active1, .dot1:hover {
+  background-color: #717171;
+}
+
+.dot2 {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+  }
+  
+  .active2, .dot2:hover {
+    background-color: #717171;
+  }
+
+  .dot3 {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+  }
+  
+  .active3, .dot3:hover {
+    background-color: #717171;
+  }
+
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+
+
+@-webkit-keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+
+.hidden1 {
+    display: none;
+  }
+
+  .hidden2 {
+    display: none;
+  }
+
+.hidden3 {
+    display: none;
+  }
