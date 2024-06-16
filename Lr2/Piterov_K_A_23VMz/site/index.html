@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HackerSpace</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="header__logo"><p>HackerSpace</p></div>
+        <nav>
+            <div class="topnav" id="myTopnav">
+                <a href="#">HOME</a>
+                <a href="#">ABOUT</a>
+                <a href="#">LERNING</a>
+                <a href="#">CONTACT</a>
+                <a href="#" id="menu" class="icon">&#9776;</a>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="main__welcome">
+            <h1>WELCOME ON <span class="mycompany">HackerSpace</span></h1>
+            <p>на рынке обучения с 1228 года</p>
+        </div>
+
+        <div class="wrapper">
+            <div class="main__about">
+                <div class="about__left">
+                    <img class="mw-100" src="img/anon.jpg" alt="anon">
+                </div>
+                <div class="about__right">
+                    <h1>Стань хакером с нами</h1>
+                    <p>Мы обучили уже четыре дивизии анонимусов</p>
+                    <ul>
+                        <li>Учим быстро</li>
+                        <li>Учим качественно</li>
+                        <li>Учим бесплатно</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="main__team">
+            <div class="wrapper">
+                <h1>Наша Команда</h1>
+                <div class="line"></div>
+                <div class="team__cards">
+                    <div class="card">
+                        <div class="photo"></div>
+                        <h4 class="name">Раян Гослинг</h4>
+                        <p class="position">Директор</p>
+                    </div>
+                    <div class="card">
+                        <div class="photo"></div>
+                        <h4 class="name">Мики Рурк</h4>
+                        <p class="position">Главный преподаватель</p>
+                    </div>
+                    <div class="card">
+                        <div class="photo"></div>
+                        <h4 class="name">Иван Ургант</h4>
+                        <p class="position">SSM специалист</p>
+                    </div>
+                    <div class="card">
+                        <div class="photo"></div>
+                        <h4 class="name">Надежда Бабкина</h4>
+                        <p class="position">HR директор</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="main__services">
+            <div class="wrapper">
+                <h1>Мы научим</h1>
+                <div class="line"></div>
+                <p>
+                    Мы обучим тебя следующим аспектам работы разработчика
+                </p>
+                <div class="services__cards">
+                    <div class="services__card">
+                        <img src="img/bd.png" alt="database">
+                        <h4>Базы данных</h4>
+                        <p>Научим заливать и сливать данные</p>
+                    </div>
+                    <div class="services__card">
+                        <img src="img/nlp.png" alt="nlp">
+                        <h4>ООП</h4>
+                        <p>Научим мыслить объектно ориентированно</p>
+                    </div>
+                    <div class="services__card">
+                        <img src="img/terminal.png" alt="terminal">
+                        <h4>Работа в терминале</h4>
+                        <p>Будешь знать, как работает матрица</p>
+                    </div>
+                    <div class="services__card">
+                        <img src="img/python.png" alt="python">
+                        <h4>Программирование</h4>
+                        <p>Сможешь написать калькулятор на 10 языках</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <section class="contact__form">
+            <h1>Связаться с нами</h1>
+            <div class="contact__wrapper">
+                <form action="#" name="newform" method="post">
+                    <div class="form__inputs">
+                        <p>Имя <span class="red">*</span><input type="text"></p>
+                        <p>Почта <span class="red">*</span><input type="text"></p>
+                    </div>
+                    <p>Сообщение <span class="red">*</span></p>
+                    <textarea name="text"></textarea>
+                    <div class="button__block">
+                        <input type="submit" value="SEND">
+                    </div>
+                </form>
+            </div>
+        </section>
+
+    </main>
+    <footer>
+        <div class="wrapper">
+            <div class="social">
+                <img src="img/facebook.png" alt="#">
+                <img src="img/tg.png" alt="#">
+                <img src="img/vk.png" alt="#">
+                <img src="img/youtube.png" alt="#">
+                
+            </div>
+        </div>
+    </footer>
+<script src="script.js"></script>
+</body>
+
+</html>
