@@ -1,0 +1,275 @@
+@charset "utf-8";
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	width: 100%;
+	height: 100%;
+	color: #333;
+	background: #f7f7f7;
+	font-size: 1em;
+	font-family: "Segoe UI", sans-serif;
+	line-height: 135%;
+}
+
+a {
+	color: #f48b8b;
+	text-decoration: none;
+	transition: all.6s ease;
+	-moz-transition: all.6s ease;
+	-webkit-transition: all.6s ease;
+	-ms-transition: all.6s ease;
+}
+
+a:hover {
+	color: #8b9ff5;
+	text-decoration: none;
+	transition: all.6s ease;
+	-moz-transition: all.6s ease;
+	-webkit-transition: all.6s ease;
+	-ms-transition: all.6s ease;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+	width: auto\9;
+}
+
+hr {
+	display: block;
+	border: 0;
+	height: 1px;
+	border-top: 1px solid #ccc;
+	padding: 0;
+}
+
+.left {float: left;}
+
+.right {float: right;}
+
+.clear {clear: both;}
+
+::selection {background: #f58b8b; color:#fff}
+
+header, footer {
+	width: 98%;
+	background-color: #fff;
+	float: left;
+}
+
+header {
+	border-bottom: 2px solid silver;
+	padding: 1%;
+}
+
+#logo {
+	font-size: 2em;
+	font-family: Comic Sans MS, sans-serif;
+	color: silver;
+}
+
+.contact {
+	font-size: 1.5em;
+	font-family: Comic Sans MS, sans-serif;
+	margin-left: 20px;
+}
+
+input[type=text].field {
+	border-radius: 5px;
+	border: 2px solid silver;
+	padding: 5px;
+	margin-left: 20px;
+}
+
+#menu {
+	color: #666;
+	font-family: Comic Sans MS, sans-serif;
+	font-size: 1.7em;
+}
+
+#menu hr {
+	width: 500px;
+	max-width: 100%;
+	margin-top: 5px;
+	margin-bottom: 10px;
+}
+
+#menuHrefs a {
+	padding: 5px 10px;
+	border-radius: 5px;
+	margin-right: 5px;
+	color: #626262;
+}
+
+#menuHrefs a:hover {
+	color: #bfbfbf;
+}
+
+#wrapper {
+	float: left;
+	width: 100%;
+	margin-top: 20px;
+}
+
+#wrapper #articles {
+	float: left;
+	width: 80%;
+	margin-left: 10%;
+}
+
+#wrapper #articles article {
+	float: left;
+	border: 1px solid silver;
+	box-sizing: border-box;
+	border-radius: 5px;
+	background-color: #fafafa;
+	min-height: 400px;
+	}
+
+@media (min-width: 700px) {
+	#wrapper #articles article {
+		width: 31.3%;
+		margin-right: 2%;
+	}
+}
+
+@media (max-width: 699px) {
+	#wrapper #articles article {
+		width: 100%;
+		margin-bottom: 10px;
+	}
+}
+
+#wrapper #articles article img {
+	width: 100%;
+	height: 200px;
+	border-radius: 5px 5px 0px 0px;
+	border-bottom: 1px solid silver;
+	margin-bottom: 10px;
+}
+
+#wrapper #articles article h2 {
+	width: 90%;
+	margin-left: 5%;
+	font-weight: normal;
+	font-size: 1.7em;
+	color: #4a4a4a;
+	text-align: center;
+	margin-bottom: 10px;
+}
+
+
+#wrapper #articles article p {
+	width: 80%;
+	margin-left: 10%;
+}
+
+#wrapper #articles article a {
+	padding: 5px;
+	background-color: #ed7b7b;
+	margin-left: 5%;
+	border-radius: 5px;
+	color: #fff;
+	margin-top: 10px;
+	float: left;
+	margin-bottom: 10px;
+}
+
+#wrapper #articles article a:hover {
+	background-color: #7feb6d;
+}
+
+#about_us {
+	width: 100%;
+	float: left;
+	background-color: #fafafa;
+	border-radius: 5px;
+	border: 1px solid silver;
+	box-sizing: border-box;
+	padding: 1%;
+}
+
+form {
+	width: 60%;
+	margin-left: 20%;
+	float: left;
+}
+
+form label {
+	float: left;
+	width: 100%;
+	margin-bottom: 10px;
+	margin-left: 20px;
+}
+
+form input {
+	border-radius: 5px;
+	border: 2px solid silver;
+	padding: 5px;
+	margin-left: 20px;
+	float: left;
+	clear: both;
+	width: 40%;
+	margin-bottom: 10px;
+}
+
+form input:focus, form textarea:focus {
+	border: 2px solid #f58b8b;
+}
+
+form textarea {
+	width: 60%;
+	float: left;
+	clear: both;
+	margin-left: 20px;
+	background-color: #fafafa;
+	border: 2px solid silver;
+	border-radius: 5px;
+	padding: 10px;
+}
+
+form #send {
+	float: left;
+	padding: 10px;
+	background-color: #f37a7a;
+	cursor: pointer;
+	border-radius: 5px;
+	margin-top: 10px;
+	color: #fff;
+}
+
+form #send:hover {
+	background-color: #bdf37a;
+}
+
+#site-block {
+	width: 100%;
+	padding: 2% 0;
+	border-bottom: 2px solid silver;
+	border-top: 2px solid silver;
+	margin: 20px 0;
+	float: left;
+	background: url("http://surl.li/untet") repeat-x center 0;
+	height: 300px;
+}
+
+footer {
+	padding: 1%;
+	border-top: 2px solid silver;
+	margin-top: 10px;
+	padding-bottom: 2%;
+}
+
+footer img {width: 16%; float: left; margin-right: 5px;}
+
+footer ul {
+	list-style-type: none;
+}
+
+footer ul li {
+	margin-bottom: 5px;
+}
