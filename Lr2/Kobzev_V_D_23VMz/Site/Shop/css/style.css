@@ -1,0 +1,13 @@
+form {
+	width: 400px;
+}
+.zad {
+	background: linear-gradient(45deg, #9966cc, #fff785);
+	}
+.raz{
+	font-size: 150%;
+}
+.card {
+	width: 32%;
+	margin-left: 1%;
+}
